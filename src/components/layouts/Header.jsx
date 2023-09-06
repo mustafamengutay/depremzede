@@ -21,7 +21,7 @@ const Header = () => {
         </nav>
         <div className="flex items-center gap-8">
           <p>En</p>
-          <Link className="bg-grey-1 rounded-full px-8 py-2">Giriş Yap</Link>
+          <Link className="bg-grey-1 px-8 rounded-full py-2">Giriş Yap</Link>
         </div>
       </div>
     </div>

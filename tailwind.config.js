@@ -14,6 +14,9 @@ module.exports = {
       'sans': ['Poppins', 'sans-serif'],
     },
     extend: {
+      borderRadius: {
+        'base': '2rem',
+      },
       colors: {
         white: '#F8F9FA',
         black: '#141414',
