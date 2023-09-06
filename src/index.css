@@ -17,3 +17,9 @@ body {
     @apply inline-block bg-white text-black w-[532px] h-[200px] rounded-base px-[51px] py-[60px];
   }
 }
+
+@layer components {
+  .btn-small {
+    @apply inline-block bg-white text-black w-[258px] h-[191px] rounded-base px-[27px] py-[60px];
+  }
+}

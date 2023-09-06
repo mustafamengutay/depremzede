@@ -23,6 +23,7 @@ module.exports = {
         'grey-1': '#2C2C2C',
       },
       fontSize: {
+        '4': '1rem',
         base: '0.875rem',
         '7': '1.75rem',
       },
