@@ -17,9 +17,11 @@ module.exports = {
       colors: {
         white: '#F8F9FA',
         black: '#141414',
+        'grey-1': '#2C2C2C',
       },
       fontSize: {
         base: '0.875rem',
+        '7': '1.75rem',
       },
       letterSpacing: {
         'minus-4': '-0.25rem',
