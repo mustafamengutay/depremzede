@@ -21,14 +21,20 @@ module.exports = {
         white: '#F8F9FA',
         black: '#141414',
         'grey-1': '#2C2C2C',
+        'grey-2': '#A1A1A1',
       },
       fontSize: {
         '4': '1rem',
         base: '0.875rem',
         '7': '1.75rem',
+        '17.5': '4.375rem',
       },
       letterSpacing: {
         '4': '0.04px',
+        'title': '101.5%'
+      },
+      lineHeight: {
+        '4': '107%',
       }
     },
   },
