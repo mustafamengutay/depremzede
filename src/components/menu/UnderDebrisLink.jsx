@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom';
 import megaphone from '../../assets/megaphone.svg';
 
+/**
+ *
+ * @returns A button-like link that is used to direct people to a form that helps people to make
+ * an announcement for people who are under debris.
+ */
 const UnderDebrisLink = () => {
   return (
     <Link className="btn-big">
