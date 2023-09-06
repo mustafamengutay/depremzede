@@ -10,7 +10,7 @@ const InformationLink = ({ icon, title }) => {
   // TODO: InformationLink should get a direction path in the future.
   return (
     <Link className="btn-medium">
-      <div className="relative h-full">
+      <div className="relative h-full -tracking-4">
         <img src={icon} alt="Donation icon" />
         <p className="absolute right-0 text-2xl whitespace-nowrap font-bold">
           {title}
