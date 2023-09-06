@@ -1,0 +1,28 @@
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
+/**
+ * @param {string} icon A path for an icon.
+ * @param {string} title A title for the link.
+ * @returns A Button-like link that can be used to direct people to a List based page.
+ */
+const InformationLink = ({ icon, title }) => {
+  // TODO: InformationLink should get a direction path in the future.
+  return (
+    <Link className="btn-medium">
+      <div className="relative h-full">
+        <img src={icon} alt="Donation icon" />
+        <p className="absolute right-0 text-2xl whitespace-nowrap font-bold">
+          {title}
+        </p>
+      </div>
+    </Link>
+  );
+};
+
+InformationLink.propTypes = {
+  icon: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
+
+export default InformationLink;

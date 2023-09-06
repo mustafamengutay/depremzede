@@ -8,6 +8,12 @@ body {
 
 @layer components {
   .btn-big {
-    @apply inline-block bg-white text-black w-[523px] h-[353px] rounded-base px-[51px] py-[60px];
+    @apply inline-block bg-white text-black w-[532px] h-[353px] rounded-base px-[51px] py-[60px];
+  }
+}
+
+@layer components {
+  .btn-medium {
+    @apply inline-block bg-white text-black w-[532px] h-[200px] rounded-base px-[51px] py-[60px];
   }
 }
