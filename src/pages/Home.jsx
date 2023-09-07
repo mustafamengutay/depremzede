@@ -1,8 +1,10 @@
 import Header from '../components/layouts/Header';
 
+import Headline from '../components/layouts/Headline';
 import UnderDebrisLink from '../components/menu/UnderDebrisLink';
 import InformationLink from '../components/menu/InformationLink';
 import HelpLink from '../components/menu/HelpLink';
+import SideMenuLink from '../components/menu/SideMenuLink';
 
 import donation from '../assets/donation.svg';
 import home from '../assets/home.svg';
@@ -11,7 +13,11 @@ import food from '../assets/utensils.svg';
 import car from '../assets/car.svg';
 import list from '../assets/list.svg';
 import homes from '../assets/homes.svg';
-import Headline from '../components/layouts/Headline';
+
+import search from '../assets/search.svg';
+import map from '../assets/map.svg';
+import info from '../assets/info.svg';
+import up from '../assets/up.svg';
 
 const Home = () => {
   return (
@@ -19,18 +25,32 @@ const Home = () => {
       <Header />
       <main className="mt-20 flex justify-between">
         <Headline />
-        <menu className="w-[533px] flex flex-col gap-6 items-center justify-center">
-          <UnderDebrisLink />
-          <InformationLink icon={donation} title="Bağış Yap" />
-          <section className="flex flex-wrap gap-x-4 gap-y-6">
-            <HelpLink icon={home} title="Konaklama Sağlayabilirim" />
-            <HelpLink icon={clothes} title="Giysi Sağlayabilirim" />
-            <HelpLink icon={food} title="Gıda Sağlayabilirim" />
-            <HelpLink icon={car} title="İş Aracı Kullanabilirim" />
-          </section>
-          <InformationLink icon={list} title="Enkaz Altında Olanlar" />
-          <InformationLink icon={homes} title="Konaklama Sağlayanlar" />
-        </menu>
+        <div className="flex">
+          <div className="flex gap-11 items-start">
+            <menu className="w-[533px] flex flex-col gap-6 items-center justify-center">
+              <UnderDebrisLink />
+              <InformationLink icon={donation} title="Bağış Yap" />
+              <section className="flex flex-wrap gap-x-4 gap-y-6">
+                <HelpLink icon={home} title="Konaklama Sağlayabilirim" />
+                <HelpLink icon={clothes} title="Giysi Sağlayabilirim" />
+                <HelpLink icon={food} title="Gıda Sağlayabilirim" />
+                <HelpLink icon={car} title="İş Aracı Kullanabilirim" />
+              </section>
+              <InformationLink icon={list} title="Enkaz Altında Olanlar" />
+              <InformationLink icon={homes} title="Konaklama Sağlayanlar" />
+            </menu>
+            <div className="h-full mr-4 flex flex-col justify-between items-center">
+              <div className="mt-14 flex flex-col gap-8">
+                <SideMenuLink icon={search} title="Arama" />
+                <SideMenuLink icon={map} title="Harita" />
+                <SideMenuLink icon={info} title="Bilgilendirme" />
+              </div>
+              <div>
+                <SideMenuLink icon={up} />
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   );
