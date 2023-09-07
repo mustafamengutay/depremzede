@@ -1,6 +1,7 @@
 import Header from '../components/layouts/Header';
 
 import Headline from '../components/layouts/Headline';
+import Footer from '../components/layouts/Footer';
 import UnderDebrisLink from '../components/menu/UnderDebrisLink';
 import InformationLink from '../components/menu/InformationLink';
 import HelpLink from '../components/menu/HelpLink';
@@ -52,6 +53,7 @@ const Home = () => {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 };
