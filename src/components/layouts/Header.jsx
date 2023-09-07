@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <div className="text-white font-light -tracking-4 flex items-center justify-between mt-10">
+    <div className="text-white min-w-[1000px] font-light -tracking-4 flex items-center justify-between mt-10">
       <p className="font-semibold text-7">Depremzede</p>
       <div className="flex items-center gap-36 text-base">
         <nav>
