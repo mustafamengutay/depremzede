@@ -14,6 +14,11 @@ module.exports = {
       'sans': ['Poppins', 'sans-serif'],
     },
     extend: {
+      spacing: {
+        '1.5': '0.375rem',
+        '48.5': '12.125rem',
+        '75': '18.75rem',
+      },
       borderRadius: {
         'base': '2rem',
       },
