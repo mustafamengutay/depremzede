@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect } from 'react';
 
 import Header from '../components/layouts/Header';
@@ -38,7 +39,11 @@ const Home = () => {
               <UnderDebrisLink route="/enkaz-altinda" />
               <InformationLink icon={donation} title="Bağış Yap" />
               <section className="flex flex-wrap gap-x-4 gap-y-6">
-                <HelpLink icon={home} title="Konaklama Sağlayabilirim" />
+                <HelpLink
+                  icon={home}
+                  title="Konaklama Sağlayabilirim"
+                  route="/konaklama-yardimi"
+                />
                 <HelpLink
                   icon={clothes}
                   title="Giysi Sağlayabilirim"
