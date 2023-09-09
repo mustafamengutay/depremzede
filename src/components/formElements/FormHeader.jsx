@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import CloseButton from '../layouts/CloseButton';
 
 const FormHeader = ({ title, description }) => {
@@ -11,6 +12,16 @@ const FormHeader = ({ title, description }) => {
       <hr />
     </div>
   );
+};
+
+FormHeader.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string,
+};
+
+FormHeader.defaultProps = {
+  description:
+    'Form bilgileri sistem yöneticileri tarafından onaylandıktan sonra sizinle iletişime geçilecektir.',
 };
 
 export default FormHeader;
