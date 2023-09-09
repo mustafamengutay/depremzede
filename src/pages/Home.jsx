@@ -29,12 +29,20 @@ const Home = () => {
         <div className="flex">
           <div className="flex gap-11 items-start">
             <menu className="w-[533px] flex flex-col gap-6 items-center justify-center">
-              <UnderDebrisLink />
+              <UnderDebrisLink route="/enkaz-altinda" />
               <InformationLink icon={donation} title="Bağış Yap" />
               <section className="flex flex-wrap gap-x-4 gap-y-6">
                 <HelpLink icon={home} title="Konaklama Sağlayabilirim" />
-                <HelpLink icon={clothes} title="Giysi Sağlayabilirim" />
-                <HelpLink icon={food} title="Gıda Sağlayabilirim" />
+                <HelpLink
+                  icon={clothes}
+                  title="Giysi Sağlayabilirim"
+                  route="/giysi-yardimi"
+                />
+                <HelpLink
+                  icon={food}
+                  title="Gıda Sağlayabilirim"
+                  route="/gida-yardimi"
+                />
                 <HelpLink icon={car} title="İş Aracı Kullanabilirim" />
               </section>
               <InformationLink icon={list} title="Enkaz Altında Olanlar" />

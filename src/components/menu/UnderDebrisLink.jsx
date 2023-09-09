@@ -6,9 +6,9 @@ import megaphone from '../../assets/megaphone.svg';
  * @returns A button-like link that is used to direct people to a form that helps people to make
  * an announcement for people who are under debris.
  */
-const UnderDebrisLink = () => {
+const UnderDebrisLink = ({ route }) => {
   return (
-    <Link className="btn-big">
+    <Link className="btn-big" to={route}>
       <div className="relative h-full flex items-start justify-between">
         <div className="w-full flex justify-between items-center">
           <img src={megaphone} alt="" />
