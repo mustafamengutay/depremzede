@@ -13,7 +13,7 @@ const TextArea = ({ title, altTitle }) => {
       <Label title={title} />
       <textarea
         placeholder={title}
-        className="focus:border-black my-1.5 flex min-w-[632px] min-h-20 rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+        className="focus:border-black my-1.5 flex min-w-[632px] min-h-20 rounded-xl border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
       ></textarea>
       <div className="text-grey-2 text-sm font-light leading-tight">
         {altTitle}
