@@ -10,6 +10,9 @@ module.exports = {
     container: {
       center: true,
     },
+    minHeight: {
+      '20': '80px',
+    },
     fontFamily: {
       'sans': ['Inter', 'sans-serif'],
     },
