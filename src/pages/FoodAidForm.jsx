@@ -1,4 +1,4 @@
-import FoodAidSection from '../components/formElements/FoodAidSection';
+import ExtraInformationSection from '../components/formElements/ExtraInformationSection';
 import FormHeader from '../components/formElements/FormHeader';
 import PersonalInfoSection from '../components/formElements/PersonalInfoSection';
 import SubmitSection from '../components/formElements/SubmitSection';
@@ -19,7 +19,10 @@ const FoodAidForm = () => {
           <div>
             <PersonalInfoSection />
             <hr className="my-8" />
-            <FoodAidSection />
+            <ExtraInformationSection
+              title="Gıda Yardımı Hakkında Bilgiler"
+              altTitle="Gıda hakkında ek bilgiler ekleyebilirsiniz"
+            />
           </div>
           <SubmitSection />
         </form>
