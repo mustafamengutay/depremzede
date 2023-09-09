@@ -1,11 +1,16 @@
+import { useEffect } from 'react';
+
 import PersonalInfoSection from '../components/formElements/PersonalInfoSection';
 import DebrisFieldSection from '../components/formElements/DebrisFieldSection';
 import FormHeader from '../components/formElements/FormHeader';
 import SubmitSection from '../components/formElements/SubmitSection';
-import { useEffect } from 'react';
 
 const UnderDebrisForm = () => {
-  useEffect(() => window.scrollTo(0, 0), []);
+  useEffect(() => {
+    // Page Settings
+    document.body.style.backgroundColor = '#F8F9FA';
+    window.scrollTo(0, 0);
+  }, []);
 
   const descriptionText = (
     <p>

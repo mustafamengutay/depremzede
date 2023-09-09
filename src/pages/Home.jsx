@@ -1,5 +1,6 @@
-import Header from '../components/layouts/Header';
+import { useEffect } from 'react';
 
+import Header from '../components/layouts/Header';
 import Headline from '../components/layouts/Headline';
 import Footer from '../components/layouts/Footer';
 import UnderDebrisLink from '../components/menu/UnderDebrisLink';
@@ -21,6 +22,11 @@ import info from '../assets/info.svg';
 import up from '../assets/up.svg';
 
 const Home = () => {
+  useEffect(() => {
+    // Page Settings
+    document.body.style.backgroundColor = '#141414';
+  }, []);
+
   return (
     <div>
       <Header />
