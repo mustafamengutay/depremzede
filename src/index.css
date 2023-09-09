@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: #141414;
-}
-
 @layer components {
   .btn-big {
     @apply inline-block bg-white text-black w-[532px] h-[353px] rounded-base px-[51px] py-[60px];
