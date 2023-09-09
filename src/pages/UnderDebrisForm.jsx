@@ -2,8 +2,11 @@ import PersonalInfoSection from '../components/formElements/PersonalInfoSection'
 import DebrisFieldSection from '../components/formElements/DebrisFieldSection';
 import FormHeader from '../components/formElements/FormHeader';
 import SubmitSection from '../components/formElements/SubmitSection';
+import { useEffect } from 'react';
 
 const UnderDebrisForm = () => {
+  useEffect(() => window.scrollTo(0, 0), []);
+
   const descriptionText = (
     <p>
       Form bilgileri sistem yöneticileri tarafından onaylandıktan sonra

@@ -1,9 +1,12 @@
+import { useEffect } from 'react';
 import ExtraInformationSection from '../components/formElements/ExtraInformationSection';
 import FormHeader from '../components/formElements/FormHeader';
 import PersonalInfoSection from '../components/formElements/PersonalInfoSection';
 import SubmitSection from '../components/formElements/SubmitSection';
 
 const ClothingAidForm = () => {
+  useEffect(() => window.scrollTo(0, 0), []);
+
   return (
     <div className="container w-screen h-screen -tracking-4">
       <FormHeader title="Giysi Yardımı Formu" />
