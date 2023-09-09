@@ -11,13 +11,14 @@ module.exports = {
       center: true,
     },
     fontFamily: {
-      'sans': ['Poppins', 'sans-serif'],
+      'sans': ['Inter', 'sans-serif'],
     },
     extend: {
       spacing: {
         '1.5': '0.375rem',
         '48.5': '12.125rem',
         '75': '18.75rem',
+        '76.25': '19.063rem',
       },
       borderRadius: {
         'base': '2rem',
@@ -36,6 +37,7 @@ module.exports = {
       },
       letterSpacing: {
         '4': '0.04px',
+        '2': '0.02px',
         'title': '101.5%'
       },
       lineHeight: {
