@@ -31,7 +31,10 @@ const UnderDebrisForm = () => {
           <div>
             <PersonalInfoSection />
             <hr className="my-8" />
-            <DebrisFieldSection />
+            <DebrisFieldSection
+              firstInputWidth={'184px'}
+              secondInputWidth={'415px'}
+            />
           </div>
           <SubmitSection />
         </form>

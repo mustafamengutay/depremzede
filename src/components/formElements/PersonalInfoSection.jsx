@@ -5,7 +5,7 @@ const PersonalInfoSection = () => {
   return (
     <div className="flex justify-between items-center">
       <p className="font-medium text-xl -tracking-2">Kişisel Bilgiler</p>
-      <div className="flex flex-wrap gap-7 w-[644px]">
+      <div className="flex flex-wrap gap-7 w-[632px] justify-end">
         <div className="flex gap-8">
           <Input title="İsim" altTitle="İsminizi giriniz" />
           <Input title="Soyisim" altTitle="Soyisminizi giriniz" />

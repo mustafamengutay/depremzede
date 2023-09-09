@@ -4,14 +4,16 @@ import Label from './Label';
 /**
  *
  * @param {string} title A text that is shown at the top of an input and as a placeholder.
+ * @param {string} inputWidth
  * @param {string} altTitle A text that is shown at the bottom of an input.
  * @returns A form input.
  */
-const Input = ({ title, altTitle }) => {
+const Input = ({ title, altTitle, width = '' }) => {
   return (
     <div>
       <Label title={title} />
       <input
+        style={{ width: width }}
         placeholder={title}
         type="text"
         className={
