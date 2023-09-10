@@ -2,6 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+  const scrollDownByPercentage = (percentage) => {
+    const windowHeight = window.innerHeight;
+    const scrollHeight = document.documentElement.scrollHeight;
+    const scrollDistance = (scrollHeight - windowHeight) * (percentage / 100);
+
+    window.scrollTo({
+      top: scrollDistance,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <header className="text-white min-w-[1000px] font-light -tracking-4 flex items-center justify-between mt-10">
       <p className="font-semibold text-7">Depremzede</p>
@@ -9,13 +20,28 @@ const Header = () => {
         <nav>
           <ul className="flex gap-8">
             <li>
-              <a href="#">Yardım Al</a>
+              <p
+                className="hover:cursor-pointer"
+                onClick={() => scrollDownByPercentage(5)}
+              >
+                Yardım Al
+              </p>
             </li>
             <li>
-              <a href="#">Yardım Sağla</a>
+              <p
+                className="hover:cursor-pointer"
+                onClick={() => scrollDownByPercentage(50)}
+              >
+                Yardım Sağla
+              </p>
             </li>
             <li>
-              <a href="#">Yardım Listesi</a>
+              <p
+                className="hover:cursor-pointer"
+                onClick={() => scrollDownByPercentage(80)}
+              >
+                Yardım Listesi
+              </p>
             </li>
           </ul>
         </nav>
