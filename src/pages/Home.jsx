@@ -37,7 +37,11 @@ const Home = () => {
           <div className="flex gap-11 items-start">
             <menu className="w-[533px] flex flex-col gap-6 items-center justify-center">
               <UnderDebrisLink route="/enkaz-altinda" />
-              <InformationLink icon={donation} title="Bağış Yap" />
+              <InformationLink
+                icon={donation}
+                title="Bağış Yap"
+                route="/bagis"
+              />
               <section className="flex flex-wrap gap-x-4 gap-y-6">
                 <HelpLink
                   icon={home}
@@ -54,7 +58,11 @@ const Home = () => {
                   title="Gıda Sağlayabilirim"
                   route="/gida-yardimi"
                 />
-                <HelpLink icon={car} title="İş Aracı Kullanabilirim" />
+                <HelpLink
+                  icon={car}
+                  title="İş Aracı Kullanabilirim"
+                  route="/is-araci-kullanabilirim"
+                />
               </section>
               <InformationLink icon={list} title="Enkaz Altında Olanlar" />
               <InformationLink icon={homes} title="Konaklama Sağlayanlar" />
