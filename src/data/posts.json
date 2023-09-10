@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Mustafa",
+    "address": "Mustafa sk. Blok: 7",
+    "city": "Lefkosa",
+    "email": "mustafa@gmail.com",
+    "phoneNo": "+90 533 562 32 56",
+    "status": true
+  },
+  {
+    "name": "Ayse",
+    "address": "Ayse sk. Blok: 2",
+    "city": "Gaziantep",
+    "email": "ayse@gmail.com",
+    "phoneNo": "+90 533 562 32 56",
+    "status": true
+  },
+  {
+    "name": "Halil",
+    "address": "Halil sk. Blok: 6",
+    "city": "Mersin",
+    "email": "halil@gmail.com",
+    "phoneNo": "+90 533 562 32 56",
+    "status": false
+  },
+  {
+    "name": "Onur",
+    "address": "Onur sk. Blok: 1",
+    "city": "Girne",
+    "email": "onur@gmail.com",
+    "phoneNo": "+90 533 512 11 11",
+    "status": false
+  },
+  {
+    "name": "Emir",
+    "address": "Emir sk. Blok: 9",
+    "city": "Bursa",
+    "email": "emir@gmail.com",
+    "phoneNo": "+90 533 512 67 98",
+    "status": true
+  }
+]

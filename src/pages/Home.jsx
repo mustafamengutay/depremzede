@@ -64,7 +64,11 @@ const Home = () => {
                   route="/is-araci-kullanabilirim"
                 />
               </section>
-              <InformationLink icon={list} title="Enkaz Altında Olanlar" />
+              <InformationLink
+                icon={list}
+                title="Enkaz Altında Olanlar"
+                route="/enkaz-altinda-olanlar"
+              />
               <InformationLink icon={homes} title="Konaklama Sağlayanlar" />
             </menu>
             <div className="h-full mr-4 flex flex-col justify-between items-center">
