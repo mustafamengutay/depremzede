@@ -6,10 +6,9 @@ import { Link } from 'react-router-dom';
  * @param {string} title A title for the link.
  * @returns A Button-like link that can be used to direct people to a List based page.
  */
-const InformationLink = ({ icon, title }) => {
-  // TODO: InformationLink should get a direction path in the future.
+const InformationLink = ({ icon, title, route }) => {
   return (
-    <Link className="btn-medium">
+    <Link className="btn-medium" to={route}>
       <div className="relative h-full -tracking-4">
         <img src={icon} alt="Donation icon" />
         <p className="absolute right-0 text-2xl whitespace-nowrap font-bold">

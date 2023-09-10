@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
  * @returns A Button-like link that can be used to direct people to a Help page.
  */
 const HelpLink = ({ icon, title, route }) => {
-  // TODO: InformationLink should get a direction path in the future.
   return (
     <Link className="btn-small" to={route}>
       <div className="h-full flex flex-col justify-center items-center gap-2 -tracking-4">
