@@ -72,7 +72,7 @@ const Home = () => {
               <InformationLink
                 icon={homes}
                 title="Konaklama Sağlayanlar"
-                // route="/konaklama-saglayanlar"
+                route="/konaklama-saglayanlar"
               />
             </menu>
             <div className="h-full mr-4 flex flex-col justify-between items-center">
