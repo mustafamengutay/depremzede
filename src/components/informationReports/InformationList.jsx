@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import VictimItem from './VictimItem';
+import Information from './Information';
 import data from '../../data/posts.json'; // TEST DATA
 
-const VictimList = () => {
+const InformationList = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     setPosts(data);
@@ -12,7 +12,7 @@ const VictimList = () => {
     <div>
       {posts.map((post, index) => {
         return (
-          <VictimItem
+          <Information
             key={index}
             name={post.name}
             address={post.address}
@@ -27,4 +27,4 @@ const VictimList = () => {
   );
 };
 
-export default VictimList;
+export default InformationList;

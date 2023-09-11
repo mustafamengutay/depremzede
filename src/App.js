@@ -7,7 +7,8 @@ import ClothingAidForm from "./pages/ClothingAidForm";
 import AccommodationForm from "./pages/AccommodationForm";
 import VehicleForm from "./pages/VehicleForm";
 import Donation from "./pages/Donation";
-import UnderDebris from "./pages/UnderDebris";
+import UnderDebrisList from "./pages/UnderDebrisList";
+import AccommodationList from "./pages/AccommodationList";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
           <Route path="/konaklama-yardimi" element={<AccommodationForm />} />
           <Route path="/is-araci-kullanabilirim" element={<VehicleForm />} />
           <Route path="/bagis" element={<Donation />} />
-          <Route path="/enkaz-altinda-olanlar" element={<UnderDebris />} />
+          <Route path="/enkaz-altinda-olanlar" element={<UnderDebrisList />} />
+          {/* <Route path="/konaklama-saglayanlar" element={<AccommodationList />} /> */}
         </Routes>
       </Router>
     </div>

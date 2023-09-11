@@ -1,6 +1,6 @@
 import React from 'react';
 
-const VictimItem = ({ name, address, city, email, phoneNo, status }) => {
+const Information = ({ name, address, city, email, phoneNo, status }) => {
   return (
     <div>
       <ul className="grid grid-cols-6 justify-items-center items-center text-base font-normal">
@@ -32,9 +32,4 @@ export const StatusTag = ({ statu }) => {
   }
 };
 
-export default VictimItem;
-
-// <li className="ml-4">{address}</li>
-// <li className="ml-2">{city}</li>
-// <li className="-ml-1">{email}</li>
-// <li className="ml-12">{phoneNo}</li>
+export default Information;

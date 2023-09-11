@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import FormHeader from '../components/formElements/FormHeader';
-import VictimList from '../components/victims/VictimList';
+import InformationList from '../components/informationReports/InformationList';
 
-const UnderDebris = () => {
+const UnderDebrisList = () => {
   useEffect(() => {
     // Page Settings
     document.body.style.backgroundColor = '#F8F9FA';
@@ -18,17 +18,17 @@ const UnderDebris = () => {
       <div className="mt-16">
         <ul className="grid grid-cols-6 justify-items-center text-base font-medium">
           <li>İlan Sahibi</li>
-          <li>Adres</li>
+          <li>Enkaz Adresi</li>
           <li>Şehir</li>
           <li>E-posta Adresi</li>
           <li>Telefon Numarası</li>
           <li>İlan Durumu</li>
         </ul>
         <hr className="mt-6 mb-8" />
-        <VictimList />
+        <InformationList />
       </div>
     </div>
   );
 };
 
-export default UnderDebris;
+export default UnderDebrisList;

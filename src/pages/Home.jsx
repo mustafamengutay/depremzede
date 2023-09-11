@@ -69,7 +69,11 @@ const Home = () => {
                 title="Enkaz Altında Olanlar"
                 route="/enkaz-altinda-olanlar"
               />
-              <InformationLink icon={homes} title="Konaklama Sağlayanlar" />
+              <InformationLink
+                icon={homes}
+                title="Konaklama Sağlayanlar"
+                // route="/konaklama-saglayanlar"
+              />
             </menu>
             <div className="h-full mr-4 flex flex-col justify-between items-center">
               <div className="mt-14 flex flex-col gap-8">
