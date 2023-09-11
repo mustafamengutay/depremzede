@@ -1,14 +1,9 @@
 import { useContext } from 'react';
 import Input from './Input';
-import FormContext from '../../context/FormContext';
+import FormContext from '../../context/form/FormContext';
 
 const AccommodationSection = ({ firstInputWidth, secondInputWidth }) => {
-  const {
-    numberOfPeopleInputValue,
-    setNumberOfPeopleInputValue,
-    addressInputValue,
-    setAddressInputValue,
-  } = useContext(FormContext);
+  const { numberOfPeopleInput, addressInput } = useContext(FormContext);
 
   return (
     <div className="flex items-center justify-between">
@@ -20,15 +15,15 @@ const AccommodationSection = ({ firstInputWidth, secondInputWidth }) => {
           title="Kişi Sayısı"
           altTitle="Kişi sayısını giriniz"
           width={firstInputWidth}
-          value={numberOfPeopleInputValue}
-          setValue={setNumberOfPeopleInputValue}
+          inputType={numberOfPeopleInput}
+          action={'SET_NUMBER_OF_PEOPLE'}
         />
         <Input
           title="Konaklama Adresi"
           altTitle="Konaklama bölgesinin adresini giriniz"
           width={secondInputWidth}
-          value={addressInputValue}
-          setValue={setAddressInputValue}
+          inputType={addressInput}
+          action={'SET_ADDRESS'}
         />
       </div>
     </div>

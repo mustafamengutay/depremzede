@@ -1,14 +1,9 @@
 import { useContext } from 'react';
 import Input from './Input';
-import FormContext from '../../context/FormContext';
+import FormContext from '../../context/form/FormContext';
 
 const VehicleSection = ({ firstInputWidth, secondInputWidth }) => {
-  const {
-    carTypeInputValue,
-    setCarTypeInputValue,
-    addressInputValue,
-    setAddressInputValue,
-  } = useContext(FormContext);
+  const { carTypeInput, addressInput } = useContext(FormContext);
 
   return (
     <div className="flex items-center justify-between">
@@ -20,15 +15,15 @@ const VehicleSection = ({ firstInputWidth, secondInputWidth }) => {
           title="Araç Tipi"
           altTitle="Araç tipini giriniz"
           width={firstInputWidth}
-          value={carTypeInputValue}
-          setValue={setCarTypeInputValue}
+          inputType={carTypeInput}
+          action={'SET_CAR_TYPE'}
         />
         <Input
           title="Adres*"
           altTitle="Adresinizi giriniz"
           width={secondInputWidth}
-          value={addressInputValue}
-          setValue={setAddressInputValue}
+          inputType={addressInput}
+          action={'SET_ADDRESS'}
         />
       </div>
     </div>

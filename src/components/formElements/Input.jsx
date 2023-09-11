@@ -1,17 +1,21 @@
 import PropTypes from 'prop-types';
 import Label from './Label';
+import { useContext } from 'react';
+import FormContext from '../../context/form/FormContext';
 
 /**
  *
  * @param {string} title A text that is shown at the top of an input and as a placeholder.
- * @param {string} inputWidth
+ * @param {string} inputWidth The width of the input box.
  * @param {string} altTitle A text that is shown at the bottom of an input.
+ * @param {string} inputType A type of an input such as nameInputValue, or emailInputValue.
  * @returns A form input.
  */
-const Input = ({ title, altTitle, width = '', value, setValue }) => {
-  const handleInputChange = (e) => {
-    // TODO: Add validation
-    setValue(e.target.value);
+const Input = ({ title, altTitle, width = '', inputType, action }) => {
+  const { dispatch } = useContext(FormContext);
+
+  const handleTextChange = (e) => {
+    dispatch({ type: action, payload: e.target.value });
   };
 
   return (
@@ -21,8 +25,8 @@ const Input = ({ title, altTitle, width = '', value, setValue }) => {
         style={{ width: width }}
         placeholder={title}
         type="text"
-        value={value}
-        onChange={handleInputChange}
+        value={inputType}
+        onChange={handleTextChange}
         className={
           'my-1.5 focus:border-black flex h-10 w-75 rounded-xl border border-input bg-transparent px-3 py-1 text-sm  transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50'
         }

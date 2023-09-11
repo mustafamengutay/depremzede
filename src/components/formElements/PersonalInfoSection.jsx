@@ -1,18 +1,10 @@
 import { useContext } from 'react';
 import Input from './Input';
-import FormContext from '../../context/FormContext';
+import FormContext from '../../context/form/FormContext';
 
 const PersonalInfoSection = () => {
-  const {
-    nameInputValue,
-    setNameInputValue,
-    surNameInputValue,
-    setSurNameInputValue,
-    phoneNumberInputValue,
-    setPhoneNumberInputValue,
-    emailInputValue,
-    setEmailInputValue,
-  } = useContext(FormContext);
+  const { nameInput, surnameInput, phoneNumberInput, emailInput } =
+    useContext(FormContext);
 
   return (
     <div className="flex justify-between items-center">
@@ -22,28 +14,28 @@ const PersonalInfoSection = () => {
           <Input
             title="İsim"
             altTitle="İsminizi giriniz"
-            value={nameInputValue}
-            setValue={setNameInputValue}
+            inputType={nameInput}
+            action={'SET_NAME'}
           />
           <Input
             title="Soyisim"
             altTitle="Soyisminizi giriniz"
-            value={surNameInputValue}
-            setValue={setSurNameInputValue}
+            inputType={surnameInput}
+            action={'SET_SURNAME'}
           />
         </div>
         <div className="flex gap-8">
           <Input
             title="Telefon Numarası*"
             altTitle="Telefon numaranızı giriniz"
-            value={phoneNumberInputValue}
-            setValue={setPhoneNumberInputValue}
+            inputType={phoneNumberInput}
+            action={'SET_PHONE_NUMBER'}
           />
           <Input
             title="E-posta Adresi"
             altTitle="E-posta adresinizi giriniz"
-            value={emailInputValue}
-            setValue={setEmailInputValue}
+            inputType={emailInput}
+            action={'SET_EMAIL'}
           />
         </div>
       </div>
