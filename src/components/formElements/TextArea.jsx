@@ -9,11 +9,11 @@ import FormContext from '../../context/form/FormContext';
  * @param {string} altTitle A text that is shown at the bottom of a text area.
  * @returns A form text area.
  */
-const TextArea = ({ title, altTitle, action }) => {
+const TextArea = ({ title, altTitle, inputType }) => {
   const { dispatch } = useContext(FormContext);
 
   const handleTextareaChange = (e) => {
-    dispatch({ type: action, payload: e.target.value });
+    dispatch({ type: 'SET_INPUT', name: inputType, payload: e.target.value });
   };
 
   return (

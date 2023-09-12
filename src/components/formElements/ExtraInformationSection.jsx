@@ -7,7 +7,7 @@ const ExtraInformationSection = ({ title, altTitle }) => {
       <TextArea
         title="Ek Bilgiler"
         altTitle={altTitle}
-        action={'SET_EXTRA_INFORMATION'}
+        inputType="extraInformationInput"
       />
     </div>
   );

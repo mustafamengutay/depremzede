@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import Label from './Label';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import FormContext from '../../context/form/FormContext';
 
 /**
@@ -11,11 +11,14 @@ import FormContext from '../../context/form/FormContext';
  * @param {string} inputType A type of an input such as nameInputValue, or emailInputValue.
  * @returns A form input.
  */
-const Input = ({ title, altTitle, width = '', inputType, action }) => {
+const Input = ({ title, altTitle, width = '', inputType }) => {
+  const [value, setValue] = useState('');
+
   const { dispatch } = useContext(FormContext);
 
   const handleTextChange = (e) => {
-    dispatch({ type: action, payload: e.target.value });
+    setValue(e.target.value);
+    dispatch({ type: 'SET_INPUT', name: inputType, payload: e.target.value });
   };
 
   return (
@@ -25,7 +28,7 @@ const Input = ({ title, altTitle, width = '', inputType, action }) => {
         style={{ width: width }}
         placeholder={title}
         type="text"
-        value={inputType}
+        value={value}
         onChange={handleTextChange}
         className={
           'my-1.5 focus:border-black flex h-10 w-75 rounded-xl border border-input bg-transparent px-3 py-1 text-sm  transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50'
