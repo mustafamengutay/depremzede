@@ -11,6 +11,7 @@ import UnderDebrisList from "./pages/UnderDebrisList";
 import AccommodationList from "./pages/AccommodationList";
 
 import { FormProvider } from "./context/form/FormContext";
+import FormSubmitted from "./pages/FormSubmitted";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/bagis" element={<Donation />} />
             <Route path="/enkaz-altinda-olanlar" element={<UnderDebrisList />} />
             <Route path="/konaklama-saglayanlar" element={<AccommodationList />} />
+            <Route path="/form-gonderildi" element={<FormSubmitted />} />
           </Routes>
         </Router>
       </div>
