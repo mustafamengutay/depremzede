@@ -12,6 +12,7 @@ import AccommodationList from "./pages/AccommodationList";
 
 import { FormProvider } from "./context/form/FormContext";
 import FormSubmitted from "./pages/FormSubmitted";
+import OfficerDashboard from "./pages/OfficerDashboard";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/enkaz-altinda-olanlar" element={<UnderDebrisList />} />
             <Route path="/konaklama-saglayanlar" element={<AccommodationList />} />
             <Route path="/form-gonderildi" element={<FormSubmitted />} />
+            <Route path="/gorevli-menusu" element={<OfficerDashboard />} />
           </Routes>
         </Router>
       </div>
