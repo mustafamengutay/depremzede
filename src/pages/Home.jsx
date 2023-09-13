@@ -82,7 +82,7 @@ const Home = () => {
                 <SideMenuLink icon={info} title="Bilgilendirme" />
               </div>
               <div>
-                <SideMenuLink icon={up} />
+                <SideMenuLink icon={up} action={'up'} />
               </div>
             </div>
           </div>
