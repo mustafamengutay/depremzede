@@ -29,7 +29,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col items-end gap-10">
           <a
-            href="#"
+            href="mailto:depremzede@iletisim.com"
             className="bg-black text-white text-center px-8 py-2 rounded-full"
           >
             İletişim
