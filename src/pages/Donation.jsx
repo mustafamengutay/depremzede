@@ -40,7 +40,7 @@ const Donation = () => {
 export const DonationPlatform = ({ image, platform }) => {
   return (
     <Link
-      className="w-[311px] h-[311px] border rounded-5 border-[#CBD5E1] px-20 py-32 flex items-center justify-center"
+      className="w-[311px] h-[311px] border rounded-5 border-[#CBD5E1] px-20 py-32 flex items-center justify-center hover:bg-gray-200 transition"
       to={platform}
       target="_blank"
     >
