@@ -16,15 +16,15 @@ const EmployeeSideMenu = ({ employeeImage, employeeName, jobType }) => {
             jobType={jobType}
           />
           <ul className="flex flex-col items-center gap-7 text-white mt-16 w-full">
-            <li className="hover:bg-grey-1 w-full px-8 py-4 rounded-5 flex items-center gap-4 cursor-pointer">
+            <li className="hover:bg-grey-1 w-full px-8 py-4 rounded-5 flex items-center gap-4 cursor-pointer transition">
               <img src={employeeMenu} alt="Employee Menu" />
               <p className="font-light">İşlemlerim</p>
             </li>
-            <li className="hover:bg-grey-1 px-8 py-4 rounded-5 flex items-center gap-4 cursor-pointer">
+            <li className="hover:bg-grey-1 px-8 py-4 rounded-5 flex items-center gap-4 cursor-pointer transition">
               <img src={employeeInfo} alt="Employee Information" />
               <p className="font-light">Bilgilerim</p>
             </li>
-            <li className="mt-16 hover:bg-grey-1 px-8 py-4 rounded-5 flex items-center gap-4 cursor-pointer">
+            <li className="mt-16 hover:bg-grey-1 px-8 py-4 rounded-5 flex items-center gap-4 cursor-pointer transition">
               <img src={employeeExit} alt="Employee Exit" />
               <p className="font-light">Çıkış Yap</p>
             </li>
