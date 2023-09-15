@@ -31,8 +31,8 @@ const OfficerDashboard = () => {
           jobType={'Görevli'}
         />
 
-        <div class="divide-x">
-          <div class="inline-block absolute top-0 h-screen min-h-[1em] w-[1px] self-stretch bg-[#F8F9FA] opacity-10"></div>
+        <div className="divide-x">
+          <div className="inline-block absolute top-0 h-screen min-h-[1em] w-[1px] self-stretch bg-[#F8F9FA] opacity-10"></div>
         </div>
 
         <div className="flex flex-col justify-center gap-16 ml-[70px]">
@@ -43,8 +43,8 @@ const OfficerDashboard = () => {
                 title="Depremzede Bilgi Doğrulama"
                 width="650px"
               />
-              <div>
-                <div className="flex gap-4 mb-6">
+              <div className="flex flex-col gap-6">
+                <div className="flex gap-6">
                   <HelpLink icon={tent} title="Çadır İsteği" width="313px" />
                   <HelpLink
                     icon={clothing}
@@ -52,7 +52,7 @@ const OfficerDashboard = () => {
                     width="313px"
                   />
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-6">
                   <HelpLink icon={food} title="Gıda İsteği" width="313px" />
                   <HelpLink
                     icon={pharmacy}
