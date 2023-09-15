@@ -3,8 +3,11 @@ import officerInfo from '../../assets/bilgiler.svg';
 import officerExit from '../../assets/cikis.svg';
 
 import OfficerAvatar from './OfficerAvatar';
+import { useNavigate } from 'react-router-dom';
 
 const OfficerSideMenu = ({ officerImage, officerName, jobType }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="w-[270px] flex flex-col items-start">
       <div className="flex flex-col items-center">
@@ -24,7 +27,10 @@ const OfficerSideMenu = ({ officerImage, officerName, jobType }) => {
               <img src={officerInfo} alt="Officer Information" />
               <p className="font-light">Bilgilerim</p>
             </li>
-            <li className="mt-16 hover:bg-grey-1 px-8 py-4 rounded-5 flex items-center gap-4 cursor-pointer transition">
+            <li
+              className="mt-20 hover:bg-grey-1 px-8 py-4 rounded-5 flex items-center gap-4 cursor-pointer transition"
+              onClick={() => navigate('/')}
+            >
               <img src={officerExit} alt="Officer Exit" />
               <p className="font-light">Çıkış Yap</p>
             </li>
