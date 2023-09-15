@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
-import EmployeeDashboardLayout from '../components/layouts/EmployeeDashboardLayout';
-import EmployeeSideMenu from '../components/employee/EmployeeSideMenu';
+import OfficerSideMenu from '../components/officer/OfficerSideMenu';
 
 import officer_profil from '../assets/officer-profile.png';
 import check from '../assets/check.svg';
@@ -21,9 +20,9 @@ const OfficerDashboard = () => {
   return (
     <div className="flex flex-col items-center">
       <div className="w-[1300px] -tracking-2 mt-14 flex">
-        <EmployeeSideMenu
-          employeeImage={officer_profil}
-          employeeName={'Ahmet Sezer'}
+        <OfficerSideMenu
+          officerImage={officer_profil}
+          officerName={'Ahmet Sezer'}
           jobType={'Görevli'}
         />
 
