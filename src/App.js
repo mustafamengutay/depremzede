@@ -9,10 +9,11 @@ import VehicleForm from "./pages/VehicleForm";
 import Donation from "./pages/Donation";
 import UnderDebrisList from "./pages/UnderDebrisList";
 import AccommodationList from "./pages/AccommodationList";
+import Form from "./pages/Form";
 
 import { FormProvider } from "./context/form/FormContext";
 import FormSubmitted from "./pages/FormSubmitted";
-import OfficerDashboard from "./pages/OfficerDashboard";
+import OfficerDashboard, { OfficerMenu, OfficerInformation } from "./pages/OfficerDashboard";
 
 function App() {
   return (
@@ -30,7 +31,10 @@ function App() {
             <Route path="/enkaz-altinda-olanlar" element={<UnderDebrisList />} />
             <Route path="/konaklama-saglayanlar" element={<AccommodationList />} />
             <Route path="/form-gonderildi" element={<FormSubmitted />} />
-            <Route path="/gorevli-menusu" element={<OfficerDashboard />} />
+            <Route path="/gorevli" element={<OfficerDashboard />}>
+              <Route path="" element={<OfficerMenu />} />
+              <Route path="bilgilerim" element={<OfficerInformation />} />
+            </Route>
           </Routes>
         </Router>
       </div>
