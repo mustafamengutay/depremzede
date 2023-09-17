@@ -14,6 +14,7 @@ import DebrisFieldSection from "./components/formElements/DebrisFieldSection";
 import ExtraInformationSection from "./components/formElements/ExtraInformationSection";
 import AccommodationSection from "./components/formElements/AccommodationSection";
 import VehicleSection from "./components/formElements/VehicleSection";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -55,6 +56,8 @@ function App() {
               <Route path="" element={<OfficerMenu />} />
               <Route path="bilgilerim" element={<OfficerInformation />} />
             </Route>
+
+            <Route path="/*" element={<NotFound />} />
 
           </Routes>
         </Router>
