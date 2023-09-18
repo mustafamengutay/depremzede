@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Mont",
+    "category": "Kıyafet",
+    "stock": "126",
+    "unit": "10 Kişilik"
+  },
+  {
+    "name": "Battaniye",
+    "category": "Kıyafet",
+    "stock": "1458",
+    "unit": "1 Kişilik"
+  },
+  {
+    "name": "Cadir",
+    "category": "Cadir",
+    "stock": "1253",
+    "unit": "10 Kişilik"
+  },
+  {
+    "name": "Neurofen",
+    "category": "Tıbbi Malzeme",
+    "stock": "186",
+    "unit": "1 Paket"
+  },
+  {
+    "name": "Kazak",
+    "category": "Giysi",
+    "stock": "2041",
+    "unit": "1 Kişilik"
+  }
+]
