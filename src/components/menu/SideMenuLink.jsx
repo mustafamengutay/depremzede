@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { resetLocationSmoothly } from '../../utils/ScrollUtils';
 
 /**
  *
@@ -11,10 +12,7 @@ import { Link } from 'react-router-dom';
 const SideMenuLink = ({ icon, title = '', action = '' }) => {
   const handleClick = () => {
     if (action.toLowerCase() === 'up') {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
+      resetLocationSmoothly();
     }
   };
 

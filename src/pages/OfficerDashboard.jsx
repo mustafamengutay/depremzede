@@ -16,12 +16,13 @@ import pharmacy from '../assets/pharmacy.svg';
 import InformationLink from '../components/menu/InformationLink';
 import SideMenuLink from '../components/menu/SideMenuLink';
 import HelpLink from '../components/menu/HelpLink';
-import { Routes, Route, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { OfficerTitle } from '../components/officer/OfficerAvatar';
+import { setBackgroundColorBlack } from '../utils/BackgroundColorUtils';
 
 const OfficerDashboard = () => {
   useEffect(() => {
-    document.body.style.backgroundColor = '#141414';
+    setBackgroundColorBlack();
   });
 
   return (

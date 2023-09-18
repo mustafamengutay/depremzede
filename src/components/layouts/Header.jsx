@@ -1,18 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { scrollDownByPercentage } from '../../utils/ScrollUtils';
 
 const Header = () => {
-  const scrollDownByPercentage = (percentage) => {
-    const windowHeight = window.innerHeight;
-    const scrollHeight = document.documentElement.scrollHeight;
-    const scrollDistance = (scrollHeight - windowHeight) * (percentage / 100);
-
-    window.scrollTo({
-      top: scrollDistance,
-      behavior: 'smooth',
-    });
-  };
-
   return (
     <header className="text-white min-w-[1000px] font-light -tracking-4 flex items-center justify-between mt-10">
       <p className="font-semibold text-7">Depremzede</p>

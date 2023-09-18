@@ -22,10 +22,12 @@ import map from '../assets/map.svg';
 import info from '../assets/info.svg';
 import up from '../assets/up.svg';
 
+import { setBackgroundColorBlack } from '../utils/BackgroundColorUtils';
+
 const Home = () => {
   useEffect(() => {
     // Page Settings
-    document.body.style.backgroundColor = '#141414';
+    setBackgroundColorBlack();
   }, []);
 
   return (

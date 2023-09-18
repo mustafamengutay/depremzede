@@ -5,12 +5,14 @@ import ahbab from '../assets/ahbap_logo.png';
 import darussafaka from '../assets/darussafaka_logo.png';
 import kizilay from '../assets/kizilay_logo.png';
 import { Link } from 'react-router-dom';
+import { setBackgroundColorWhite } from '../utils/BackgroundColorUtils';
+import { resetLocation } from '../utils/ScrollUtils';
 
 const Donation = () => {
   useEffect(() => {
     // Page Settings
-    document.body.style.backgroundColor = '#F8F9FA';
-    window.scrollTo(0, 0);
+    setBackgroundColorWhite();
+    resetLocation();
   }, []);
 
   const descriptionText =

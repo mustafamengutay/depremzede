@@ -4,14 +4,16 @@ import { Outlet, useLocation } from 'react-router-dom';
 import FormHeader from '../components/formElements/FormHeader';
 import PersonalInfoSection from '../components/formElements/PersonalInfoSection';
 import SubmitSection from '../components/formElements/SubmitSection';
+import { setBackgroundColorWhite } from '../utils/BackgroundColorUtils';
+import { resetLocation } from '../utils/ScrollUtils';
 
 const Form = () => {
   const location = useLocation();
 
   useEffect(() => {
     // Page Settings
-    document.body.style.backgroundColor = '#F8F9FA';
-    window.scrollTo(0, 0);
+    setBackgroundColorWhite();
+    resetLocation();
   }, []);
 
   let descriptionText;

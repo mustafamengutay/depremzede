@@ -1,12 +1,14 @@
 import { useEffect } from 'react';
 import FormHeader from '../components/formElements/FormHeader';
 import InformationList from '../components/informationReports/InformationList';
+import { setBackgroundColorWhite } from '../utils/BackgroundColorUtils';
+import { resetLocation } from '../utils/ScrollUtils';
 
 const UnderDebrisList = () => {
   useEffect(() => {
     // Page Settings
-    document.body.style.backgroundColor = '#F8F9FA';
-    window.scrollTo(0, 0);
+    setBackgroundColorWhite();
+    resetLocation();
   }, []);
 
   const descriptionText =

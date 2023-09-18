@@ -1,14 +1,16 @@
 import { useEffect } from 'react';
 import successIcon from '../assets/success.svg';
 import { useNavigate } from 'react-router-dom';
+import { setBackgroundColorWhite } from '../utils/BackgroundColorUtils';
+import { resetLocation } from '../utils/ScrollUtils';
 
 const FormSubmitted = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
     // Page Settings
-    document.body.style.backgroundColor = '#F8F9FA';
-    window.scrollTo(0, 0);
+    setBackgroundColorWhite();
+    resetLocation();
 
     setTimeout(() => {
       navigate('/');
