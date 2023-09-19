@@ -11,6 +11,9 @@ const formReducer = (state, action) => {
                 addressInput: '',
                 extraInformationInput: '',
                 carTypeInput: '',
+                officerBirthdayInput: '',
+                officerComesFromInput: '',
+                officerLocationInput: '',
             };
 
         case 'SET_INPUT':

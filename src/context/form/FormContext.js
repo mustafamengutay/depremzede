@@ -13,6 +13,9 @@ export const FormProvider = ({ children }) => {
         addressInput: '',
         extraInformationInput: '',
         carTypeInput: '',
+        officerBirthdayInput: '',
+        officerComesFromInput: '',
+        officerLocationInput: '',
     };
 
     const [state, dispatch] = useReducer(formReducer, initialState);
