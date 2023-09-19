@@ -3,7 +3,8 @@
     "id": "1",
     "name": "John",
     "surname": "Doe",
-    "sex": "Male",
+    "phoneNumber": "0533 853 45 78",
+    "email": "test@gmail.com",
     "birth": "1985",
     "location": "Istanbul",
     "city": "Ankara"
@@ -12,7 +13,8 @@
     "id": "2",
     "name": "Jane",
     "surname": "Smith",
-    "sex": "Female",
+    "phoneNumber": "0533 853 45 78",
+    "email": "test@gmail.com",
     "birth": "1990",
     "location": "Ankara",
     "city": "Izmir"
@@ -21,7 +23,8 @@
     "id": "3",
     "name": "Michael",
     "surname": "Johnson",
-    "sex": "Male",
+    "phoneNumber": "0533 853 45 78",
+    "email": "test@gmail.com",
     "birth": "1988",
     "location": "Antalya",
     "city": "Bursa"
@@ -30,7 +33,8 @@
     "id": "4",
     "name": "Emily",
     "surname": "Williams",
-    "sex": "Female",
+    "phoneNumber": "0533 853 45 78",
+    "email": "test@gmail.com",
     "birth": "1995",
     "location": "Izmir",
     "city": "Antalya"
@@ -39,7 +43,8 @@
     "id": "5",
     "name": "David",
     "surname": "Jones",
-    "sex": "Male",
+    "phoneNumber": "0533 853 45 78",
+    "email": "test@gmail.com",
     "birth": "1992",
     "location": "Bursa",
     "city": "Istanbul"

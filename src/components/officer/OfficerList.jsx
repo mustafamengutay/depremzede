@@ -16,7 +16,8 @@ const OfficerList = () => {
             id={officer.id}
             name={officer.name}
             surname={officer.surname}
-            sex={officer.sex}
+            phoneNumber={officer.phoneNumber}
+            email={officer.email}
             birth={officer.birth}
             location={officer.location}
             city={officer.city}

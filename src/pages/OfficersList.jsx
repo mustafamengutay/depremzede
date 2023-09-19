@@ -19,9 +19,9 @@ const OfficersList = () => {
       <div className="mt-16">
         <ul className="grid grid-cols-7 justify-items-center text-base font-medium">
           <li>ID</li>
-          <li>İsim</li>
-          <li>Soyisim</li>
-          <li>Cinsiyet</li>
+          <li>İsim Soyisim</li>
+          <li>Telefon Numarası</li>
+          <li>E-posta Adresi</li>
           <li>Doğum Tarihi</li>
           <li>Geldiği Şehir</li>
           <li>Atandığı Bölge</li>
