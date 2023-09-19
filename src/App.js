@@ -16,6 +16,7 @@ import AccommodationSection from "./components/formElements/AccommodationSection
 import VehicleSection from "./components/formElements/VehicleSection";
 import NotFound from "./pages/NotFound";
 import InventoriesList from "./pages/InventoriesList";
+import OfficersList from "./pages/OfficersList";
 
 function App() {
   return (
@@ -61,6 +62,7 @@ function App() {
             <Route path="/*" element={<NotFound />} />
 
             <Route path="/envanterler" element={<InventoriesList />} />
+            <Route path="/gorevliler" element={<OfficersList />} />
           </Routes>
         </Router>
       </div>
