@@ -45,11 +45,17 @@ export const ManagerMenu = () => {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex gap-6">
-        <HelpLink icon={inventory} title="Envanter" width="313px" />
+        <HelpLink
+          icon={inventory}
+          title="Envanter"
+          width="313px"
+          route="/envanterler"
+        />
         <HelpLink
           icon={assignOfficer}
-          title="Görevlilere Bölge Atama"
+          title="Görevli Listesi"
           width="313px"
+          route="/gorevliler"
         />
       </div>
       <div className="flex gap-6">
@@ -57,11 +63,13 @@ export const ManagerMenu = () => {
           icon={createOfficer}
           title="Görevli Oluştur / Sil"
           width="313px"
+          route="/gorevli-olustur"
         />
         <HelpLink
           icon={officerRequests}
           title="Görevli İstekleri"
           width="313px"
+          route="/gorevli-istekleri"
         />
       </div>
     </div>
