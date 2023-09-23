@@ -3,6 +3,8 @@ import FormHeader from '../components/formElements/FormHeader';
 import { setBackgroundColorWhite } from '../utils/BackgroundColorUtils';
 import { resetLocation } from '../utils/ScrollUtils';
 import InventoryList from '../components/inventory/InventoryList';
+import SearchBar from '../components/formElements/SearchBar';
+import Select from '../components/formElements/Select';
 
 const InventoriesList = () => {
   // TODO: We can add a search bar
@@ -19,7 +21,13 @@ const InventoriesList = () => {
   return (
     <div className="container w-screen h-screen -tracking-4">
       <FormHeader title="Envanter" description={descriptionText} />
-      <div className="mt-16">
+
+      <div className="mt-16 flex justify-between items-center">
+        <SearchBar title="Ürün ismini giriniz..." width="300px" />
+        <Select />
+      </div>
+
+      <div className="mt-6">
         <ul className="grid grid-cols-5 justify-items-center text-base font-medium">
           <li>Ürün İsmi</li>
           <li>Kategori</li>

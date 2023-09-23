@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import data from '../../data/officers.json';
 import OfficerItem from './OfficerItem';
+import FormContext from '../../context/form/FormContext';
 
 const OfficerList = () => {
   const [officers, setOfficers] = useState([]);
@@ -8,11 +9,23 @@ const OfficerList = () => {
     setOfficers(data);
   });
 
+  const { searchBarValue } = useContext(FormContext);
+
+  const filteredOfficers = officers.filter((officer) => {
+    if (searchBarValue === '') {
+      return officer;
+    } else {
+      const info = officer.id + ' ' + officer.name + ' ' + officer.surname;
+      return info.toLowerCase().includes(searchBarValue);
+    }
+  });
+
   return (
     <div>
-      {officers.map((officer) => {
+      {filteredOfficers.map((officer) => {
         return (
           <OfficerItem
+            key={officer.id}
             id={officer.id}
             name={officer.name}
             surname={officer.surname}
