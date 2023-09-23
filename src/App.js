@@ -18,6 +18,7 @@ import NotFound from "./pages/NotFound";
 import InventoriesList from "./pages/InventoriesList";
 import OfficersList from "./pages/OfficersList";
 import CreateOfficerForm from "./pages/CreateOfficerForm";
+import ManagerDashboard, { ManagerMenu } from "./pages/ManagerDashboard";
 
 function App() {
   return (
@@ -57,6 +58,11 @@ function App() {
 
             <Route path="/gorevli" element={<OfficerDashboard />}>
               <Route path="" element={<OfficerMenu />} />
+              <Route path="bilgilerim" element={<OfficerInformation />} />
+            </Route>
+
+            <Route path="/yonetici" element={<ManagerDashboard />}>
+              <Route path="" element={<ManagerMenu />} />
               <Route path="bilgilerim" element={<OfficerInformation />} />
             </Route>
 
