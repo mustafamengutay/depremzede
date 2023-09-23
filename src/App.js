@@ -19,6 +19,7 @@ import InventoriesList from "./pages/InventoriesList";
 import OfficersList from "./pages/OfficersList";
 import CreateOfficerForm from "./pages/CreateOfficerForm";
 import ManagerDashboard, { ManagerMenu } from "./pages/ManagerDashboard";
+import OfficerRequests from "./pages/OfficerRequests";
 
 function App() {
   return (
@@ -71,6 +72,7 @@ function App() {
             <Route path="/envanterler" element={<InventoriesList />} />
             <Route path="/gorevliler" element={<OfficersList />} />
             <Route path="/gorevli-olustur" element={<CreateOfficerForm />} />
+            <Route path="/gorevli-istekleri" element={<OfficerRequests />} />
           </Routes>
         </Router>
       </div>

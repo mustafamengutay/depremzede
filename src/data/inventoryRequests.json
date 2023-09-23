@@ -1,0 +1,37 @@
+[
+  {
+    "name": "John Doe",
+    "inventoryName": "Item A",
+    "category": "Office Supplies",
+    "location": "Gocmenkoy",
+    "stock": "5"
+  },
+  {
+    "name": "Jane Smith",
+    "inventoryName": "Item B",
+    "category": "Electronics",
+    "location": "Girne",
+    "stock": "2"
+  },
+  {
+    "name": "Robert Johnson",
+    "inventoryName": "Item C",
+    "category": "Furniture",
+    "location": "Salamis",
+    "stock": "1"
+  },
+  {
+    "name": "Sarah Davis",
+    "inventoryName": "Item D",
+    "category": "Kitchen Appliances",
+    "location": "Gocmenkoy",
+    "stock": "3"
+  },
+  {
+    "name": "Michael Brown",
+    "inventoryName": "Item E",
+    "category": "Sports Equipment",
+    "location": "Salamis",
+    "stock": "4"
+  }
+]
