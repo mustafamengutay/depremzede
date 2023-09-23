@@ -4,11 +4,14 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    screens: {
-      xl: '1160px',
-    },
     container: {
+      screens: {
+        xl: '1160px',
+      },
       center: true,
+    },
+    maxWidth: {
+      'dashboard': '81.25rem',
     },
     minHeight: {
       '20': '80px',

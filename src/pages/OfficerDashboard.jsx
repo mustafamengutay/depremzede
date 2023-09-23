@@ -26,19 +26,19 @@ const OfficerDashboard = () => {
   });
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <div className="w-[1300px] -tracking-2 flex">
-        <OfficerSideMenu
-          officerImage={officer_profil}
-          officerName={'Ahmet Sezer'}
-          jobType={'Görevli'}
-        />
+    <div className="container max-w-dashboard h-screen flex items-center justify-between">
+      <OfficerSideMenu
+        officerImage={officer_profil}
+        officerName={'Ahmet Sezer'}
+        jobType={'Yonetici'}
+      />
 
-        {/* <div className="divide-x">
-          <div className="inline-block absolute top-0 h-screen min-h-[1em] w-[1px] self-stretch bg-[#F8F9FA] opacity-10"></div>
-        </div> */}
+      <Outlet />
 
-        <Outlet />
+      <div className="flex flex-col gap-8">
+        <SideMenuLink icon={search} title="Arama" />
+        <SideMenuLink icon={map} title="Harita" />
+        <SideMenuLink icon={info} title="Bilgilendirme" />
       </div>
     </div>
   );
@@ -54,7 +54,7 @@ export const OfficerInformation = ({
   jobType,
 }) => {
   return (
-    <div className="w-[550px] ml-[254px] mt-24 h-max">
+    <div className="w-[550px] h-max">
       <div className="flex items-center gap-6 mb-12">
         <p className="text-white font-semibold text-2xl">{officerName}</p>
         <OfficerTitle jobType={jobType} />
@@ -93,9 +93,9 @@ export const OfficerInformation = ({
 
 export const OfficerMenu = () => {
   return (
-    <div className="flex flex-col justify-center gap-16 ml-[70px]">
+    <div className="flex flex-col justify-center gap-16">
       <div className="flex justify-between items-center">
-        <div className="flex flex-col gap-6 ml-[90px]">
+        <div className="flex flex-col gap-6 ">
           <InformationLink
             icon={check}
             title="Depremzede Bilgi Doğrulama"
@@ -115,11 +115,6 @@ export const OfficerMenu = () => {
               />
             </div>
           </div>
-        </div>
-        <div className="mt-14 flex flex-col gap-8 ml-36">
-          <SideMenuLink icon={search} title="Arama" />
-          <SideMenuLink icon={map} title="Harita" />
-          <SideMenuLink icon={info} title="Bilgilendirme" />
         </div>
       </div>
     </div>

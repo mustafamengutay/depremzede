@@ -3,7 +3,7 @@ import officerInfo from '../../assets/bilgiler.svg';
 import officerExit from '../../assets/cikis.svg';
 
 import OfficerAvatar from './OfficerAvatar';
-import { useLocation, Link, useNavigate } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 
 const OfficerSideMenu = ({ officerImage, officerName, jobType }) => {
   const location = useLocation();
@@ -17,7 +17,7 @@ const OfficerSideMenu = ({ officerImage, officerName, jobType }) => {
   };
 
   return (
-    <div className="w-[270px] flex flex-col items-start">
+    <div className="flex flex-col items-start">
       <div className="flex flex-col items-center">
         <h1 className="font-bold text-7 text-white mb-20">Depremzede</h1>
         <div className="flex flex-col items-center gap-2">

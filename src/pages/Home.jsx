@@ -31,7 +31,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       <Header />
       <main className="mt-20 flex justify-between">
         <Headline />
