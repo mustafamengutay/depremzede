@@ -22,6 +22,12 @@ const formReducer = (state, action) => {
                 [action.name]: action.payload,
             };
 
+        case 'SET_SEARCHBAR':
+            return {
+                ...state,
+                searchBarValue: action.payload,
+            }
+
         default:
             return state;
     }

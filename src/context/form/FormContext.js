@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useReducer, useState } from "react";
 import formReducer from "./FormReducer";
 
 const FormContext = createContext();
@@ -16,6 +16,7 @@ export const FormProvider = ({ children }) => {
         officerBirthdayInput: '',
         officerComesFromInput: '',
         officerLocationInput: '',
+        searchBarValue: '',
     };
 
     const [state, dispatch] = useReducer(formReducer, initialState);
