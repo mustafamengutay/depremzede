@@ -30,7 +30,8 @@ const OfficerDashboard = () => {
       <OfficerSideMenu
         officerImage={officer_profil}
         officerName={'Ahmet Sezer'}
-        jobType={'Yonetici'}
+        jobType={'Gorevli'}
+        routeAddress={'/gorevli'}
       />
 
       <Outlet />

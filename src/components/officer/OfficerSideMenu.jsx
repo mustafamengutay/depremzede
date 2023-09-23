@@ -5,7 +5,12 @@ import officerExit from '../../assets/cikis.svg';
 import OfficerAvatar from './OfficerAvatar';
 import { useLocation, Link } from 'react-router-dom';
 
-const OfficerSideMenu = ({ officerImage, officerName, jobType }) => {
+const OfficerSideMenu = ({
+  officerImage,
+  officerName,
+  jobType,
+  routeAddress,
+}) => {
   const location = useLocation();
 
   const pathMatchRoute = (route) => {
@@ -30,9 +35,9 @@ const OfficerSideMenu = ({ officerImage, officerName, jobType }) => {
             <Link
               className="hover:bg-grey-1 w-full px-8 py-4 rounded-5 flex items-center gap-4 cursor-pointer transition"
               style={{
-                backgroundColor: pathMatchRoute('/gorevli'),
+                backgroundColor: pathMatchRoute(routeAddress),
               }}
-              to="/gorevli"
+              to={routeAddress}
             >
               <img src={officerMenu} alt="Officer Menu" />
               <p className="font-light">İşlemlerim</p>
@@ -40,9 +45,9 @@ const OfficerSideMenu = ({ officerImage, officerName, jobType }) => {
             <Link
               className="hover:bg-grey-1 px-8 py-4 rounded-5 flex items-center gap-4 cursor-pointer transition"
               style={{
-                backgroundColor: pathMatchRoute('/gorevli/bilgilerim'),
+                backgroundColor: pathMatchRoute(`${routeAddress}/bilgilerim`),
               }}
-              to="/gorevli/bilgilerim"
+              to={`${routeAddress}/bilgilerim`}
             >
               <img src={officerInfo} alt="Officer Information" />
               <p className="font-light">Bilgilerim</p>
