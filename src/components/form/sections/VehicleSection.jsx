@@ -1,4 +1,4 @@
-import Input from './Input';
+import Input from '../elements/Input';
 
 const VehicleSection = ({ firstInputWidth, secondInputWidth }) => {
   return (

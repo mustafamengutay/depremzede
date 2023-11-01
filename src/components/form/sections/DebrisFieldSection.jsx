@@ -1,4 +1,4 @@
-import Input from './Input';
+import Input from '../elements/Input';
 
 const DebrisFieldSection = ({ firstInputWidth, secondInputWidth }) => {
   return (

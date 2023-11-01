@@ -1,4 +1,4 @@
-import SubmitButton from './SubmitButton';
+import SubmitButton from './../elements/SubmitButton';
 
 const SubmitSection = () => {
   return (

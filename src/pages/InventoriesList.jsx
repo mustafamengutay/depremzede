@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
-import FormHeader from '../components/formElements/FormHeader';
+import FormHeader from '../components/form/FormHeader';
 import { setBackgroundColorWhite } from '../utils/BackgroundColorUtils';
 import { resetLocation } from '../utils/ScrollUtils';
 import InventoryList from '../components/inventory/InventoryList';
-import SearchBar from '../components/formElements/SearchBar';
-import Select from '../components/formElements/Select';
+import SearchBar from '../components/form/SearchBar';
+import Select from '../components/form/elements/Select';
 
 const InventoriesList = () => {
   // TODO: We can add a search bar

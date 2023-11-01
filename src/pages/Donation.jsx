@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import FormHeader from '../components/formElements/FormHeader';
+import FormHeader from '../components/form/FormHeader';
 
 import ahbab from '../assets/ahbap_logo.png';
 import darussafaka from '../assets/darussafaka_logo.png';

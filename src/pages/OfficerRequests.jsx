@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
-import FormHeader from '../components/formElements/FormHeader';
+import FormHeader from '../components/form/FormHeader';
 import { setBackgroundColorWhite } from '../utils/BackgroundColorUtils';
 import { resetLocation } from '../utils/ScrollUtils';
 import OfficerRequestList from '../components/officer/OfficerRequestList';
-import SearchBar from '../components/formElements/SearchBar';
-import Select from '../components/formElements/Select';
+import SearchBar from '../components/form/SearchBar';
+import Select from '../components/form/elements/Select';
 
 const OfficerRequests = () => {
   useEffect(() => {

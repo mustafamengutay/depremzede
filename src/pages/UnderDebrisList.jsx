@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import FormHeader from '../components/formElements/FormHeader';
+import FormHeader from '../components/form/FormHeader';
 import InformationList from '../components/informationReports/InformationList';
 import { setBackgroundColorWhite } from '../utils/BackgroundColorUtils';
 import { resetLocation } from '../utils/ScrollUtils';

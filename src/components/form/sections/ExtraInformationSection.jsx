@@ -1,4 +1,4 @@
-import TextArea from './TextArea';
+import TextArea from '../elements/TextArea';
 
 const ExtraInformationSection = ({ title, altTitle }) => {
   return (

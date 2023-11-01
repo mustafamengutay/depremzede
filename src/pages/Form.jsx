@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 
-import FormHeader from '../components/formElements/FormHeader';
-import PersonalInfoSection from '../components/formElements/PersonalInfoSection';
-import SubmitSection from '../components/formElements/SubmitSection';
+import FormHeader from '../components/form/FormHeader';
+import PersonalInfoSection from '../components/form/sections/PersonalInfoSection';
+import SubmitSection from '../components/form/sections/SubmitSection';
 import { setBackgroundColorWhite } from '../utils/BackgroundColorUtils';
 import { resetLocation } from '../utils/ScrollUtils';
 

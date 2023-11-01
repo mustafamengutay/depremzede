@@ -10,10 +10,10 @@ import { FormProvider } from "./context/form/FormContext";
 import FormSubmitted from "./pages/FormSubmitted";
 import OfficerDashboard, { OfficerMenu, OfficerInformation } from "./pages/OfficerDashboard";
 
-import DebrisFieldSection from "./components/formElements/DebrisFieldSection";
-import ExtraInformationSection from "./components/formElements/ExtraInformationSection";
-import AccommodationSection from "./components/formElements/AccommodationSection";
-import VehicleSection from "./components/formElements/VehicleSection";
+import DebrisFieldSection from "./components/form/sections/DebrisFieldSection";
+import ExtraInformationSection from "./components/form/sections/ExtraInformationSection";
+import AccommodationSection from "./components/form/sections/AccommodationSection";
+import VehicleSection from "./components/form/sections/VehicleSection";
 import NotFound from "./pages/NotFound";
 import InventoriesList from "./pages/InventoriesList";
 import OfficersList from "./pages/OfficersList";

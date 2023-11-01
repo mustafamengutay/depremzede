@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 
-import FormHeader from '../components/formElements/FormHeader';
-import Input from '../components/formElements/Input';
-import SubmitSection from '../components/formElements/SubmitSection';
+import FormHeader from '../components/form/FormHeader';
+import Input from '../components/form/elements/Input';
+import SubmitSection from '../components/form/sections/SubmitSection';
 import { setBackgroundColorWhite } from '../utils/BackgroundColorUtils';
 import { resetLocation } from '../utils/ScrollUtils';
 
