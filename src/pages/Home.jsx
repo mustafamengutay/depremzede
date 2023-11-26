@@ -31,65 +31,67 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="container">
-      <Header />
-      <main className="mt-20 flex justify-between">
-        <Headline />
-        <div className="flex">
-          <div className="flex gap-11 items-start">
-            <menu className="w-[533px] flex flex-col gap-6 items-center justify-center">
-              <UnderDebrisLink route="/form/enkaz-altinda" />
-              <InformationLink
-                icon={donation}
-                title="Bağış Yap"
-                route="/bagis"
-              />
-              <section className="flex flex-wrap gap-x-4 gap-y-6">
-                <HelpLink
-                  icon={home}
-                  title="Konaklama Sağlayabilirim"
-                  route="/form/konaklama-yardimi"
+    <div className="wrapper">
+      <div className="mx-35">
+        <Header />
+        <main className="mt-20 flex justify-between">
+          <Headline />
+          <div className="flex">
+            <div className="flex gap-11 items-start">
+              <menu className="w-[533px] flex flex-col gap-6 items-center justify-center">
+                <UnderDebrisLink route="/form/enkaz-altinda" />
+                <InformationLink
+                  icon={donation}
+                  title="Bağış Yap"
+                  route="/bagis"
                 />
-                <HelpLink
-                  icon={clothes}
-                  title="Giysi Sağlayabilirim"
-                  route="/form/giysi-yardimi"
+                <section className="flex flex-wrap gap-x-4 gap-y-6">
+                  <HelpLink
+                    icon={home}
+                    title="Konaklama Sağlayabilirim"
+                    route="/form/konaklama-yardimi"
+                  />
+                  <HelpLink
+                    icon={clothes}
+                    title="Giysi Sağlayabilirim"
+                    route="/form/giysi-yardimi"
+                  />
+                  <HelpLink
+                    icon={food}
+                    title="Gıda Sağlayabilirim"
+                    route="/form/gida-yardimi"
+                  />
+                  <HelpLink
+                    icon={car}
+                    title="İş Aracı Kullanabilirim"
+                    route="/form/is-araci-kullanabilirim"
+                  />
+                </section>
+                <InformationLink
+                  icon={list}
+                  title="Enkaz Altında Olanlar"
+                  route="/enkaz-altinda-olanlar"
                 />
-                <HelpLink
-                  icon={food}
-                  title="Gıda Sağlayabilirim"
-                  route="/form/gida-yardimi"
+                <InformationLink
+                  icon={homes}
+                  title="Konaklama Sağlayanlar"
+                  route="/konaklama-saglayanlar"
                 />
-                <HelpLink
-                  icon={car}
-                  title="İş Aracı Kullanabilirim"
-                  route="/form/is-araci-kullanabilirim"
-                />
-              </section>
-              <InformationLink
-                icon={list}
-                title="Enkaz Altında Olanlar"
-                route="/enkaz-altinda-olanlar"
-              />
-              <InformationLink
-                icon={homes}
-                title="Konaklama Sağlayanlar"
-                route="/konaklama-saglayanlar"
-              />
-            </menu>
-            <div className="h-full mr-4 flex flex-col justify-between items-center">
-              <div className="mt-14 flex flex-col gap-8">
-                <SideMenuLink icon={search} title="Arama" />
-                <SideMenuLink icon={map} title="Harita" />
-                <SideMenuLink icon={info} title="Bilgilendirme" />
-              </div>
-              <div>
-                <SideMenuLink icon={up} action={'up'} />
+              </menu>
+              <div className="h-full mr-4 flex flex-col justify-between items-center">
+                <div className="mt-14 flex flex-col gap-8">
+                  <SideMenuLink icon={search} title="Arama" />
+                  <SideMenuLink icon={map} title="Harita" />
+                  <SideMenuLink icon={info} title="Bilgilendirme" />
+                </div>
+                <div>
+                  <SideMenuLink icon={up} action={'up'} />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </main>
+        </main>
+      </div>
       <Footer />
     </div>
   );
