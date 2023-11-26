@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <footer className="text-base bg-white text-black px-32 h-60 min-w-[1000px] w-screen mt-60 flex items-center justify-center absolute left-0">
-      <div className="w-full flex items-end justify-between">
+    <footer className="text-base bg-white text-black h-60 mt-60 flex items-center justify-center">
+      <div className="w-full px-35 flex items-end justify-between">
         <div className="flex flex-col items-start">
           <div className="flex flex-col gap-6 mb-8">
             <h2 className="font-bold text-3xl">Depremzede</h2>
