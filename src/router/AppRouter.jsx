@@ -16,13 +16,13 @@ import InventoriesList from '../pages/InventoriesList';
 import CreateOfficerForm from '../pages/CreateOfficerForm';
 import OfficerRequests from '../pages/OfficerRequests';
 import NotFound from '../pages/NotFound';
-// import Login from '../pages/Login';
+import Login from '../pages/Login';
 
 const AppRouter = () => {
   return (
     <Routes>
       <Route exact path="/" element={<Home />} />
-      {/* <Route path="/giris-yap" element={<Login />} /> */}
+      <Route path="/giris-yap" element={<Login />} />
 
       <Route path="/bagis" element={<Donation />} />
       <Route path="/enkaz-altinda-olanlar" element={<UnderDebrisList />} />
