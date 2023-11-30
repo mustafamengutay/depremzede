@@ -1,10 +1,6 @@
 import PropTypes from 'prop-types';
-import { useContext } from 'react';
-import FormContext from '../../../context/form/FormContext';
 
-const TextArea = ({ title, altTitle, inputType }) => {
-  const { dispatch } = useContext(FormContext);
-
+const TextArea = ({ title, altTitle, inputType, dispatch }) => {
   const handleTextareaChange = (e) => {
     dispatch({ type: 'SET_INPUT', name: inputType, payload: e.target.value });
   };

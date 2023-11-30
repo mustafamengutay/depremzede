@@ -1,6 +1,10 @@
+import { useContext } from 'react';
 import Input from '../elements/Input';
+import FormContext from '../../../context/form/FormContext';
 
-const DebrisFieldSection = ({ firstInputWidth, secondInputWidth }) => {
+const DebrisFieldSection = () => {
+  const { dispatch } = useContext(FormContext);
+
   return (
     <div className="flex items-center justify-between">
       <p className="font-medium text-xl -tracking-2">
@@ -10,14 +14,16 @@ const DebrisFieldSection = ({ firstInputWidth, secondInputWidth }) => {
         <Input
           title="Kişi Sayısı"
           altTitle="Kişi sayısını giriniz"
-          width={firstInputWidth}
+          width={'184px'}
           inputType="numberOfPeopleInput"
+          dispatch={dispatch}
         />
         <Input
           title="Adres"
           altTitle="Enkaz bölgesinin adresini giriniz"
-          width={secondInputWidth}
+          width={'415px'}
           inputType="addressInput"
+          dispatch={dispatch}
         />
       </div>
     </div>

@@ -1,11 +1,8 @@
 import PropTypes from 'prop-types';
-import { useContext, useState } from 'react';
-import FormContext from '../../../context/form/FormContext';
+import { useState } from 'react';
 
-const Input = ({ title, altTitle, width = '', inputType }) => {
+const Input = ({ title, altTitle, width = '', inputType, dispatch }) => {
   const [value, setValue] = useState('');
-
-  const { dispatch } = useContext(FormContext);
 
   const handleTextChange = (e) => {
     setValue(e.target.value);

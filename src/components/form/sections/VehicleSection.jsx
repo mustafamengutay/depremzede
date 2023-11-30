@@ -1,6 +1,10 @@
+import { useContext } from 'react';
+import FormContext from '../../../context/form/FormContext';
 import Input from '../elements/Input';
 
-const VehicleSection = ({ firstInputWidth, secondInputWidth }) => {
+const VehicleSection = () => {
+  const { dispatch } = useContext(FormContext);
+
   return (
     <div className="flex items-center justify-between">
       <p className="font-medium text-xl -tracking-2">
@@ -10,14 +14,16 @@ const VehicleSection = ({ firstInputWidth, secondInputWidth }) => {
         <Input
           title="Araç Tipi"
           altTitle="Araç tipini giriniz"
-          width={firstInputWidth}
+          width={'184px'}
           inputType="carTypeInput"
+          dispatch={dispatch}
         />
         <Input
           title="Adres*"
           altTitle="Adresinizi giriniz"
-          width={secondInputWidth}
+          width={'415px'}
           inputType="addressInput"
+          dispatch={dispatch}
         />
       </div>
     </div>
