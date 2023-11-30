@@ -1,14 +1,7 @@
 import PropTypes from 'prop-types';
-import Label from './Label';
 import { useContext } from 'react';
 import FormContext from '../../../context/form/FormContext';
 
-/**
- *
- * @param {string} title A text that is shown at the top of an text area and as a placeholder.
- * @param {string} altTitle A text that is shown at the bottom of a text area.
- * @returns A form text area.
- */
 const TextArea = ({ title, altTitle, inputType }) => {
   const { dispatch } = useContext(FormContext);
 
@@ -18,7 +11,12 @@ const TextArea = ({ title, altTitle, inputType }) => {
 
   return (
     <div>
-      <Label title={title} />
+      <label
+        htmlFor="input"
+        className="text-black text-sm font-medium leading-tight"
+      >
+        {title}
+      </label>
       <textarea
         placeholder={title}
         onChange={handleTextareaChange}

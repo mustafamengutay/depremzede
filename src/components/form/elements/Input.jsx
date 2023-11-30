@@ -1,16 +1,7 @@
 import PropTypes from 'prop-types';
-import Label from './Label';
 import { useContext, useState } from 'react';
 import FormContext from '../../../context/form/FormContext';
 
-/**
- *
- * @param {string} title A text that is shown at the top of an input and as a placeholder.
- * @param {string} inputWidth The width of the input box.
- * @param {string} altTitle A text that is shown at the bottom of an input.
- * @param {string} inputType A type of an input such as nameInputValue, or emailInputValue.
- * @returns A form input.
- */
 const Input = ({ title, altTitle, width = '', inputType }) => {
   const [value, setValue] = useState('');
 
@@ -23,7 +14,12 @@ const Input = ({ title, altTitle, width = '', inputType }) => {
 
   return (
     <div>
-      <Label title={title} />
+      <label
+        htmlFor="input"
+        className="text-black text-sm font-medium leading-tight"
+      >
+        {title}
+      </label>
       <input
         style={{ width: width }}
         placeholder={title}
