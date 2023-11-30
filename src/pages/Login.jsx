@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { setBackgroundColorWhite } from '../utils/BackgroundColorUtils';
 import { resetLocation } from '../utils/ScrollUtils';
 import Input from '../components/form/elements/Input';
 import CloseButton from '../components/layouts/CloseButton';
+import AuthContext from '../context/auth/AuthContext';
 
 const Login = () => {
   useEffect(() => {
@@ -10,6 +11,9 @@ const Login = () => {
     setBackgroundColorWhite();
     resetLocation();
   }, []);
+
+  const { dispatch } = useContext(AuthContext);
+
   return (
     <div className="h-screen mx-35 my-[50px]">
       <div className="mt-10 flex justify-end items-start">
@@ -24,8 +28,16 @@ const Login = () => {
             </p>
           </div>
           <div className="flex flex-col gap-6 mb-12">
-            <Input title="E-posta Adresi" />
-            <Input title="Şifre" />
+            <Input
+              title="E-posta Adresi"
+              inputType={'emailInput'}
+              dispatch={dispatch}
+            />
+            <Input
+              title="Şifre"
+              inputType={'passwordInput'}
+              dispatch={dispatch}
+            />
             <a className="text-xs text-right underline" href="#">
               Șifremi unuttum
             </a>
