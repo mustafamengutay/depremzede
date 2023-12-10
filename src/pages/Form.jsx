@@ -1,16 +1,16 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
-import FormHeader from '../components/form/FormHeader';
-import PersonalInfoSection from '../components/form/sections/PersonalInfoSection';
-import SubmitSection from '../components/form/sections/SubmitSection';
-import ExtraInformationSection from '../components/form/sections/ExtraInformationSection';
-import VehicleSection from '../components/form/sections/VehicleSection';
-import DebrisFieldSection from '../components/form/sections/DebrisFieldSection';
-import AccommodationSection from '../components/form/sections/AccommodationSection';
+import FormHeader from "../components/form/FormHeader";
+import PersonalInfoSection from "../components/form/sections/PersonalInfoSection";
+import SubmitSection from "../components/form/sections/SubmitSection";
+import ExtraInformationSection from "../components/form/sections/ExtraInformationSection";
+import VehicleSection from "../components/form/sections/VehicleSection";
+import DebrisFieldSection from "../components/form/sections/DebrisFieldSection";
+import AccommodationSection from "../components/form/sections/AccommodationSection";
 
-import { setBackgroundColorWhite } from '../utils/BackgroundColorUtils';
-import { resetLocation } from '../utils/ScrollUtils';
+import { setBackgroundColorWhite } from "../utils/BackgroundColorUtils";
+import { resetLocation } from "../utils/ScrollUtils";
 
 const Form = () => {
   const location = useLocation();
@@ -26,8 +26,8 @@ const Form = () => {
   let sectionComponent;
 
   switch (location.pathname) {
-    case '/form/enkaz-altinda':
-      formHeaderTitle = 'Tanıdığım Enkaz Altında Formu';
+    case "/form/enkaz-altinda":
+      formHeaderTitle = "Tanıdığım Enkaz Altında Formu";
       descriptionText = (
         <p>
           Form bilgileri sistem yöneticileri tarafından onaylandıktan sonra
@@ -37,8 +37,8 @@ const Form = () => {
       );
       sectionComponent = <DebrisFieldSection />;
       break;
-    case '/form/konaklama-yardimi':
-      formHeaderTitle = 'Konaklama Sağlayabilirim Formu';
+    case "/form/konaklama-yardimi":
+      formHeaderTitle = "Konaklama Sağlayabilirim Formu";
       descriptionText = (
         <p>
           Form bilgileri sistem yöneticileri tarafından onaylandıktan sonra
@@ -48,8 +48,8 @@ const Form = () => {
       );
       sectionComponent = <AccommodationSection />;
       break;
-    case '/form/giysi-yardimi':
-      formHeaderTitle = 'Giysi Yardımı Formu';
+    case "/form/giysi-yardimi":
+      formHeaderTitle = "Giysi Yardımı Formu";
       sectionComponent = (
         <ExtraInformationSection
           title="Giysi Yardımı Hakkında Bilgiler"
@@ -57,8 +57,8 @@ const Form = () => {
         />
       );
       break;
-    case '/form/gida-yardimi':
-      formHeaderTitle = 'Gıda Yardımı Formu';
+    case "/form/gida-yardimi":
+      formHeaderTitle = "Gıda Yardımı Formu";
       sectionComponent = (
         <ExtraInformationSection
           title="Gıda Yardımı Hakkında Bilgiler"
@@ -66,12 +66,12 @@ const Form = () => {
         />
       );
       break;
-    case '/form/is-araci-kullanabilirim':
-      formHeaderTitle = 'İş Aracı Kullanabilirim Formu';
+    case "/form/is-araci-kullanabilirim":
+      formHeaderTitle = "İş Aracı Kullanabilirim Formu";
       sectionComponent = <VehicleSection />;
       break;
     default:
-      window.location = '/';
+      window.location = "/";
   }
 
   return (

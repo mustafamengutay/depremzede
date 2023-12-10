@@ -11,17 +11,17 @@ const Footer = () => {
             </p>
           </div>
           <nav>
-            <ul className="flex gap-14">
-              <li>
+            <ul className="flex gap-14 ">
+              <li className="hover:cursor-pointer hover:bg-black hover:text-white rounded-md p-2 transition duration-500 ease-in-out">
                 <a href="#">Yardım Al</a>
               </li>
-              <li>
+              <li className="hover:cursor-pointer hover:bg-black hover:text-white rounded-md p-2 transition duration-500 ease-in-out">
                 <a href="#">Yardım Sağla</a>
               </li>
-              <li>
+              <li className="hover:cursor-pointer hover:bg-black hover:text-white rounded-md p-2 transition duration-500 ease-in-out">
                 <a href="#">Yardım Listesi</a>
               </li>
-              <li>
+              <li className="hover:cursor-pointer hover:bg-black hover:text-white rounded-md p-2 transition duration-500 ease-in-out">
                 <a href="#">Gizlilik</a>
               </li>
             </ul>
@@ -30,7 +30,7 @@ const Footer = () => {
         <div className="flex flex-col items-end gap-10">
           <a
             href="mailto:depremzede@iletisim.com"
-            className="bg-black text-white text-center px-8 py-2 rounded-full"
+            className="bg-black text-white text-center px-8 py-2 rounded-full  hover:bg-stone-700	 transition duration-300 ease-in-out"
           >
             İletişim
           </a>
