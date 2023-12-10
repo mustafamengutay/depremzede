@@ -32,12 +32,12 @@ const Home = () => {
 
   return (
     <div className="wrapper">
-      <div className="mx-35">
+      <div className="md:mx-35">
         <Header />
-        <main className="mt-20 flex justify-between">
+        <main className="mt-20 md:flex min-w-[533px] justify-between">
           <Headline />
-          <div className="flex">
-            <div className="flex gap-11 items-start">
+          <div className="md:flex">
+            <div className="flex md:gap-11 md:items-start justify-center">
               <menu className="w-[533px] flex flex-col gap-6 items-center justify-center">
                 <UnderDebrisLink route="/form/enkaz-altinda" />
                 <InformationLink
@@ -78,13 +78,13 @@ const Home = () => {
                   route="/konaklama-saglayanlar"
                 />
               </menu>
-              <div className="h-full mr-4 flex flex-col justify-between items-center">
-                <div className="mt-14 flex flex-col gap-8">
+              <div className="h-full md:mr-4 flex flex-col justify-between items-center">
+                <div className="mt-14 md:flex flex-col gap-8 hidden">
                   <SideMenuLink icon={search} title="Arama" />
                   <SideMenuLink icon={map} title="Harita" />
                   <SideMenuLink icon={info} title="Bilgilendirme" />
                 </div>
-                <div>
+                <div className="md:inline-block hidden">
                   <SideMenuLink icon={up} action={'up'} />
                 </div>
               </div>
