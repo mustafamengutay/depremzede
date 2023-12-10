@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import megaphone from '../../assets/megaphone.svg';
+import { Link } from "react-router-dom";
+import megaphone from "../../assets/megaphone.svg";
 
 /**
  *
@@ -8,7 +8,10 @@ import megaphone from '../../assets/megaphone.svg';
  */
 const UnderDebrisLink = ({ route }) => {
   return (
-    <Link className="btn-big" to={route}>
+    <Link
+      className="btn-big hover:bg-white-2 hover:shadow-inner transition-all duration-300"
+      to={route}
+    >
       <div className="relative h-full flex items-start justify-between">
         <div className="w-full flex justify-between items-center">
           <img src={megaphone} alt="" />

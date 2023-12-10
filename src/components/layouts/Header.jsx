@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { scrollDownByPercentage } from '../../utils/ScrollUtils';
+import React from "react";
+import { Link } from "react-router-dom";
+import { scrollDownByPercentage } from "../../utils/ScrollUtils";
 
 const Header = () => {
   return (
@@ -11,7 +11,7 @@ const Header = () => {
           <ul className="flex gap-8">
             <li>
               <p
-                className="hover:cursor-pointer"
+                className=" hover:cursor-pointer  hover:bg-white hover:text-black rounded-md p-2 transition duration-500 ease-in-out"
                 onClick={() => scrollDownByPercentage(5)}
               >
                 Yardım Al
@@ -19,7 +19,7 @@ const Header = () => {
             </li>
             <li>
               <p
-                className="hover:cursor-pointer"
+                className="hover:cursor-pointer hover:bg-white hover:text-black rounded-md p-2 transition duration-500 ease-in-out"
                 onClick={() => scrollDownByPercentage(50)}
               >
                 Yardım Sağla
@@ -27,7 +27,7 @@ const Header = () => {
             </li>
             <li>
               <p
-                className="hover:cursor-pointer"
+                className="hover:cursor-pointer hover:bg-white hover:text-black rounded-md p-2 transition duration-500 ease-in-out"
                 onClick={() => scrollDownByPercentage(80)}
               >
                 Yardım Listesi
@@ -37,7 +37,11 @@ const Header = () => {
         </nav>
         <div className="flex items-center gap-8">
           <p>En</p>
-          <Link className="bg-grey-1 px-8 rounded-full py-2" to={'/giris-yap'}>
+          {/* hover ekledim */}
+          <Link
+            className="bg-grey-1 px-8 rounded-full py-2  inline-block border-2 border-black  transition-all duration-300 hover:bg-white hover:text-black"
+            to={"/giris-yap"}
+          >
             Giriş Yap
           </Link>
         </div>
