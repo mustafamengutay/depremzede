@@ -1,24 +1,24 @@
-import { useEffect } from 'react';
-import OfficerSideMenu from '../components/officer/OfficerSideMenu';
+import { useEffect } from "react";
+import OfficerSideMenu from "../components/officer/OfficerSideMenu";
 
-import officer_profil from '../assets/officer-profile.png';
-import check from '../assets/check.svg';
+import officer_profil from "../assets/officer-profile.png";
+import check from "../assets/check.svg";
 
-import search from '../assets/search.svg';
-import map from '../assets/map.svg';
-import info from '../assets/info.svg';
+import search from "../assets/search.svg";
+import map from "../assets/map.svg";
+import info from "../assets/info.svg";
 
-import tent from '../assets/home.svg';
-import clothing from '../assets/clothing-dash.svg';
-import food from '../assets/utensils.svg';
-import pharmacy from '../assets/pharmacy.svg';
+import tent from "../assets/home.svg";
+import clothing from "../assets/clothing-dash.svg";
+import food from "../assets/utensils.svg";
+import pharmacy from "../assets/pharmacy.svg";
 
-import InformationLink from '../components/menu/InformationLink';
-import SideMenuLink from '../components/menu/SideMenuLink';
-import HelpLink from '../components/menu/HelpLink';
-import { Outlet } from 'react-router-dom';
-import { OfficerTitle } from '../components/officer/OfficerAvatar';
-import { setBackgroundColorBlack } from '../utils/BackgroundColorUtils';
+import InformationLink from "../components/menu/InformationLink";
+import SideMenuLink from "../components/menu/SideMenuLink";
+import HelpLink from "../components/menu/HelpLink";
+import { Outlet } from "react-router-dom";
+import { OfficerTitle } from "../components/officer/OfficerAvatar";
+import { setBackgroundColorBlack } from "../utils/BackgroundColorUtils";
 
 const OfficerDashboard = () => {
   useEffect(() => {
@@ -26,17 +26,17 @@ const OfficerDashboard = () => {
   });
 
   return (
-    <div className="container max-w-dashboard h-screen flex items-center justify-between">
+    <div className="container max-w-dashboard h-screen flex items-center justify-between mt-8 mx-4  min-w-[600px]">
       <OfficerSideMenu
         officerImage={officer_profil}
-        officerName={'Ahmet Sezer'}
-        jobType={'Gorevli'}
-        routeAddress={'/gorevli'}
+        officerName={"Ahmet Sezer"}
+        jobType={"Gorevli"}
+        routeAddress={"/gorevli"}
       />
 
       <Outlet />
 
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8 ">
         <SideMenuLink icon={search} title="Arama" />
         <SideMenuLink icon={map} title="Harita" />
         <SideMenuLink icon={info} title="Bilgilendirme" />
@@ -55,7 +55,7 @@ export const OfficerInformation = ({
   jobType,
 }) => {
   return (
-    <div className="w-[550px] h-max">
+    <div className="w-[550px]  h-max  mx-4 ">
       <div className="flex items-center gap-6 mb-12">
         <p className="text-white font-semibold text-2xl">{officerName}</p>
         <OfficerTitle jobType={jobType} />
@@ -74,7 +74,7 @@ export const OfficerInformation = ({
         <hr classNamez="border-[#E9ECEF] w-full border-t-[0.5px]" />
         <div className="text-white flex items-center gap-2">
           <p>Cinsiyet:</p>
-          <p className="font-semibold text-xl">{sex}</p>
+          <p className="font-semibold text-xl"> {sex}</p>
         </div>
         <hr classNamez="border-[#E9ECEF] w-full border-t-[0.5px]" />
         <div className="text-white flex items-center gap-2">
@@ -94,20 +94,22 @@ export const OfficerInformation = ({
 
 export const OfficerMenu = () => {
   return (
-    <div className="flex flex-col justify-center gap-16">
-      <div className="flex justify-between items-center">
-        <div className="flex flex-col gap-6 ">
+    <div className="flex flex-col justify-center gap-16  ">
+      <div className="flex justify-between items-center ">
+        <div className="flex flex-col gap-6  mx-4  ">
           <InformationLink
             icon={check}
             title="Depremzede Bilgi Doğrulama"
-            width="650px"
+            width=" 650px"
           />
-          <div className="flex flex-col gap-6">
-            <div className="flex gap-6">
+          <div className="flex flex-col gap-6  ">
+            <div className="flex  gap-6  flex-col md:flex-row ">
+              {/* flex-col md:flex-row */}
               <HelpLink icon={tent} title="Çadır İsteği" width="313px" />
               <HelpLink icon={clothing} title="Giysi İsteği" width="313px" />
             </div>
-            <div className="flex gap-6">
+            <div className="flex gap-6  flex-col md:flex-row ">
+              {/* flex-col md:flex-row */}
               <HelpLink icon={food} title="Gıda İsteği" width="313px" />
               <HelpLink
                 icon={pharmacy}
