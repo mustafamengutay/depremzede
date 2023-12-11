@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
-import inventoryRequests from '../../data/inventoryRequests.json';
-import FormContext from '../../context/form/FormContext';
-import OfficerRequestItem from './OfficerRequestItem';
+import React, { useContext, useEffect, useState } from "react";
+import inventoryRequests from "../../data/inventoryRequests.json";
+import FormContext from "../../context/form/FormContext";
+import OfficerRequestItem from "./OfficerRequestItem";
 
 const OfficerRequestList = () => {
   const [inventories, setInventories] = useState([]);
@@ -12,16 +12,16 @@ const OfficerRequestList = () => {
   const { searchBarValue } = useContext(FormContext);
 
   const filteredInventory = inventories.filter((inventory) => {
-    if (searchBarValue === '') {
+    if (searchBarValue === "") {
       return inventory;
     } else {
-      const info = inventory.inventoryName + ' ' + inventory.category;
+      const info = inventory.inventoryName + " " + inventory.category;
       return info.toLowerCase().includes(searchBarValue);
     }
   });
 
   return (
-    <div>
+    <div className="w-[1160px]">
       {filteredInventory.map((inventory, index) => {
         return (
           <OfficerRequestItem

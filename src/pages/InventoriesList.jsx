@@ -1,10 +1,10 @@
-import { useEffect } from 'react';
-import FormHeader from '../components/form/FormHeader';
-import { setBackgroundColorWhite } from '../utils/BackgroundColorUtils';
-import { resetLocation } from '../utils/ScrollUtils';
-import InventoryList from '../components/inventory/InventoryList';
-import SearchBar from '../components/form/SearchBar';
-import Select from '../components/form/elements/Select';
+import { useEffect } from "react";
+import FormHeader from "../components/form/FormHeader";
+import { setBackgroundColorWhite } from "../utils/BackgroundColorUtils";
+import { resetLocation } from "../utils/ScrollUtils";
+import InventoryList from "../components/inventory/InventoryList";
+import SearchBar from "../components/form/SearchBar";
+import Select from "../components/form/elements/Select";
 
 const InventoriesList = () => {
   // TODO: We can add a search bar
@@ -16,10 +16,10 @@ const InventoriesList = () => {
   }, []);
 
   const descriptionText =
-    'Aşağıdaki listeden depoda bulunan envanterleri görebilir ve ekleme/çıkarma işlemleri yapabilirsiniz.';
+    "Aşağıdaki listeden depoda bulunan envanterleri görebilir ve ekleme/çıkarma işlemleri yapabilirsiniz.";
 
   return (
-    <div className="container w-screen h-screen -tracking-4">
+    <div className="container w-screen h-screen -tracking-4 min-w-[464px]">
       <FormHeader title="Envanter" description={descriptionText} />
 
       <div className="mt-16 flex justify-between items-center">
@@ -27,8 +27,8 @@ const InventoriesList = () => {
         <Select />
       </div>
 
-      <div className="mt-6">
-        <ul className="grid grid-cols-5 justify-items-center text-base font-medium">
+      <div className="mt-6 overflow-x-auto">
+        <ul className="grid grid-cols-5 justify-items-center text-base font-medium min-w-full divide-y w-[1160px]">
           <li>Ürün İsmi</li>
           <li>Kategori</li>
           <li>Adet Sayısı</li>

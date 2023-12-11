@@ -16,7 +16,6 @@ const Form = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Page Settings
     setBackgroundColorWhite();
     resetLocation();
   }, []);

@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
-import InventoryItem from './InventoryItem';
-import data from '../../data/inventories.json';
-import FormContext from '../../context/form/FormContext';
+import React, { useContext, useEffect, useState } from "react";
+import InventoryItem from "./InventoryItem";
+import data from "../../data/inventories.json";
+import FormContext from "../../context/form/FormContext";
 
 const InventoryList = () => {
   const [inventories, setInventories] = useState([]);
@@ -12,7 +12,7 @@ const InventoryList = () => {
   const { searchBarValue } = useContext(FormContext);
 
   const filteredInventories = inventories.filter((inventory) => {
-    if (searchBarValue === '') {
+    if (searchBarValue === "") {
       return inventory;
     } else {
       return inventory.name.toLowerCase().includes(searchBarValue);
@@ -20,7 +20,7 @@ const InventoryList = () => {
   });
 
   return (
-    <div>
+    <div className="w-[1160px]">
       {filteredInventories.map((inventory, index) => {
         return (
           <InventoryItem

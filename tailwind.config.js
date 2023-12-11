@@ -20,6 +20,10 @@ module.exports = {
       sans: ["Inter", "sans-serif"],
     },
     extend: {
+      width: {
+        1160: "72.5rem",
+        464: "29rem",
+      },
       spacing: {
         1.5: "0.375rem",
         48.5: "12.125rem",

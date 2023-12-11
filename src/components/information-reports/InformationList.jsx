@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import Information from './Information';
-import data from '../../data/posts.json'; // TEST DATA
+import { useEffect, useState } from "react";
+import Information from "./Information";
+import data from "../../data/posts.json"; // TEST DATA
 
 const InformationList = () => {
   const [posts, setPosts] = useState([]);
@@ -9,7 +9,7 @@ const InformationList = () => {
   }, []);
 
   return (
-    <div>
+    <div className=" w-[1160px]">
       {posts.map((post, index) => {
         return (
           <Information

@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
-import data from '../../data/officers.json';
-import OfficerItem from './OfficerItem';
-import FormContext from '../../context/form/FormContext';
+import React, { useContext, useEffect, useState } from "react";
+import data from "../../data/officers.json";
+import OfficerItem from "./OfficerItem";
+import FormContext from "../../context/form/FormContext";
 
 const OfficerList = () => {
   const [officers, setOfficers] = useState([]);
@@ -12,16 +12,16 @@ const OfficerList = () => {
   const { searchBarValue } = useContext(FormContext);
 
   const filteredOfficers = officers.filter((officer) => {
-    if (searchBarValue === '') {
+    if (searchBarValue === "") {
       return officer;
     } else {
-      const info = officer.id + ' ' + officer.name + ' ' + officer.surname;
+      const info = officer.id + " " + officer.name + " " + officer.surname;
       return info.toLowerCase().includes(searchBarValue);
     }
   });
 
   return (
-    <div>
+    <div className="w-[1160px]">
       {filteredOfficers.map((officer) => {
         return (
           <OfficerItem
