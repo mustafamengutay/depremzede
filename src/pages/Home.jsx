@@ -31,60 +31,60 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="wrapper">
-      <div className="md:mx-35">
+    <div className='wrapper'>
+      <div className='mx-35'>
         <Header />
-        <main className="mt-20 md:flex min-w-[533px] justify-between">
+        <main className='mt-20 flex justify-between'>
           <Headline />
-          <div className="md:flex">
-            <div className="flex md:gap-11 md:items-start justify-center">
-              <menu className="w-[533px] flex flex-col gap-6 items-center justify-center">
-                <UnderDebrisLink route="/form/enkaz-altinda" />
+          <div className='flex'>
+            <div className='flex gap-11 items-start'>
+              <menu className='w-[533px] flex flex-col gap-6 items-center justify-center'>
+                <UnderDebrisLink route='/form/enkaz-altinda' />
                 <InformationLink
                   icon={donation}
-                  title="Bağış Yap"
-                  route="/bagis"
+                  title='Bağış Yap'
+                  route='/bagis'
                 />
-                <section className="flex flex-wrap gap-x-4 gap-y-6">
+                <section className='flex flex-wrap gap-x-4 gap-y-6'>
                   <HelpLink
                     icon={home}
-                    title="Konaklama Sağlayabilirim"
-                    route="/form/konaklama-yardimi"
+                    title='Konaklama Sağlayabilirim'
+                    route='/form/konaklama-yardimi'
                   />
                   <HelpLink
                     icon={clothes}
-                    title="Giysi Sağlayabilirim"
-                    route="/form/giysi-yardimi"
+                    title='Giysi Sağlayabilirim'
+                    route='/form/giysi-yardimi'
                   />
                   <HelpLink
                     icon={food}
-                    title="Gıda Sağlayabilirim"
-                    route="/form/gida-yardimi"
+                    title='Gıda Sağlayabilirim'
+                    route='/form/gida-yardimi'
                   />
                   <HelpLink
                     icon={car}
-                    title="İş Aracı Kullanabilirim"
-                    route="/form/is-araci-kullanabilirim"
+                    title='İş Aracı Kullanabilirim'
+                    route='/form/is-araci-kullanabilirim'
                   />
                 </section>
                 <InformationLink
                   icon={list}
-                  title="Enkaz Altında Olanlar"
-                  route="/enkaz-altinda-olanlar"
+                  title='Enkaz Altında Olanlar'
+                  route='/enkaz-altinda-olanlar'
                 />
                 <InformationLink
                   icon={homes}
-                  title="Konaklama Sağlayanlar"
-                  route="/konaklama-saglayanlar"
+                  title='Konaklama Sağlayanlar'
+                  route='/konaklama-saglayanlar'
                 />
               </menu>
-              <div className="h-full md:mr-4 flex flex-col justify-between items-center">
-                <div className="mt-14 md:flex flex-col gap-8 hidden">
-                  <SideMenuLink icon={search} title="Arama" />
-                  <SideMenuLink icon={map} title="Harita" />
-                  <SideMenuLink icon={info} title="Bilgilendirme" />
+              <div className='h-full mr-4 flex flex-col justify-between items-center'>
+                <div className='mt-14 flex flex-col gap-8'>
+                  <SideMenuLink icon={search} title='Arama' />
+                  <SideMenuLink icon={map} title='Harita' />
+                  <SideMenuLink icon={info} title='Bilgilendirme' />
                 </div>
-                <div className="md:inline-block hidden">
+                <div>
                   <SideMenuLink icon={up} action={'up'} />
                 </div>
               </div>

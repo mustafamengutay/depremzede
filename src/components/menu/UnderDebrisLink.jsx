@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import megaphone from "../../assets/megaphone.svg";
+import { Link } from 'react-router-dom';
+import megaphone from '../../assets/megaphone.svg';
 
 /**
  *
@@ -8,18 +8,15 @@ import megaphone from "../../assets/megaphone.svg";
  */
 const UnderDebrisLink = ({ route }) => {
   return (
-    <Link
-      className="btn-big hover:bg-white-2 hover:shadow-inner transition-all duration-300"
-      to={route}
-    >
-      <div className="relative h-full flex items-start justify-between">
-        <div className="w-full flex justify-between items-center">
-          <img src={megaphone} alt="" />
-          <div className="flex flex-col items-center justify-between h-full">
-            <p className="font-bold text-2xl w-[174px] h-[54px] mr-2">
+    <Link className='btn-big' to={route}>
+      <div className='relative h-full flex items-start justify-between'>
+        <div className='w-full flex justify-between items-center'>
+          <img src={megaphone} alt='' />
+          <div className='flex flex-col items-center justify-between h-full'>
+            <p className='font-bold text-2xl w-[174px] h-[54px] mr-2'>
               Ben/Tanıdığım Enkaz Altında
             </p>
-            <div className="bg-black whitespace-nowrap text-white px-8 py-2 rounded-full absolute bottom-0">
+            <div className='bg-black whitespace-nowrap text-white px-8 py-2 rounded-full absolute bottom-0'>
               Yardım Formu
             </div>
           </div>

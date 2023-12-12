@@ -21,38 +21,38 @@ import Login from '../pages/Login';
 const AppRouter = () => {
   return (
     <Routes>
-      <Route exact path="/" element={<Home />} />
-      <Route path="/giris-yap" element={<Login />} />
+      <Route exact path='/' element={<Home />} />
+      <Route path='/giris-yap' element={<Login />} />
 
-      <Route path="/bagis" element={<Donation />} />
-      <Route path="/enkaz-altinda-olanlar" element={<UnderDebrisList />} />
-      <Route path="/konaklama-saglayanlar" element={<AccommodationList />} />
-      <Route path="/form-gonderildi" element={<FormSubmitted />} />
+      <Route path='/bagis' element={<Donation />} />
+      <Route path='/enkaz-altinda-olanlar' element={<UnderDebrisList />} />
+      <Route path='/konaklama-saglayanlar' element={<AccommodationList />} />
+      <Route path='/form-gonderildi' element={<FormSubmitted />} />
 
-      <Route path="/form" element={<Form />}>
-        <Route path="enkaz-altinda" />
-        <Route path="konaklama-yardimi" />
-        <Route path="gida-yardimi" />
-        <Route path="giysi-yardimi" />
-        <Route path="is-araci-kullanabilirim" />
+      <Route path='/form' element={<Form />}>
+        <Route path='enkaz-altinda' />
+        <Route path='konaklama-yardimi' />
+        <Route path='gida-yardimi' />
+        <Route path='giysi-yardimi' />
+        <Route path='is-araci-kullanabilirim' />
       </Route>
 
-      <Route path="/gorevli" element={<OfficerDashboard />}>
-        <Route path="" element={<OfficerMenu />} />
-        <Route path="bilgilerim" element={<OfficerInformation />} />
+      <Route path='/gorevli' element={<OfficerDashboard />}>
+        <Route path='' element={<OfficerMenu />} />
+        <Route path='bilgilerim' element={<OfficerInformation />} />
       </Route>
 
-      <Route path="/yonetici" element={<ManagerDashboard />}>
-        <Route path="" element={<ManagerMenu />} />
-        <Route path="bilgilerim" element={<OfficerInformation />} />
+      <Route path='/yonetici' element={<ManagerDashboard />}>
+        <Route path='' element={<ManagerMenu />} />
+        <Route path='bilgilerim' element={<OfficerInformation />} />
       </Route>
 
-      <Route path="/*" element={<NotFound />} />
+      <Route path='/*' element={<NotFound />} />
 
-      <Route path="/envanterler" element={<InventoriesList />} />
-      <Route path="/gorevliler" element={<OfficersList />} />
-      <Route path="/gorevli-olustur" element={<CreateOfficerForm />} />
-      <Route path="/gorevli-istekleri" element={<OfficerRequests />} />
+      <Route path='/envanterler' element={<InventoriesList />} />
+      <Route path='/gorevliler' element={<OfficersList />} />
+      <Route path='/gorevli-olustur' element={<CreateOfficerForm />} />
+      <Route path='/gorevli-istekleri' element={<OfficerRequests />} />
     </Routes>
   );
 };

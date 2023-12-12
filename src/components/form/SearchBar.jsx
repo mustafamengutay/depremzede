@@ -20,7 +20,7 @@ const SearchBar = ({ title, width = '' }) => {
       <input
         style={{ width: width }}
         placeholder={title}
-        type="text"
+        type='text'
         value={searchBarValue}
         onChange={handleTextChange}
         className={
