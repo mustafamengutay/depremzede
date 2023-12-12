@@ -6,12 +6,12 @@ const Header = () => {
   return (
     <header className='text-white min-w-[1000px] font-light -tracking-4 flex items-center justify-between mt-10'>
       <p className='font-semibold text-7 w-max'>Depremzede</p>
-      <div className='flex items-center gap-36 text-base'>
+      <div className='flex items-center gap-35 text-base'>
         <nav>
-          <ul className='flex gap-8'>
+          <ul className='flex gap-4'>
             <li>
               <p
-                className=' hover:cursor-pointer  hover:bg-white hover:text-black rounded-md p-2 transition duration-500 ease-in-out'
+                className='hover:cursor-pointer hover:bg-white hover:text-black rounded-base py-2 px-4 transition duration-500 ease-in-out'
                 onClick={() => scrollDownByPercentage(5)}
               >
                 Yardım Al
@@ -19,7 +19,7 @@ const Header = () => {
             </li>
             <li>
               <p
-                className='hover:cursor-pointer hover:bg-white hover:text-black rounded-md p-2 transition duration-500 ease-in-out'
+                className='hover:cursor-pointer hover:bg-white hover:text-black rounded-base py-2 px-4 transition duration-500 ease-in-out'
                 onClick={() => scrollDownByPercentage(50)}
               >
                 Yardım Sağla
@@ -27,7 +27,7 @@ const Header = () => {
             </li>
             <li>
               <p
-                className='hover:cursor-pointer hover:bg-white hover:text-black rounded-md p-2 transition duration-500 ease-in-out'
+                className='hover:cursor-pointer hover:bg-white hover:text-black rounded-base py-2  px-4 transition duration-500 ease-in-out'
                 onClick={() => scrollDownByPercentage(80)}
               >
                 Yardım Listesi
@@ -36,8 +36,12 @@ const Header = () => {
           </ul>
         </nav>
         <div className='flex items-center gap-8'>
-          <p>En</p>
-          {/* hover ekledim */}
+          <a
+            href='/'
+            onClick={() => alert('English translation will be active soon!')}
+          >
+            En
+          </a>
           <Link
             className='bg-grey-1 px-8 rounded-full py-2  inline-block border-2 border-black  transition-all duration-300 hover:bg-white hover:text-black'
             to={'/giris-yap'}
