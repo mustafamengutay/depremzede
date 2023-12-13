@@ -1,15 +1,8 @@
-import { useEffect, useState } from 'react';
 import Information from './Information';
-import data from '../../data/posts.json'; // TEST DATA
 
-const InformationList = () => {
-  const [posts, setPosts] = useState([]);
-  useEffect(() => {
-    setPosts(data);
-  }, []);
-
+const InformationList = ({ posts }) => {
   return (
-    <div className=' w-[1160px]'>
+    <div>
       {posts.map((post, index) => {
         return (
           <Information
@@ -18,8 +11,8 @@ const InformationList = () => {
             address={post.address}
             city={post.city}
             email={post.email}
-            phoneNo={post.phoneNo}
-            status={post.status}
+            phoneNo={post.phoneNumber}
+            status={post.ilanDurumu}
           />
         );
       })}

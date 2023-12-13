@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-const Input = ({ title, altTitle, width = '', inputType, dispatch }) => {
+const Input = ({ title, altTitle, width = '', setState }) => {
   const [value, setValue] = useState('');
 
   const handleTextChange = (e) => {
+    setState(e.target.value);
     setValue(e.target.value);
-    dispatch({ type: 'SET_INPUT', name: inputType, payload: e.target.value });
   };
 
   return (

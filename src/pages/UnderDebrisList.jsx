@@ -1,13 +1,20 @@
-import { useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import FormHeader from '../components/form/FormHeader';
 import InformationList from '../components/information-reports/InformationList';
 import { setBackgroundColorWhite } from '../utils/BackgroundColorUtils';
 import { resetLocation } from '../utils/ScrollUtils';
+import FormContext from '../context/form/FormContext';
 
 const UnderDebrisList = () => {
+  const [underDebrisList, setUnderDebrisList] = useState([]);
+
+  const { getList } = useContext(FormContext);
+
   useEffect(() => {
     setBackgroundColorWhite();
     resetLocation();
+
+    getList('/users/enkaz-altinda', setUnderDebrisList);
   }, []);
 
   const descriptionText =
@@ -26,7 +33,7 @@ const UnderDebrisList = () => {
           <li>İlan Durumu</li>
         </ul>
         <hr className='mt-6 mb-8' />
-        <InformationList />
+        <InformationList posts={underDebrisList} />
       </div>
     </div>
   );
