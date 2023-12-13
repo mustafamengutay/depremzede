@@ -26,7 +26,7 @@ const OfficerDashboard = () => {
   });
 
   return (
-    <div className='container max-w-dashboard h-screen flex items-center justify-between mt-8 mx-4  min-w-[600px]'>
+    <div className='container max-w-dashboard h-screen flex items-center justify-between'>
       <OfficerSideMenu
         officerImage={officer_profil}
         officerName={'Ahmet Sezer'}
