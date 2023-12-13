@@ -7,6 +7,7 @@ Creating an online earthquake relief system can serve the purpose of connecting 
 First, you need to install Node.js on your computer!
 
 1. Go to backend directory, and run `npm install` command to add dependencies to the backend application.
+5. Create .env file inside backend directory, and add your MongoDB URI [MONGO_URI=yourURI]. 
 2. Run `npm start` command to run to the server.
 3. Run `npm install` command to add dependencies to the frontend application.
 4. Run `npm start` command to run the frontend application.
