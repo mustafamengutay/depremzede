@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { setBackgroundColorWhite } from '../../utils/BackgroundColorUtils';
 import { resetLocation } from '../../utils/ScrollUtils';
@@ -8,8 +8,18 @@ import Input from '../../components/form/elements/Input';
 import SubmitButton from '../../components/form/elements/SubmitButton';
 import FormHeader from '../../components/form/FormHeader';
 
+import FormContext from '../../context/form/FormContext';
+
 const VehicleForm = () => {
-  const location = useLocation();
+  const { sendPost } = useContext(FormContext);
+  const navigate = useNavigate();
+
+  const [name, setName] = useState('');
+  const [surname, setSurname] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [email, setEmail] = useState('');
+  const [type, setType] = useState('');
+  const [address, setAddress] = useState('');
 
   useEffect(() => {
     setBackgroundColorWhite();
@@ -24,11 +34,28 @@ const VehicleForm = () => {
     </p>
   );
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const post = {
+      name,
+      surname,
+      phoneNumber,
+      email,
+      type,
+      address,
+    };
+
+    sendPost(post, '/users/is-araci-kullanabilirim');
+
+    navigate('/form-gonderildi');
+  };
+
   return (
     <div className='container w-screen h-screen -tracking-4'>
       <FormHeader title={formHeaderTitle} description={descriptionText} />
       <div className='my-16'>
-        <form className='flex flex-col'>
+        <form className='flex flex-col' onSubmit={handleSubmit}>
           <div>
             <div className='flex justify-between items-center flex-col sm:flex-row'>
               <p className='font-medium text-xl -tracking-2 mb-4 sm:mb-0'>
@@ -39,28 +66,24 @@ const VehicleForm = () => {
                   <Input
                     title='İsim'
                     altTitle='İsminizi giriniz'
-                    inputType='nameInput'
-                    // dispatch={dispatch}
+                    setState={setName}
                   />
                   <Input
                     title='Soyisim'
                     altTitle='Soyisminizi giriniz'
-                    inputType='surnameInput'
-                    // dispatch={dispatch}
+                    setState={setSurname}
                   />
                 </div>
                 <div className='flex flex-col sm:flex-row gap-8'>
                   <Input
                     title='Telefon Numarası*'
                     altTitle='Telefon numaranızı giriniz'
-                    inputType='phoneNumberInput'
-                    // dispatch={dispatch}
+                    setState={setPhoneNumber}
                   />
                   <Input
                     title='E-posta Adresi'
                     altTitle='E-posta adresinizi giriniz'
-                    inputType='emailInput'
-                    // dispatch={dispatch}
+                    setState={setEmail}
                   />
                 </div>
               </div>
@@ -74,14 +97,12 @@ const VehicleForm = () => {
                 <Input
                   title='Araç Tipi'
                   altTitle='Araç tipini giriniz'
-                  inputType='carTypeInput'
-                  // dispatch={dispatch}
+                  setState={setType}
                 />
                 <Input
                   title='Adres*'
                   altTitle='Adresinizi giriniz'
-                  inputType='addressInput'
-                  // dispatch={dispatch}
+                  setState={setAddress}
                 />
               </div>
             </div>

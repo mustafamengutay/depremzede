@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { setBackgroundColorWhite } from '../../utils/BackgroundColorUtils';
 import { resetLocation } from '../../utils/ScrollUtils';
@@ -8,7 +9,16 @@ import TextArea from '../../components/form/elements/TextArea';
 import FormHeader from '../../components/form/FormHeader';
 import SubmitButton from '../../components/form/elements/SubmitButton';
 
+import FormContext from '../../context/form/FormContext';
+
 const ClothesForm = () => {
+  const { sendPost } = useContext(FormContext);
+  const navigate = useNavigate();
+
+  const [name, setName] = useState('');
+  const [surname, setSurname] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [email, setEmail] = useState('');
   const [description, setDescription] = useState('');
 
   useEffect(() => {
@@ -24,11 +34,27 @@ const ClothesForm = () => {
     </p>
   );
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const post = {
+      name,
+      surname,
+      phoneNumber,
+      email,
+      description,
+    };
+
+    sendPost(post, '/users/giysi-yardimi');
+
+    navigate('/form-gonderildi');
+  };
+
   return (
     <div className='container w-screen h-screen -tracking-4'>
       <FormHeader title={formHeaderTitle} description={descriptionText} />
       <div className='my-16'>
-        <form className='flex flex-col'>
+        <form className='flex flex-col' onSubmit={handleSubmit}>
           <div>
             <div className='flex justify-between items-center flex-col sm:flex-row'>
               <p className='font-medium text-xl -tracking-2 mb-4 sm:mb-0'>
@@ -39,28 +65,24 @@ const ClothesForm = () => {
                   <Input
                     title='İsim'
                     altTitle='İsminizi giriniz'
-                    inputType='nameInput'
-                    // dispatch={dispatch}
+                    setState={setName}
                   />
                   <Input
                     title='Soyisim'
                     altTitle='Soyisminizi giriniz'
-                    inputType='surnameInput'
-                    // dispatch={dispatch}
+                    setState={setSurname}
                   />
                 </div>
                 <div className='flex flex-col sm:flex-row gap-8'>
                   <Input
                     title='Telefon Numarası*'
                     altTitle='Telefon numaranızı giriniz'
-                    inputType='phoneNumberInput'
-                    // dispatch={dispatch}
+                    setState={setPhoneNumber}
                   />
                   <Input
                     title='E-posta Adresi'
                     altTitle='E-posta adresinizi giriniz'
-                    inputType='emailInput'
-                    // dispatch={dispatch}
+                    setState={setEmail}
                   />
                 </div>
               </div>

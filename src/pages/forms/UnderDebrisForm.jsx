@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { setBackgroundColorWhite } from '../../utils/BackgroundColorUtils';
 import { resetLocation } from '../../utils/ScrollUtils';
@@ -6,11 +7,11 @@ import { resetLocation } from '../../utils/ScrollUtils';
 import Input from '../../components/form/elements/Input';
 import SubmitButton from '../../components/form/elements/SubmitButton';
 import FormHeader from '../../components/form/FormHeader';
+
 import FormContext from '../../context/form/FormContext';
-import { useNavigate } from 'react-router-dom';
 
 const UnderDebrisForm = () => {
-  const { sendUnderDebrisPost } = useContext(FormContext);
+  const { sendPost } = useContext(FormContext);
   const navigate = useNavigate();
 
   const [name, setName] = useState('');
@@ -43,11 +44,10 @@ const UnderDebrisForm = () => {
       phoneNumber,
       email,
       address,
-      kisiSayisi: numberOfPeople,
-      ilanDurumu: true,
+      numberOfPeople,
     };
 
-    sendUnderDebrisPost(post);
+    sendPost(post, '/users/enkaz-altinda');
 
     navigate('/form-gonderildi');
   };
