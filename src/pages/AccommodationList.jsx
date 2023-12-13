@@ -1,14 +1,23 @@
-import { useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
+
 import FormHeader from '../components/form/FormHeader';
 import InformationList from '../components/information-reports/InformationList';
 import { setBackgroundColorWhite } from '../utils/BackgroundColorUtils';
 import { resetLocation } from '../utils/ScrollUtils';
 
+import FormContext from '../context/form/FormContext';
+
 const AccommodationList = () => {
+  const [accommodationList, setAccommodationList] = useState([]);
+
+  const { getList } = useContext(FormContext);
+
   useEffect(() => {
     // Page Settings
     setBackgroundColorWhite();
     resetLocation();
+
+    getList('/users/konaklama-yardimi', setAccommodationList);
   }, []);
 
   const descriptionText =
@@ -27,7 +36,8 @@ const AccommodationList = () => {
           <li>İlan Durumu</li>
         </ul>
         <hr className='mt-6 mb-8' />
-        <InformationList />
+        {/* THERE IS A PROBLEM ABOUT FIELDS, CHECK THEM LATER */}
+        <InformationList posts={accommodationList} />
       </div>
     </div>
   );
