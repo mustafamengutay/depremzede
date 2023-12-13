@@ -3,7 +3,6 @@ import Home from '../pages/Home';
 import Donation from '../pages/Donation';
 import UnderDebrisList from '../pages/UnderDebrisList';
 import FormSubmitted from '../pages/FormSubmitted';
-import Form from '../pages/Form';
 import AccommodationList from '../pages/AccommodationList';
 import ManagerDashboard, { ManagerMenu } from '../pages/ManagerDashboard';
 
@@ -13,14 +12,26 @@ import OfficerDashboard, {
 } from '../pages/OfficerDashboard';
 import OfficersList from '../pages/OfficersList';
 import InventoriesList from '../pages/InventoriesList';
-import CreateOfficerForm from '../pages/CreateOfficerForm';
+import CreateOfficerForm from '../pages/forms/CreateOfficerForm';
 import OfficerRequests from '../pages/OfficerRequests';
 import NotFound from '../pages/NotFound';
 import Login from '../pages/Login';
 
+import UnderDebrisForm from '../pages/forms/UnderDebrisForm';
+import AccomodationForm from '../pages/forms/AccomodationForm';
+import ClothesForm from '../pages/forms/ClothesForm';
+import FoodAidForm from '../pages/forms/FoodAidForm';
+import VehicleForm from '../pages/forms/VehicleForm';
+
 const AppRouter = () => {
   return (
     <Routes>
+      <Route path='/enkaz-altinda' element={<UnderDebrisForm />} />
+      <Route path='/konaklama-yardimi' element={<AccomodationForm />} />
+      <Route path='/gida-yardimi' element={<FoodAidForm />} />
+      <Route path='/giysi-yardimi' element={<ClothesForm />} />
+      <Route path='/is-araci-kullanabilirim' element={<VehicleForm />} />
+
       <Route exact path='/' element={<Home />} />
       <Route path='/giris-yap' element={<Login />} />
 
@@ -28,14 +39,6 @@ const AppRouter = () => {
       <Route path='/enkaz-altinda-olanlar' element={<UnderDebrisList />} />
       <Route path='/konaklama-saglayanlar' element={<AccommodationList />} />
       <Route path='/form-gonderildi' element={<FormSubmitted />} />
-
-      <Route path='/form' element={<Form />}>
-        <Route path='enkaz-altinda' />
-        <Route path='konaklama-yardimi' />
-        <Route path='gida-yardimi' />
-        <Route path='giysi-yardimi' />
-        <Route path='is-araci-kullanabilirim' />
-      </Route>
 
       <Route path='/gorevli' element={<OfficerDashboard />}>
         <Route path='' element={<OfficerMenu />} />

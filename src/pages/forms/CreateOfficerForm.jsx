@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 
-import FormHeader from '../components/form/FormHeader';
-import Input from '../components/form/elements/Input';
-import SubmitSection from '../components/form/sections/SubmitSection';
-import { setBackgroundColorWhite } from '../utils/BackgroundColorUtils';
-import { resetLocation } from '../utils/ScrollUtils';
+import FormHeader from '../../components/form/FormHeader';
+import Input from '../../components/form/elements/Input';
+import { setBackgroundColorWhite } from '../../utils/BackgroundColorUtils';
+import { resetLocation } from '../../utils/ScrollUtils';
+import SubmitButton from '../../components/form/elements/SubmitButton';
 
 const CreateOfficerForm = () => {
   useEffect(() => {
@@ -71,7 +71,12 @@ const CreateOfficerForm = () => {
               </div>
             </div>
           </div>
-          <SubmitSection />
+          <div className='flex items-center gap-72 my-12 self-end'>
+            <p className='text-base -tracking-2 font-light'>
+              *Bu alanlar zorunludur.
+            </p>
+            <SubmitButton />
+          </div>
         </form>
       </div>
     </div>
