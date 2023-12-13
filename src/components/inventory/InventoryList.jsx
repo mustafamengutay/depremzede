@@ -20,7 +20,7 @@ const InventoryList = () => {
   });
 
   return (
-    <div className='w-[1160px]'>
+    <div>
       {filteredInventories.map((inventory, index) => {
         return (
           <InventoryItem

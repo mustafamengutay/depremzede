@@ -36,7 +36,7 @@ const OfficerDashboard = () => {
 
       <Outlet />
 
-      <div className='flex flex-col gap-8 '>
+      <div className='flex flex-col gap-8'>
         <SideMenuLink icon={search} title='Arama' />
         <SideMenuLink icon={map} title='Harita' />
         <SideMenuLink icon={info} title='Bilgilendirme' />
@@ -55,7 +55,7 @@ export const OfficerInformation = ({
   jobType,
 }) => {
   return (
-    <div className='w-[550px]  h-max  mx-4 '>
+    <div className='w-[550px] h-max mx-4'>
       <div className='flex items-center gap-6 mb-12'>
         <p className='text-white font-semibold text-2xl'>{officerName}</p>
         <OfficerTitle jobType={jobType} />
@@ -94,21 +94,21 @@ export const OfficerInformation = ({
 
 export const OfficerMenu = () => {
   return (
-    <div className='flex flex-col justify-center gap-16  '>
-      <div className='flex justify-between items-center '>
-        <div className='flex flex-col gap-6  mx-4  '>
+    <div className='flex flex-col justify-center gap-16'>
+      <div className='flex justify-between items-center'>
+        <div className='flex flex-col gap-6  mx-4'>
           <InformationLink
             icon={check}
             title='Depremzede Bilgi Doğrulama'
             width=' 650px'
           />
-          <div className='flex flex-col gap-6  '>
-            <div className='flex  gap-6  flex-col md:flex-row '>
+          <div className='flex flex-col gap-6'>
+            <div className='flex  gap-6  flex-col md:flex-row'>
               {/* flex-col md:flex-row */}
               <HelpLink icon={tent} title='Çadır İsteği' width='313px' />
               <HelpLink icon={clothing} title='Giysi İsteği' width='313px' />
             </div>
-            <div className='flex gap-6  flex-col md:flex-row '>
+            <div className='flex gap-6  flex-col md:flex-row'>
               {/* flex-col md:flex-row */}
               <HelpLink icon={food} title='Gıda İsteği' width='313px' />
               <HelpLink

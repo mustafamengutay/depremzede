@@ -26,7 +26,7 @@ const OfficerRequests = () => {
       </div>
 
       <div className='mt-6 overflow-x-auto'>
-        <ul className='grid grid-cols-6 justify-items-center text-base font-medium min-w-full divide-y w-[1160px]'>
+        <ul className='grid grid-cols-6 justify-items-center text-base font-medium min-w-full'>
           <li>Görevli Adı</li>
           <li>Ürün İsmi</li>
           <li>Kategori</li>

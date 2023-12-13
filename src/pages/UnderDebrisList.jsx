@@ -17,7 +17,7 @@ const UnderDebrisList = () => {
     <div className='container w-screen h-screen -tracking-4 '>
       <FormHeader title='Enkaz Altında Olanlar' description={descriptionText} />
       <div className='mt-16 overflow-x-auto'>
-        <ul className='grid grid-cols-6 justify-items-center text-base font-medium min-w-full divide-y w-[1160px] '>
+        <ul className='grid grid-cols-6 justify-items-center text-base font-medium min-w-full'>
           <li>İlan Sahibi</li>
           <li>Enkaz Adresi</li>
           <li>Şehir</li>

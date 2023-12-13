@@ -22,7 +22,7 @@ const ManagerDashboard = () => {
   });
 
   return (
-    <div className='container max-w-dashboard h-screen flex items-center justify-between mt-8 mx-4  min-w-[600px]'>
+    <div className='container max-w-dashboard h-screen flex items-center justify-between'>
       <OfficerSideMenu
         officerImage={officer_profil}
         officerName={'Ahmet Sezer'}
@@ -32,7 +32,7 @@ const ManagerDashboard = () => {
 
       <Outlet />
 
-      <div className='flex flex-col gap-8 '>
+      <div className='flex flex-col gap-8'>
         <SideMenuLink icon={search} title='Arama' />
         <SideMenuLink icon={map} title='Harita' />
         <SideMenuLink icon={info} title='Bilgilendirme' />
@@ -43,8 +43,8 @@ const ManagerDashboard = () => {
 
 export const ManagerMenu = () => {
   return (
-    <div className='flex flex-col gap-6 sm:flex-row mx-2'>
-      <div className='flex flex-col gap-6 sm:flex-1  md:mt-0  mt-96'>
+    <div className='flex flex-col gap-6'>
+      <div className='flex gap-6'>
         <HelpLink
           icon={inventory}
           title='Envanter'
@@ -58,7 +58,7 @@ export const ManagerMenu = () => {
           route='/gorevliler'
         />
       </div>
-      <div className='flex flex-col gap-6 sm:flex-1'>
+      <div className='flex gap-6'>
         <HelpLink
           icon={createOfficer}
           title='Görevli Oluştur / Sil'

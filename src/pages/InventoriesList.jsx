@@ -19,7 +19,7 @@ const InventoriesList = () => {
     'Aşağıdaki listeden depoda bulunan envanterleri görebilir ve ekleme/çıkarma işlemleri yapabilirsiniz.';
 
   return (
-    <div className='container w-screen h-screen -tracking-4 min-w-[464px]'>
+    <div className='container w-screen h-screen -tracking-4'>
       <FormHeader title='Envanter' description={descriptionText} />
 
       <div className='mt-16 flex justify-between items-center'>
@@ -27,8 +27,8 @@ const InventoriesList = () => {
         <Select />
       </div>
 
-      <div className='mt-6 overflow-x-auto'>
-        <ul className='grid grid-cols-5 justify-items-center text-base font-medium min-w-full divide-y w-[1160px]'>
+      <div className='mt-6'>
+        <ul className='grid grid-cols-5 justify-items-center text-base font-medium'>
           <li>Ürün İsmi</li>
           <li>Kategori</li>
           <li>Adet Sayısı</li>

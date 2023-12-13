@@ -25,7 +25,7 @@ const OfficersList = () => {
       </div>
 
       <div className='mt-6 overflow-x-auto'>
-        <ul className='grid grid-cols-8 justify-items-center items-center text-base font-medium min-w-full divide-y w-[1160px]'>
+        <ul className='grid grid-cols-8 justify-items-center items-center text-base font-medium min-w-full'>
           <li>ID</li>
           <li>İsim Soyisim</li>
           <li>Telefon Numarası</li>
