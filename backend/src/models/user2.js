@@ -29,16 +29,16 @@ const userSchema2 = new mongoose.Schema({
             }
         }
     },
-    kisiSayisi: {
+    numberOfPeople: {
         type: String,
         trim: true
     },
-    accommAddress: {
+    address: {
         type: String,
         required: true,
         trim: true
     },
-    ilanDurumu: {
+    status: {
         type: Boolean,
         trim: false
     }

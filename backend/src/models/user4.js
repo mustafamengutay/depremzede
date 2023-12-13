@@ -29,7 +29,7 @@ const userSchema4 = new mongoose.Schema({
             }
         }
     },
-    aracTipi: {
+    type: {
         type: String,
         trim: true
     },
@@ -38,7 +38,7 @@ const userSchema4 = new mongoose.Schema({
         required: true,
         trim: true
     },
-    ilanDurumu: {
+    status: {
         type: Boolean,
         trim: true,
         default: false

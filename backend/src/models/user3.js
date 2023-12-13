@@ -29,14 +29,10 @@ const userSchema3 = new mongoose.Schema({
             }
         }
     },
-    ekbilgiler: {
+    description: {
         type: String,
         trim: false
     },
-    ilanDurumu: {
-        type: Boolean,
-        trim: false
-    }
 })
 
 const User3 = mongoose.model('User3-Giysi-Sağlayanlar', userSchema3)

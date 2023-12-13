@@ -29,7 +29,7 @@ const userSchema = new mongoose.Schema({
             }
         }
     },
-    kisiSayisi: {
+    numberOfPeople: {
         type: String,
         trim: true
     },
@@ -38,9 +38,10 @@ const userSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    ilanDurumu: {
+    status: {
         type: Boolean,
-        trim: false
+        trim: false,
+        default: false,
     }
 })
 
