@@ -21,7 +21,7 @@ const SideMenuLink = ({ icon, title = '', action = '' }) => {
       className='flex flex-col justify-center items-center gap-2'
       onClick={handleClick}
     >
-      <div className='bg-grey-1 w-[55px] h-[55px] rounded-full flex justify-center items-center'>
+      <div className='bg-grey-1 w-[55px] h-[55px] rounded-full flex justify-center items-center transition-all duration-300 hover:shadow-inner hover:bg-black hover:invert'>
         <img src={icon} alt='' />
       </div>
       <p className='text-white text-base font-light'>{title}</p>

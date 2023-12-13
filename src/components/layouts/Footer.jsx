@@ -30,7 +30,7 @@ const Footer = () => {
         <div className='flex flex-col items-end gap-10'>
           <a
             href='mailto:depremzede@iletisim.com'
-            className='bg-black text-white text-center px-8 py-2 rounded-full'
+            className='text-white text-center px-8 py-2 rounded-full bg-grey-1 hover:bg-black transition duration-300 ease-in-out'
           >
             İletişim
           </a>
