@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 
-mongoose.connect('mongodb+srv://mustafamengutay:mustafa@earthquake.qvfqewf.mongodb.net/?retryWrites=true&w=majority', {
+dotenv.config();
+
+const DB_URI = process.env.MONGO_URI;
+
+mongoose.connect(DB_URI, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true
@@ -10,5 +15,3 @@ mongoose.connect('mongodb+srv://mustafamengutay:mustafa@earthquake.qvfqewf.mongo
 
 // mongodb+srv://admin:earthquake1@mylocaldb.0a9keyk.mongodb.net/
 //mongodb://127.0.0.1:27017/my-database-earthquake
-
-// mongodb + srv://mustafamengutay:<password>@earthquake.qvfqewf.mongodb.net/?retryWrites=true&w=majority
