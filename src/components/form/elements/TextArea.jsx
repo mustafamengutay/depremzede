@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 
-const TextArea = ({ title, altTitle, inputType, dispatch }) => {
+const TextArea = ({ title, altTitle, setState }) => {
   const handleTextareaChange = (e) => {
-    dispatch({ type: 'SET_INPUT', name: inputType, payload: e.target.value });
+    setState(e.target.value);
   };
 
   return (
@@ -31,21 +31,3 @@ TextArea.propTypes = {
 };
 
 export default TextArea;
-
-{
-  /*   <label
-        htmlFor="input"
-        className="text-black text-sm font-medium leading-tight"
-      >
-        {title}
-      </label>
-      <textarea
-        placeholder={title}
-        onChange={handleTextareaChange}
-        className=" md:min-w-[632px] focus:border-black my-1.5 w-full rounded-xl border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
-      ></textarea>
-      <div className="text-grey-2 text-sm font-light leading-tight">
-        {altTitle}
-      </div>
-    </div>*/
-}

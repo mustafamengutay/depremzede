@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 import { setBackgroundColorWhite } from '../../utils/BackgroundColorUtils';
 import { resetLocation } from '../../utils/ScrollUtils';
@@ -10,7 +9,7 @@ import FormHeader from '../../components/form/FormHeader';
 import SubmitButton from '../../components/form/elements/SubmitButton';
 
 const ClothesForm = () => {
-  const location = useLocation();
+  const [description, setDescription] = useState('');
 
   useEffect(() => {
     setBackgroundColorWhite();
@@ -74,8 +73,7 @@ const ClothesForm = () => {
               <TextArea
                 title='Gıda Yardımı Hakkında Bilgiler'
                 altTitle='Gıda hakkında ek bilgiler ekleyebilirsiniz'
-                inputType='extraInformationInput'
-                // dispatch={dispatch}
+                setState={setDescription}
               />
             </div>
           </div>
