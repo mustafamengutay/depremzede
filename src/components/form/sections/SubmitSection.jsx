@@ -2,8 +2,7 @@ import SubmitButton from './../elements/SubmitButton';
 
 const SubmitSection = () => {
   return (
-    <div className='flex flex-col items-center gap-4 my-8 sm:my-12 self-end'>
-      {/* margin ve flex ekledim*/}
+    <div className='flex items-center gap-72 my-12 self-end'>
       <p className='text-base -tracking-2 font-light'>
         *Bu alanlar zorunludur.
       </p>
