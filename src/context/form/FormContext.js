@@ -1,8 +1,9 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 const FormContext = createContext();
 
 export const FormProvider = ({ children }) => {
+    const [searchBarValue, setSearchBarValue] = useState('');
 
     /**
      * 
@@ -32,6 +33,8 @@ export const FormProvider = ({ children }) => {
 
     return (
         <FormContext.Provider value={{
+            searchBarValue,
+            setSearchBarValue,
             sendPost,
             getList,
         }}>

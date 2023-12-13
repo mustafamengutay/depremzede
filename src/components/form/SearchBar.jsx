@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import FormContext from '../../context/form/FormContext';
 
 /**
@@ -9,10 +9,11 @@ import FormContext from '../../context/form/FormContext';
  * @returns A search bar.
  */
 const SearchBar = ({ title, width = '' }) => {
-  const { searchBarValue, dispatch } = useContext(FormContext);
+  const { searchBarValue, setSearchBarValue } = useContext(FormContext);
 
   const handleTextChange = (e) => {
-    dispatch({ type: 'SET_SEARCHBAR', payload: e.target.value.toLowerCase() });
+    // TODO: add search bar feature
+    setSearchBarValue(e.target.value);
   };
 
   return (
