@@ -27,16 +27,6 @@ const AccommodationList = () => {
     <div className='container w-screen h-screen -tracking-4'>
       <FormHeader title='Konaklama Sağlayanlar' description={descriptionText} />
       <div className='mt-16'>
-        <ul className='grid grid-cols-6 justify-items-center text-base font-medium'>
-          <li>İlan Sahibi</li>
-          <li>Konaklama Adresi</li>
-          <li>Şehir</li>
-          <li>E-posta Adresi</li>
-          <li>Telefon Numarası</li>
-          <li>İlan Durumu</li>
-        </ul>
-        <hr className='mt-6 mb-8' />
-        {/* THERE IS A PROBLEM ABOUT FIELDS, CHECK THEM LATER */}
         <InformationList posts={accommodationList} />
       </div>
     </div>

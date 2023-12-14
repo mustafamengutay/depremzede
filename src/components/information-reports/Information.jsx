@@ -1,5 +1,9 @@
 import React from 'react';
 
+/**
+ *
+ * @summary Deprecated
+ */
 const Information = ({ name, address, city, email, phoneNo, status }) => {
   return (
     <div>
@@ -19,14 +23,14 @@ const Information = ({ name, address, city, email, phoneNo, status }) => {
 export const StatusTag = ({ statu }) => {
   if (statu) {
     return (
-      <div className='w-[120px] flex justify-center bg-red-200 border border-red-700 text-red-700 rounded-full px-3 py-1'>
-        <li>Aktif</li>
+      <div className='w-28 mt-2 flex justify-center bg-red-200 border-red-800 text-red-700 rounded-lg px-3 py-1'>
+        <li className='list-none'>Aktif</li>
       </div>
     );
   } else {
     return (
-      <div className='w-[120px] flex justify-center bg-green-200 border border-green-700 text-green-700 rounded-full px-3 py-1'>
-        <li>Tamamlandı</li>
+      <div className='w-28 flex justify-center bg-green-200 text-green-800 rounded-lg px-3 py-1'>
+        <li className='list-none'>Tamamlandı</li>
       </div>
     );
   }
