@@ -23,7 +23,7 @@ const Information = ({ name, address, city, email, phoneNo, status }) => {
 export const StatusTag = ({ statu }) => {
   if (statu) {
     return (
-      <div className='w-28 mt-2 flex justify-center bg-red-200 border-red-800 text-red-700 rounded-lg px-3 py-1'>
+      <div className='w-28 flex justify-center bg-red-200 border-red-800 text-red-700 rounded-lg px-3 py-1'>
         <li className='list-none'>Aktif</li>
       </div>
     );
