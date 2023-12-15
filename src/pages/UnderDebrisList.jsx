@@ -23,7 +23,7 @@ const UnderDebrisList = () => {
   return (
     <div className='container w-screen h-screen -tracking-4 '>
       <FormHeader title='Enkaz Altında Olanlar' description={descriptionText} />
-      <div className='mt-16 overflow-x-auto'>
+      <div className='overflow-x-auto'>
         <InformationList posts={underDebrisList} />
       </div>
     </div>

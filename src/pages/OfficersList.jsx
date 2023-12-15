@@ -19,7 +19,7 @@ const OfficersList = () => {
     <div className='container w-screen h-screen -tracking-4  min-w-[464px]'>
       <FormHeader title='Görevliler' description={descriptionText} />
 
-      <div className='mt-16 flex justify-between items-center'>
+      <div className='flex justify-between items-center'>
         <SearchBar title='ID veya isim giriniz...' width='300px' />
         <Select />
       </div>

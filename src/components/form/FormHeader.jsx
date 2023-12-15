@@ -3,7 +3,7 @@ import CloseButton from '../layouts/CloseButton';
 
 const FormHeader = ({ title, description }) => {
   return (
-    <div className='mt-10 mx-2 md:mx-0'>
+    <div className='mt-10 mb-10 mx-2 md:mx-0'>
       <div className='flex justify-between items-center mb-3'>
         <h1 className='text-xl font-medium'>{title}</h1>
         <CloseButton />

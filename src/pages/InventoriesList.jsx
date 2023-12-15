@@ -22,7 +22,7 @@ const InventoriesList = () => {
     <div className='container w-screen h-screen -tracking-4'>
       <FormHeader title='Envanter' description={descriptionText} />
 
-      <div className='mt-16 flex justify-between items-center'>
+      <div className='flex justify-between items-center'>
         <SearchBar title='Ürün ismini giriniz...' width='300px' />
         <Select />
       </div>

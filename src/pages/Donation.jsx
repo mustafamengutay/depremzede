@@ -21,7 +21,7 @@ const Donation = () => {
   return (
     <div className='container w-screen h-screen -tracking-4'>
       <FormHeader title='Bağış Platformları' description={descriptionText} />
-      <div className='flex flex-wrap justify-center items-center gap-12 my-16'>
+      <div className='flex flex-wrap justify-center items-center gap-12'>
         <DonationPlatform
           image={ahbab}
           platform='https://ahbap.org/bagisci-ol'

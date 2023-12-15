@@ -67,7 +67,7 @@ const InformationList = ({ posts }) => {
         </Table.Root>
       </ScrollArea>
       <ReactPaginate
-        containerClassName='flex gap-2 justify-end mt-6'
+        containerClassName='flex gap-2 justify-end mt-10'
         pageClassName='py-1 px-3 border rounded-lg'
         activeClassName={'bg-black text-white'}
         onPageChange={(event) => setPage(event.selected)}

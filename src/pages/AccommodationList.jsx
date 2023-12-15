@@ -26,7 +26,7 @@ const AccommodationList = () => {
   return (
     <div className='container w-screen h-screen -tracking-4'>
       <FormHeader title='Konaklama Sağlayanlar' description={descriptionText} />
-      <div className='mt-16'>
+      <div>
         <InformationList posts={accommodationList} />
       </div>
     </div>
