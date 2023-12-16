@@ -36,9 +36,11 @@ const TentDialog = () => {
           <Flex direction='column' gap='3'>
             <Input title='Adet' width='400px' setState={setStock} />
           </Flex>
-          <div className='mt-4 flex justify-end'>
-            <SubmitButton />
-          </div>
+          <Dialog.Close>
+            <div className='mt-4 flex justify-end'>
+              <SubmitButton />
+            </div>
+          </Dialog.Close>
         </form>
       </Dialog.Content>
     </Dialog.Root>

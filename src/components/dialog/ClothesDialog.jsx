@@ -42,9 +42,11 @@ const ClothesDialog = () => {
             <Input title='Tür' width='400px' setState={setClothingType} />
             <Input title='Adet' width='400px' setState={setStock} />
           </Flex>
-          <div className='mt-4 flex justify-end'>
-            <SubmitButton />
-          </div>
+          <Dialog.Close>
+            <div className='mt-4 flex justify-end'>
+              <SubmitButton />
+            </div>
+          </Dialog.Close>
         </form>
       </Dialog.Content>
     </Dialog.Root>
