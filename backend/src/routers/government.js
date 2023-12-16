@@ -3,8 +3,8 @@ const Officer = require('../models/officer')
 const Envanter = require('../models/envanter');
 const router = new express.Router()
 
-
-router.post('/government', async (req, res) => {
+// görevli oluşrur
+router.post('/gorevli-olustur', async (req, res) => {
     const officer = new Officer(req.body)
     //console.log(req.body);
     officer.password = officer.name + officer.surname
@@ -18,8 +18,8 @@ router.post('/government', async (req, res) => {
         res.status(400).send(e)
     }
 })
-
-router.get('/government', async (req, res) => {
+// gorevli listesi
+router.get('/gorevliler', async (req, res) => {
     try {
         const { authorized, search, Uid } = req.query;
 
@@ -47,7 +47,7 @@ router.get('/government', async (req, res) => {
         res.status(500).send()
     }
 })
-
+//şimdilik gerek yok id ye göre arar
 router.get('/government/:id', async (req, res) => {
     const _id = req.params.id
 
@@ -63,8 +63,8 @@ router.get('/government/:id', async (req, res) => {
         res.status(500).send()
     }
 })
-
-router.patch('/government/:id', async (req, res) => {
+// id ye göre bilgileri günceller
+router.patch('/gorevliler/:id', async (req, res) => {
     const updates = Object.keys(req.body);
     const allowedUpdates = ['name', 'surname', 'phoneNumber', 'email', 'authorized'];
     const isValidOperation = updates.every((update) => {
@@ -87,8 +87,8 @@ router.patch('/government/:id', async (req, res) => {
         res.status(400).send(e)
     }
 })
-
-router.delete('/government/:id', async (req, res) => {
+// görevli silme id ile
+router.delete('/gorevli-sil/:id', async (req, res) => {
     try {
         const officer = await Officer.findByIdAndDelete(req.params.id)
 
@@ -157,7 +157,7 @@ router.delete('/inventory/:id', async (req, res) => {
     }
 });
 
-// Güncelleme işlemi için bir route
+// Güncelleme işlemi için bir route eklenme çıkarma durumu için
 router.patch('/inventory/:id', async (req, res) => {
     const updates = Object.keys(req.body);
     const allowedUpdates = ['urunIsmi', 'kategori', 'adeti'];
@@ -185,3 +185,9 @@ router.patch('/inventory/:id', async (req, res) => {
 
 
 module.exports = router;
+
+
+
+/*
+görevli istek yaptığı zaman yöneticinin istek listesine düşcek
+*/
