@@ -90,11 +90,11 @@ const ClothesForm = () => {
           <hr className='my-8' />
           <div className='md:flex-row flex-col flex items-center md:justify-between'>
             <p className='font-medium text-xl -tracking-2 md:mb-0 mb-4'>
-              {'Gıda Yardımı Hakkında Bilgiler'}
+              {'Giysi Yardımı Hakkında Bilgiler'}
             </p>
             <TextArea
-              title='Gıda Yardımı Hakkında Bilgiler'
-              altTitle='Gıda hakkında ek bilgiler ekleyebilirsiniz'
+              title='Giysi Yardımı Hakkında Bilgiler'
+              altTitle='Giysi hakkında ek bilgiler ekleyebilirsiniz'
               setState={setDescription}
             />
           </div>
