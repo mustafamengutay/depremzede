@@ -8,14 +8,8 @@ import search from '../assets/search.svg';
 import map from '../assets/map.svg';
 import info from '../assets/info.svg';
 
-import tent from '../assets/home.svg';
-import clothing from '../assets/clothing-dash.svg';
-import food from '../assets/utensils.svg';
-import pharmacy from '../assets/pharmacy.svg';
-
 import InformationLink from '../components/menu/InformationLink';
 import SideMenuLink from '../components/menu/SideMenuLink';
-import HelpLink from '../components/menu/HelpLink';
 import { Outlet } from 'react-router-dom';
 import { OfficerTitle } from '../components/officer/OfficerAvatar';
 import { setBackgroundColorBlack } from '../utils/BackgroundColorUtils';
@@ -106,6 +100,7 @@ export const OfficerMenu = () => {
             icon={check}
             title='Depremzede Bilgi Doğrulama'
             width=' 650px'
+            route={'/depremzede-onayla'}
           />
           <div className='flex flex-col gap-6'>
             <div className='flex  gap-6  flex-col md:flex-row'>

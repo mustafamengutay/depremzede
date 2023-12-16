@@ -22,6 +22,7 @@ import AccomodationForm from '../pages/forms/AccomodationForm';
 import ClothesForm from '../pages/forms/ClothesForm';
 import FoodAidForm from '../pages/forms/FoodAidForm';
 import VehicleForm from '../pages/forms/VehicleForm';
+import VictimConfirmation from '../pages/VictimConfirmation';
 
 const AppRouter = () => {
   return (
@@ -56,6 +57,7 @@ const AppRouter = () => {
       <Route path='/gorevliler' element={<OfficersList />} />
       <Route path='/gorevli-olustur' element={<CreateOfficerForm />} />
       <Route path='/gorevli-istekleri' element={<OfficerRequests />} />
+      <Route path='/depremzede-onayla' element={<VictimConfirmation />} />
     </Routes>
   );
 };
