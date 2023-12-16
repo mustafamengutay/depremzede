@@ -20,6 +20,11 @@ import { Outlet } from 'react-router-dom';
 import { OfficerTitle } from '../components/officer/OfficerAvatar';
 import { setBackgroundColorBlack } from '../utils/BackgroundColorUtils';
 
+import TentDialog from '../components/dialog/TentDialog';
+import ClothesDialog from '../components/dialog/ClothesDialog';
+import FoodAidDialog from '../components/dialog/FoodAidDialog';
+import MedicalDialog from '../components/dialog/MedicalDialog';
+
 const OfficerDashboard = () => {
   useEffect(() => {
     setBackgroundColorBlack();
@@ -104,18 +109,12 @@ export const OfficerMenu = () => {
           />
           <div className='flex flex-col gap-6'>
             <div className='flex  gap-6  flex-col md:flex-row'>
-              {/* flex-col md:flex-row */}
-              <HelpLink icon={tent} title='Çadır İsteği' width='313px' />
-              <HelpLink icon={clothing} title='Giysi İsteği' width='313px' />
+              <TentDialog />
+              <ClothesDialog />
             </div>
             <div className='flex gap-6  flex-col md:flex-row'>
-              {/* flex-col md:flex-row */}
-              <HelpLink icon={food} title='Gıda İsteği' width='313px' />
-              <HelpLink
-                icon={pharmacy}
-                title='Tıbbi Malzeme İsteği'
-                width='313px'
-              />
+              <FoodAidDialog />
+              <MedicalDialog />
             </div>
           </div>
         </div>
