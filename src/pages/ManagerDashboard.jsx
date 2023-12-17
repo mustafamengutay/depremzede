@@ -3,10 +3,12 @@ import { useEffect } from 'react';
 import HelpLink from '../components/menu/HelpLink';
 import OfficerSideMenu from '../components/officer/OfficerSideMenu';
 import SideMenuLink from '../components/menu/SideMenuLink';
+import InformationLink from '../components/menu/InformationLink';
 
 import search from '../assets/search.svg';
 import map from '../assets/map.svg';
 import info from '../assets/info.svg';
+import check from '../assets/check.svg';
 
 import assignOfficer from '../assets/assignOfficer.svg';
 import createOfficer from '../assets/createOfficer.svg';
@@ -43,34 +45,46 @@ const ManagerDashboard = () => {
 
 export const ManagerMenu = () => {
   return (
-    <div className='flex flex-col gap-6'>
-      <div className='flex gap-6'>
-        <HelpLink
-          icon={inventory}
-          title='Envanter'
-          width='313px'
-          route='/envanterler'
-        />
-        <HelpLink
-          icon={assignOfficer}
-          title='Görevli Listesi'
-          width='313px'
-          route='/gorevliler'
-        />
-      </div>
-      <div className='flex gap-6'>
-        <HelpLink
-          icon={createOfficer}
-          title='Görevli Oluştur / Sil'
-          width='313px'
-          route='/gorevli-olustur'
-        />
-        <HelpLink
-          icon={officerRequests}
-          title='Görevli İstekleri'
-          width='313px'
-          route='/gorevli-istekleri'
-        />
+    <div className='flex flex-col justify-center gap-16'>
+      <div className='flex justify-between items-center'>
+        <div className='flex flex-col gap-6  mx-4'>
+          <InformationLink
+            icon={check}
+            title='Envanter Ekle'
+            width=' 650px'
+            route={'/envanter-ekle'}
+          />
+          <div className='flex flex-col gap-6'>
+            <div className='flex  gap-6  flex-col md:flex-row'>
+              <HelpLink
+                icon={inventory}
+                title='Envanterler'
+                width='313px'
+                route='/envanterler'
+              />
+              <HelpLink
+                icon={assignOfficer}
+                title='Görevli Listesi'
+                width='313px'
+                route='/gorevliler'
+              />
+            </div>
+            <div className='flex gap-6  flex-col md:flex-row'>
+              <HelpLink
+                icon={createOfficer}
+                title='Görevli Oluştur / Sil'
+                width='313px'
+                route='/gorevli-olustur'
+              />
+              <HelpLink
+                icon={officerRequests}
+                title='Görevli İstekleri'
+                width='313px'
+                route='/gorevli-istekleri'
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
