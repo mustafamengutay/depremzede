@@ -115,13 +115,19 @@ router.delete("/gorevli-sil/:id", async (req, res) => {
 
 router.post("/inventory", async (req, res) => {
   try {
-    const { urunIsmi, kategori, adeti } = req.body;
+    const { inventoryName,
+      category,
+      type,
+      stock,
+      description, } = req.body;
 
     // Create a new inventory item
     const newInventoryItem = new Envanter({
-      urunIsmi,
-      kategori,
-      adeti,
+      inventoryName,
+      category,
+      type,
+      stock,
+      description,
     });
 
     // Save the item to the inventory
@@ -168,7 +174,7 @@ router.delete("/inventory/:id", async (req, res) => {
 // Güncelleme işlemi için bir route eklenme çıkarma durumu için
 router.patch("/inventory/:id", async (req, res) => {
   const updates = Object.keys(req.body);
-  const allowedUpdates = ["urunIsmi", "kategori", "adeti"];
+  const allowedUpdates = ["inventoryName", "category", "stock", "type", "description"];
   const isValidOperation = updates.every((update) =>
     allowedUpdates.includes(update)
   );

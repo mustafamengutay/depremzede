@@ -1,25 +1,31 @@
 const mongoose = require('mongoose')
 //const validator = require('validator')
 
-
-
 const EnvanterSchema = new mongoose.Schema({
     urunId: {
         type: Number
     },
-    urunIsmi: {
+    inventoryName: {
         type: String,
         trim: true
     },
-    kategori: {
+    category: {
         type: String,
         trim: true
     },
-    adeti: {
+    type: {
+        type: String,
+        trim: true
+    },
+    stock: {
         type: String,
         required: true,
         trim: true
-    }
+    },
+    description: {
+        type: String,
+        trim: true
+    },
 })
 
 EnvanterSchema.pre('save', async function (next) {
@@ -34,7 +40,7 @@ EnvanterSchema.pre('save', async function (next) {
             envanter.urunId = 1;
         }
     }
-    next() 
+    next()
 })
 
 
