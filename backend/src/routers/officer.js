@@ -1,6 +1,7 @@
 const express = require('express')
 const Officer = require('../models/officer')
 const User = require('../models/user')
+const User1 = require('../models/user1')
 const auth = require('../middleware/auth')
 const router = new express.Router()
 
@@ -84,6 +85,7 @@ router.patch('/officers/:id', async (req, res) => {
 
 /*-----------------------------------------JUST DO IT------------------------------------------------*/
 /*----------------------------------------NEVER GIVE UP-----------------------------------------------*/
+//bu officerlar için olan listeye düşer
 router.get("/users/enkaz-altinda", async (req, res) => {
     try {
       const users = await User.find({});
@@ -93,24 +95,93 @@ router.get("/users/enkaz-altinda", async (req, res) => {
     }
   });
 
+  // Approve a request from the enkaz-altinda list based on Uid
+  // her 2 database içinde güncelleme yapar Uid ye bağlı olarak
+router.patch('/officers/depremzede-onayla/:uid', async (req, res) => {
+  try {
+      // Birinci veritabanındaki modeli Uid'ye göre güncelleme
+      const user = await User.findOneAndUpdate({ Uid: req.params.uid }, { status: true }, { new: true });
+
+      // İkinci veritabanındaki modeli Uid'ye göre güncelleme
+      const user1 = await User1.findOneAndUpdate({ Uid: req.params.uid }, { status: true }, { new: true });
+
+      // Her iki veritabanında da kullanıcı bulunamazsa 404 hatası gönder
+      if (!user || !user1) {
+          return res.status(404).send();
+      }
+
+      // Başarılı durumda her iki kullanıcıyı da gönder
+      res.json({
+          user: user,
+          user1: user1
+      });
+
+  } catch (e) {
+      // Hata durumunda hata mesajını gönder
+      res.status(400).json({ error: e.message });
+  }
+});
+
+//şimdi yukarıdaki patch ile false yapıyoruz requesti eğer sayfadan silinecekse bu router ile silinecek
+// VE SADECE OFFICERLARIN LISTESINDEKILERI SILER
+router.delete('/officers/delete-request/:uid', async (req, res) => {
+  try {
+    const user = await User.findOneAndDelete({ Uid: req.params.uid });
+
+    if (!user) {
+      return res.status(404).send();
+    }
+
+    res.json({
+      user: user
+  });
+  } catch (e) {
+    res.status(500).send(e);
+  }
+});
+
+module.exports = router;
+
+
+
+
+
+
+
+
+/*
 // Approve a request from the enkaz-altinda list
 router.patch('/officers/depremzede-onayla/:id', async (req, res) => {
-    try {
-      const user = await User.findByIdAndUpdate(req.params.id, { status: true }, { new: true });
-  
-      if (!user) {
-        return res.status(404).send();
-      }
-  
-      res.send(user);
-    } catch (e) {
-      res.status(400).send(e);
-    }
-  });
+  try {
+    const user = await User.findByIdAndUpdate(req.params.id, { status: true }, { new: true });
+    
+    const user1 = await User1.findByIdAndUpdate(req.params.id, { status: true }, { new: true });
+
+    
+    //if (!user) {
+    //  return res.status(404).send();
+    //}
+    //res.send(user);
+    
+
+    if (!user || !user1) {
+      return res.status(404).send();
+  }
+    // Başarılı durumda her iki kullanıcıyı da gönder
+    res.json({
+        user: user,
+        user1: user1
+    });
+
+  } catch (e) {
+    res.status(400).send(e);
+  }
+});
+
 
   // Cancel a request
   // I wrote it just in case to cancel request you have to delete it, go to one router below
-router.patch('/officers/cancel-request/:id', async (req, res) => {
+  router.patch('/officers/cancel-request/:id', async (req, res) => {
     try {
       const user = await User.findByIdAndUpdate(req.params.id, { status: false }, { new: true });
   
@@ -124,32 +195,7 @@ router.patch('/officers/cancel-request/:id', async (req, res) => {
     }
   });
 
-
-//şimdi yukarıdaki patch ile false yapıyoruz requesti eğer sayfadan silinecekse bu router ile silinecek
-router.delete('/officers/delete-request/:id', async (req, res) => {
-  try {
-    const user = await User.findByIdAndDelete(req.params.id);
-
-    if (!user) {
-      return res.status(404).send();
-    }
-
-    res.send(user);
-  } catch (e) {
-    res.status(500).send(e);
-  }
-});
-module.exports = router;
-
-
-
-
-
-
-
-
-
-
+*/
 
 
 

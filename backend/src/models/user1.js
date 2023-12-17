@@ -3,7 +3,7 @@ const validator = require('validator');
 
 
 /*Enkaz altında olanlar için kurulmuş model */
-const userSchema = new mongoose.Schema({
+const userSchema1 = new mongoose.Schema({
     Uid: {
         type: Number
     },
@@ -48,13 +48,12 @@ const userSchema = new mongoose.Schema({
     }
 })
 
-
-userSchema.pre('save', async function (next) {
+userSchema1.pre('save', async function (next) {
 
     const user = this
 
     if (!user.Uid) {
-        const lastUser = await User.findOne({}, {}, { sort: { Uid: -1 } });
+        const lastUser = await User1.findOne({}, {}, { sort: { Uid: -1 } });
 
         if (lastUser) {
             user.Uid = lastUser.Uid + 1;
@@ -66,7 +65,6 @@ userSchema.pre('save', async function (next) {
     next() //i wrote it mean im done with here, end of the function.
 })
 
+const User1 = mongoose.model('Userlar-icin-User-Enkaz-altinda', userSchema1)
 
-const User = mongoose.model('User-Enkaz-altinda', userSchema)
-
-module.exports = User
+module.exports = User1

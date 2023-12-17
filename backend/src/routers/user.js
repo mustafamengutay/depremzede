@@ -1,5 +1,6 @@
 const express = require("express");
 const User = require("../models/user");
+const User1 = require("../models/user1");
 const User2 = require("../models/user2");
 const User3 = require("../models/user3");
 const User4 = require("../models/user4");
@@ -11,21 +12,29 @@ const router = new express.Router();
 
 
 // ben tanidiğim enkaz altinda
-router.post("/users/enkaz-altinda", async (req, res) => {
-  const user = new User(req.body);
-
+router.post("/users/enkaz-altindaa", async (req, res) => {
   try {
+    const user = new User(req.body);
     await user.save();
-    res.status(201).send(user);
+
+    const user1 = new User1(req.body);
+    await user1.save();
+
+    res.status(201).json({
+      user: user,
+      user1: user1
+    });
+
   } catch (e) {
-    res.status(400).send(e);
+    res.status(400).json({ error: e.message });
   }
 });
+
 // onaylanan istekleri user sayfasında göstermen için
 router.get('/users/approved-requests', async (req, res) => {
   try {
     const users = await User.find({ status: true }); // Approved requests
-
+  
     res.send(users);
   } catch (e) {
     res.status(500).send(e);
