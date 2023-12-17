@@ -5,14 +5,10 @@ const User3 = require("../models/user3");
 const User4 = require("../models/user4");
 const User5 = require("../models/user5");
 
-//-------------------------------------------------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------------------------------------------------
 
-const checkPostFrequency = require("../middleware/checkPostFrequency");
+//const checkPostFrequency = require("../middleware/checkPostFrequency");
 const router = new express.Router();
 
-//-------------------------------------------------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------------------------------------------------
 
 // ben tanidiğim enkaz altinda
 router.post("/users/enkaz-altinda", async (req, res) => {
@@ -25,13 +21,14 @@ router.post("/users/enkaz-altinda", async (req, res) => {
     res.status(400).send(e);
   }
 });
-
-router.get("/users/enkaz-altinda", async (req, res) => {
+// onaylanan istekleri user sayfasında göstermen için
+router.get('/users/approved-requests', async (req, res) => {
   try {
-    const users = await User.find({});
+    const users = await User.find({ status: true }); // Approved requests
+
     res.send(users);
   } catch (e) {
-    res.status(500).send();
+    res.status(500).send(e);
   }
 });
 

@@ -1,5 +1,6 @@
 const express = require('express')
 const Officer = require('../models/officer')
+const User = require('../models/user')
 const auth = require('../middleware/auth')
 const router = new express.Router()
 
@@ -81,6 +82,63 @@ router.patch('/officers/:id', async (req, res) => {
 })
 
 
+/*-----------------------------------------JUST DO IT------------------------------------------------*/
+/*----------------------------------------NEVER GIVE UP-----------------------------------------------*/
+router.get("/users/enkaz-altinda", async (req, res) => {
+    try {
+      const users = await User.find({});
+      res.send(users);
+    } catch (e) {
+      res.status(500).send();
+    }
+  });
+
+// Approve a request from the enkaz-altinda list
+router.patch('/officers/depremzede-onayla/:id', async (req, res) => {
+    try {
+      const user = await User.findByIdAndUpdate(req.params.id, { status: true }, { new: true });
+  
+      if (!user) {
+        return res.status(404).send();
+      }
+  
+      res.send(user);
+    } catch (e) {
+      res.status(400).send(e);
+    }
+  });
+
+  // Cancel a request
+  // I wrote it just in case to cancel request you have to delete it, go to one router below
+router.patch('/officers/cancel-request/:id', async (req, res) => {
+    try {
+      const user = await User.findByIdAndUpdate(req.params.id, { status: false }, { new: true });
+  
+      if (!user) {
+        return res.status(404).send();
+      }
+  
+      res.send(user);
+    } catch (e) {
+      res.status(400).send(e);
+    }
+  });
+
+
+//şimdi yukarıdaki patch ile false yapıyoruz requesti eğer sayfadan silinecekse bu router ile silinecek
+router.delete('/officers/delete-request/:id', async (req, res) => {
+  try {
+    const user = await User.findByIdAndDelete(req.params.id);
+
+    if (!user) {
+      return res.status(404).send();
+    }
+
+    res.send(user);
+  } catch (e) {
+    res.status(500).send(e);
+  }
+});
 module.exports = router;
 
 
