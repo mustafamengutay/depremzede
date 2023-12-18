@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 import { Dialog, Flex } from '@radix-ui/themes';
 import * as Dialogs from '@radix-ui/react-dialog';
@@ -9,8 +9,24 @@ import HelpLink from '../menu/HelpLink';
 import Input from '../form/elements/Input';
 import SubmitButton from '../form/elements/SubmitButton';
 
+import FormContext from '../../context/form/FormContext';
+
 const FoodAidDialog = () => {
+  const { sendPost } = useContext(FormContext);
+
   const [stock, setStock] = useState('');
+  const [location, setLocation] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const request = {
+      adetSayisi: stock,
+      istenilenBolge: location,
+    };
+
+    sendPost(request, '/gorevli-gida-istegi');
+  };
 
   const overlay = {
     backgroundColor: 'rgba(0, 0, 0, .8)',
@@ -30,11 +46,16 @@ const FoodAidDialog = () => {
       <Dialog.Content style={{ maxWidth: 450 }}>
         <Dialog.Title>Gıda İsteği</Dialog.Title>
         <Dialog.Description size='2' mb='4'>
-          Adet sayısını giriniz.
+          Adet sayısını ve bölgeyi giriniz.
         </Dialog.Description>
-        <form>
+        <form onSubmit={handleSubmit}>
           <Flex direction='column' gap='3'>
             <Input title='Adet' width='400px' setState={setStock} />
+            <Input
+              title='İstenilen Bölge'
+              width='400px'
+              setState={setLocation}
+            />
           </Flex>
           <Dialog.Close>
             <div className='mt-4 flex justify-end'>

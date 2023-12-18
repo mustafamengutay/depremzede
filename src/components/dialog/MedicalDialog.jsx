@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 import { Dialog, Flex } from '@radix-ui/themes';
 import * as Dialogs from '@radix-ui/react-dialog';
@@ -8,10 +8,26 @@ import medical from '../../assets/pharmacy.svg';
 import HelpLink from '../menu/HelpLink';
 import Input from '../form/elements/Input';
 import SubmitButton from '../form/elements/SubmitButton';
+import FormContext from '../../context/form/FormContext';
 
 const MedicalDialog = () => {
-  const [type, setType] = useState('');
+  const { sendPost } = useContext(FormContext);
+
+  const [name, setName] = useState('');
   const [stock, setStock] = useState('');
+  const [location, setLocation] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const request = {
+      urunismi: name,
+      adetSayisi: stock,
+      istenilenBolge: location,
+    };
+
+    sendPost(request, '/gorevli-tibbiMalzeme-istegi');
+  };
 
   const overlay = {
     backgroundColor: 'rgba(0, 0, 0, .8)',
@@ -33,10 +49,15 @@ const MedicalDialog = () => {
         <Dialog.Description size='2' mb='4'>
           İlaç Türünü ve Adet sayısını giriniz.
         </Dialog.Description>
-        <form>
+        <form onSubmit={handleSubmit}>
           <Flex direction='column' gap='3'>
-            <Input title='İlaç Türü' width='400px' setState={setType} />
+            <Input title='İlaç Adı' width='400px' setState={setName} />
             <Input title='Adet' width='400px' setState={setStock} />
+            <Input
+              title='İstenilen Bölge'
+              width='400px'
+              setState={setLocation}
+            />
           </Flex>
           <Dialog.Close>
             <div className='mt-4 flex justify-end'>
