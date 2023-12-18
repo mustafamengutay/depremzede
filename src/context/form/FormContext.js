@@ -25,10 +25,16 @@ export const FormProvider = ({ children }) => {
      * @param {string} url An API path where a list is fetched for listing operation.
      * @param {function} setState A state function to update a state that stores the incoming list.
      */
-    const getList = async (url, setState) => {
-        const response = await fetch(url);
-        const list = await response.json();
-        setState(list);
+    const getList = (url) => {
+        return new Promise(async (resolve, reject) => {
+            try {
+                const response = await fetch(url);
+                const list = await response.json();
+                resolve(list);
+            } catch (error) {
+                reject(error);
+            }
+        });
     };
 
     return (

@@ -17,8 +17,12 @@ const AccommodationList = () => {
     setBackgroundColorWhite();
     resetLocation();
 
-    getList('/users/konaklama-yardimi', setAccommodationList);
-  }, []);
+    const fetchList = async () => {
+      const list = await getList('/users/konaklama-yardimi');
+      setAccommodationList(list);
+    };
+    fetchList();
+  }, [getList]);
 
   const descriptionText =
     'Aşağıdaki listeden konaklama sağlayan vatandaşlarımızın adresini görebilir ve ilan sahibiyle iletişime geçebilirsiniz.';

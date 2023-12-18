@@ -14,8 +14,12 @@ const UnderDebrisList = () => {
     setBackgroundColorWhite();
     resetLocation();
 
-    getList('/users/enkaz-altinda', setUnderDebrisList);
-  }, []);
+    const fetchList = async () => {
+      const list = await getList('/users/approved-requests');
+      setUnderDebrisList(list);
+    };
+    fetchList();
+  }, [getList]);
 
   const descriptionText =
     'Aşağıdaki listeden enkaz altında olan vatandaşlarımızın adresini görebilir ve ilan sahibiyle iletişime geçebilirsiniz.';

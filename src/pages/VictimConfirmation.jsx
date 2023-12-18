@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 
 import { ScrollArea, Table } from '@radix-ui/themes';
 import ReactPaginate from 'react-paginate';
@@ -8,9 +8,13 @@ import { resetLocation } from '../utils/ScrollUtils';
 
 import FormHeader from '../components/form/FormHeader';
 
-import posts from '../data/posts.json';
+import FormContext from '../context/form/FormContext';
 
 const VictimConfirmation = () => {
+  const { getList } = useContext(FormContext);
+
+  const [posts, setPosts] = useState([]);
+
   const [page, setPage] = useState(0);
   const [filterData, setFilterData] = useState();
   const records = 8;
@@ -19,12 +23,17 @@ const VictimConfirmation = () => {
     setBackgroundColorWhite();
     resetLocation();
 
-    setFilterData(
-      posts.filter((item, index) => {
-        return (index >= page * records) & (index < (page + 1) * records);
-      })
-    );
-  }, [page, posts]);
+    const fetchList = async () => {
+      const posts = await getList('/users/enkaz-altinda');
+      setPosts(posts);
+      setFilterData(
+        posts.filter((item, index) => {
+          return (index >= page * records) & (index < (page + 1) * records);
+        })
+      );
+    };
+    fetchList();
+  }, [page, getList]);
 
   const descriptionText = (
     <p>
@@ -34,6 +43,22 @@ const VictimConfirmation = () => {
       görünecektir.
     </p>
   );
+
+  const handleConfirm = (e, id) => {
+    e.preventDefault();
+
+    fetch(`/officers/depremzede-onayla/${id}`, {
+      method: 'PATCH',
+    });
+  };
+
+  const handleCancel = (e, id) => {
+    e.preventDefault();
+
+    fetch(`/officers/delete-request/${id}`, {
+      method: 'DELETE',
+    });
+  };
 
   return (
     <div className='container w-screen h-screen -tracking-4'>
@@ -52,9 +77,9 @@ const VictimConfirmation = () => {
                 <Table.ColumnHeaderCell justify={'center'}>
                   Adres
                 </Table.ColumnHeaderCell>
-                <Table.ColumnHeaderCell justify={'center'}>
+                {/* <Table.ColumnHeaderCell justify={'center'}>
                   Şehir
-                </Table.ColumnHeaderCell>
+                </Table.ColumnHeaderCell> */}
                 <Table.ColumnHeaderCell justify={'center'}>
                   E-posta
                 </Table.ColumnHeaderCell>
@@ -70,21 +95,30 @@ const VictimConfirmation = () => {
             <Table.Body>
               {filterData &&
                 filterData.map((post) => {
+                  const postId = post._id;
                   return (
-                    <Table.Row align={'center'}>
+                    <Table.Row align={'center'} key={postId}>
                       <Table.RowHeaderCell justify={'center'}>
                         {post.name}
                       </Table.RowHeaderCell>
                       <Table.Cell justify={'center'}>{post.address}</Table.Cell>
-                      <Table.Cell justify={'center'}>{post.city}</Table.Cell>
+                      {/* <Table.Cell justify={'center'}>{post.city}</Table.Cell> */}
                       <Table.Cell justify={'center'}>{post.email}</Table.Cell>
-                      <Table.Cell justify={'center'}>{post.phoneNo}</Table.Cell>
+                      <Table.Cell justify={'center'}>
+                        {post.phoneNumber}
+                      </Table.Cell>
                       <Table.Cell align='center'>
                         <div className='flex justify-center gap-2'>
-                          <button className='flex flex-col items-center justify-center h-8 w-20  py-2 px-4 bg-grey-1 hover:bg-black transition text-white rounded-lg'>
+                          <button
+                            className='flex flex-col items-center justify-center h-8 w-20  py-2 px-4 bg-grey-1 hover:bg-black transition text-white rounded-lg'
+                            onClick={(e) => handleConfirm(e, postId)}
+                          >
                             Doğrula
                           </button>
-                          <button className='flex flex-col items-center justify-center h-8 w-20  py-2 px-4 border border-grey-1 text-black hover:bg-black transition hover:text-white rounded-lg'>
+                          <button
+                            className='flex flex-col items-center justify-center h-8 w-20  py-2 px-4 border border-grey-1 text-black hover:bg-black transition hover:text-white rounded-lg'
+                            onClick={(e) => handleCancel(e, postId)}
+                          >
                             İptal et
                           </button>
                         </div>
