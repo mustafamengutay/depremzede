@@ -12,7 +12,7 @@ const router = new express.Router();
 
 
 // ben tanidiğim enkaz altinda
-router.post("/users/enkaz-altindaa", async (req, res) => {
+router.post("/users/enkaz-altinda", async (req, res) => {
   try {
     const user = new User(req.body);
     await user.save();
@@ -34,7 +34,7 @@ router.post("/users/enkaz-altindaa", async (req, res) => {
 router.get('/users/approved-requests', async (req, res) => {
   try {
     const users = await User.find({ status: true }); // Approved requests
-  
+
     res.send(users);
   } catch (e) {
     res.status(500).send(e);
