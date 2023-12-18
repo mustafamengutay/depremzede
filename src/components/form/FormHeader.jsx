@@ -8,15 +8,17 @@ const FormHeader = ({ title, description }) => {
         <h1 className='text-xl font-medium'>{title}</h1>
         <CloseButton />
       </div>
-      <p className='text-base text-grey-2 font-light mb-10'>{description}</p>
+      <div className='text-base text-grey-2 font-light mb-10'>
+        {description}
+      </div>
       <hr />
     </div>
   );
 };
 
 FormHeader.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string,
+  title: PropTypes.node.isRequired,
+  description: PropTypes.node,
 };
 
 FormHeader.defaultProps = {
