@@ -113,21 +113,18 @@ router.patch('/officers/depremzede-onayla/:id', async (req, res) => {
 });
 
 
-//şimdi yukarıdaki patch ile false yapıyoruz requesti eğer sayfadan silinecekse bu router ile silinecek
-// VE SADECE OFFICERLARIN LISTESINDEKILERI SILER
-router.delete('/officers/delete-request/:uid', async (req, res) => {
+//iptal butonu için
+router.delete('/officers/cancel-request/:id', async (req, res) => {
   try {
-    const user = await User.findOneAndDelete({ Uid: req.params.uid });
+    const user = await User.findByIdAndDelete(req.params.id);
 
     if (!user) {
-      return res.status(404).send();
+      return res.status(404).json({ error: "Kullanıcı bulunamadı." });
     }
 
-    res.json({
-      user: user
-  });
+    res.json({ user, message: "Başvuru iptal edildi." });
   } catch (e) {
-    res.status(500).send(e);
+    res.status(500).json({ error: e.message });
   }
 });
 
