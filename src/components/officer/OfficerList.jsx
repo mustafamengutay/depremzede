@@ -19,11 +19,11 @@ const OfficerRequestList = ({ posts }) => {
     );
   }, [page, posts]);
 
-  const filteredInventory = filterData.filter((inventory) => {
+  const filteredInventory = filterData.filter((officer) => {
     if (searchBarValue === '') {
-      return inventory;
+      return officer;
     } else {
-      const info = inventory.kategori;
+      const info = officer.name;
       return info.toLowerCase().includes(searchBarValue);
     }
   });
