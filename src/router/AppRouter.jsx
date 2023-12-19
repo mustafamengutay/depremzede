@@ -10,8 +10,8 @@ import OfficerDashboard, {
   OfficerMenu,
   OfficerInformation,
 } from '../pages/OfficerDashboard';
-import OfficersList from '../pages/OfficersList';
-import InventoriesList from '../pages/InventoriesList';
+import Officers from '../pages/Officers';
+import Inventory from '../pages/Inventory';
 import CreateOfficerForm from '../pages/forms/CreateOfficerForm';
 import OfficerRequests from '../pages/OfficerRequests';
 import NotFound from '../pages/NotFound';
@@ -23,6 +23,7 @@ import ClothesForm from '../pages/forms/ClothesForm';
 import FoodAidForm from '../pages/forms/FoodAidForm';
 import VehicleForm from '../pages/forms/VehicleForm';
 import VictimConfirmation from '../pages/VictimConfirmation';
+import AddInventoryForm from '../pages/forms/AddInventoryForm';
 
 const AppRouter = () => {
   return (
@@ -53,11 +54,12 @@ const AppRouter = () => {
 
       <Route path='/*' element={<NotFound />} />
 
-      <Route path='/envanterler' element={<InventoriesList />} />
-      <Route path='/gorevliler' element={<OfficersList />} />
+      <Route path='/envanterler' element={<Inventory />} />
+      <Route path='/gorevliler' element={<Officers />} />
       <Route path='/gorevli-olustur' element={<CreateOfficerForm />} />
       <Route path='/gorevli-istekleri' element={<OfficerRequests />} />
       <Route path='/depremzede-onayla' element={<VictimConfirmation />} />
+      <Route path='/envanter-ekle' element={<AddInventoryForm />} />
     </Routes>
   );
 };
