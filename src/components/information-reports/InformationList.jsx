@@ -29,9 +29,6 @@ const InformationList = ({ posts }) => {
                 Adres
               </Table.ColumnHeaderCell>
               <Table.ColumnHeaderCell justify={'center'}>
-                Şehir
-              </Table.ColumnHeaderCell>
-              <Table.ColumnHeaderCell justify={'center'}>
                 E-posta
               </Table.ColumnHeaderCell>
               <Table.ColumnHeaderCell justify={'center'}>
@@ -52,7 +49,6 @@ const InformationList = ({ posts }) => {
                       {post.name + ' ' + post.surname}
                     </Table.RowHeaderCell>
                     <Table.Cell justify={'center'}>{post.address}</Table.Cell>
-                    <Table.Cell justify={'center'}>{post.city}</Table.Cell>
                     <Table.Cell justify={'center'}>{post.email}</Table.Cell>
                     <Table.Cell justify={'center'}>
                       {post.phoneNumber}
