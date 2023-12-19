@@ -38,16 +38,18 @@ const CreateOfficerForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const post = {
+    const newOfficer = {
       name,
       surname,
       phoneNumber,
+      email: `${name}${surname}@gmail.com`,
       dataOfBirth: dob,
       comeFromCity: cameFrom,
       resposibleFromCity: region,
+      authorized: false,
     };
 
-    sendPost(post, '/government');
+    sendPost(newOfficer, '/gorevli-olustur');
 
     navigate('/form-gonderildi');
   };
