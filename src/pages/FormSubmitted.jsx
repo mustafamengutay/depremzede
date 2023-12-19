@@ -13,7 +13,7 @@ const FormSubmitted = () => {
     resetLocation();
 
     setTimeout(() => {
-      navigate('/');
+      navigate(-2);
     }, 5000);
   }, []);
 
