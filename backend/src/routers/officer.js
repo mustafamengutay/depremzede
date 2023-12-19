@@ -1,7 +1,7 @@
 const express = require('express')
 const Officer = require('../models/officer')
 const User = require('../models/user')
-const User1 = require('../models/user1')
+//const User1 = require('../models/user1')
 const auth = require('../middleware/auth')
 const router = new express.Router()
 
@@ -88,39 +88,30 @@ router.patch('/officers/:id', async (req, res) => {
 //bu officerlar için olan listeye düşer
 router.get("/users/enkaz-altinda", async (req, res) => {
     try {
-      const users = await User.find({});
+      const users = await User.find({status: false});
       res.send(users);
     } catch (e) {
       res.status(500).send();
     }
   });
 
-  // Approve a request from the enkaz-altinda list based on Uid
-  // her 2 database içinde güncelleme yapar Uid ye bağlı olarak
-router.patch('/officers/depremzede-onayla/:uid', async (req, res) => {
+// officerRouter.js
+
+router.patch('/officers/depremzede-onayla/:id', async (req, res) => {
   try {
-      // Birinci veritabanındaki modeli Uid'ye göre güncelleme
-      const user = await User.findOneAndUpdate({ Uid: req.params.uid }, { status: true }, { new: true });
+    // Kullanıcıyı id'ye göre bul ve onayla
+    const user = await User.findByIdAndUpdate(req.params.id, { status: true }, { new: true });
 
-      // İkinci veritabanındaki modeli Uid'ye göre güncelleme
-      const user1 = await User1.findOneAndUpdate({ Uid: req.params.uid }, { status: true }, { new: true });
+    if (!user) {
+      return res.status(404).json({ error: "Kullanici bulunamadı." });
+    }
 
-      // Her iki veritabanında da kullanıcı bulunamazsa 404 hatası gönder
-      if (!user || !user1) {
-          return res.status(404).send();
-      }
-
-      // Başarılı durumda her iki kullanıcıyı da gönder
-      res.json({
-          user: user,
-          user1: user1
-      });
-
+    res.send(user);
   } catch (e) {
-      // Hata durumunda hata mesajını gönder
-      res.status(400).json({ error: e.message });
+    res.status(400).json({ error: e.message });
   }
 });
+
 
 //şimdi yukarıdaki patch ile false yapıyoruz requesti eğer sayfadan silinecekse bu router ile silinecek
 // VE SADECE OFFICERLARIN LISTESINDEKILERI SILER
