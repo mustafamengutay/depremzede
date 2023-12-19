@@ -48,7 +48,7 @@ const officerSchema = new mongoose.Schema({
         }
     },
     dataOfBirth: {
-        type: Number,
+        type: String,
         minlength: 4,
         trim: true, 
     },
