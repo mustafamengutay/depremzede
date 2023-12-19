@@ -19,19 +19,20 @@ const VictimConfirmation = () => {
   const [filterData, setFilterData] = useState();
   const records = 8;
 
+  const fetchList = async () => {
+    const posts = await getList('/users/enkaz-altinda');
+    setPosts(posts);
+    setFilterData(
+      posts.filter((item, index) => {
+        return (index >= page * records) & (index < (page + 1) * records);
+      })
+    );
+  };
+
   useEffect(() => {
     setBackgroundColorWhite();
     resetLocation();
 
-    const fetchList = async () => {
-      const posts = await getList('/users/enkaz-altinda');
-      setPosts(posts);
-      setFilterData(
-        posts.filter((item, index) => {
-          return (index >= page * records) & (index < (page + 1) * records);
-        })
-      );
-    };
     fetchList();
   }, [page, getList]);
 
@@ -49,15 +50,15 @@ const VictimConfirmation = () => {
 
     fetch(`/officers/depremzede-onayla/${id}`, {
       method: 'PATCH',
-    });
+    }).then(() => fetchList());
   };
 
   const handleCancel = (e, id) => {
     e.preventDefault();
 
-    fetch(`/officers/delete-request/${id}`, {
+    fetch(`/officers/cancel-request/${id}`, {
       method: 'DELETE',
-    });
+    }).then(() => fetchList());
   };
 
   return (
@@ -95,9 +96,8 @@ const VictimConfirmation = () => {
             <Table.Body>
               {filterData &&
                 filterData.map((post) => {
-                  const postId = post._id;
                   return (
-                    <Table.Row align={'center'} key={postId}>
+                    <Table.Row align={'center'} key={post._id}>
                       <Table.RowHeaderCell justify={'center'}>
                         {post.name}
                       </Table.RowHeaderCell>
@@ -111,13 +111,13 @@ const VictimConfirmation = () => {
                         <div className='flex justify-center gap-2'>
                           <button
                             className='flex flex-col items-center justify-center h-8 w-20  py-2 px-4 bg-grey-1 hover:bg-black transition text-white rounded-lg'
-                            onClick={(e) => handleConfirm(e, postId)}
+                            onClick={(e) => handleConfirm(e, post._id)}
                           >
                             Doğrula
                           </button>
                           <button
                             className='flex flex-col items-center justify-center h-8 w-20  py-2 px-4 border border-grey-1 text-black hover:bg-black transition hover:text-white rounded-lg'
-                            onClick={(e) => handleCancel(e, postId)}
+                            onClick={(e) => handleCancel(e, post._id)}
                           >
                             İptal et
                           </button>
