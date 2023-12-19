@@ -69,9 +69,12 @@ router.patch("/gorevliler/:id", async (req, res) => {
   const allowedUpdates = [
     "name",
     "surname",
+    "dataOfBirth",
     "phoneNumber",
     "email",
-    "authorized",
+    "comeFromCity",
+    "resposibleFromCity",
+    "authorized"
   ];
   const isValidOperation = updates.every((update) => {
     return allowedUpdates.includes(update);
