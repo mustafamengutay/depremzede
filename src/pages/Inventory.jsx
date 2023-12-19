@@ -8,7 +8,7 @@ import Select from '../components/form/elements/Select';
 import FormContext from '../context/form/FormContext';
 import InventoryList from '../components/inventory/InventoryList';
 
-const OfficerRequests = () => {
+const Inventory = () => {
   const [inventoryList, setInventoryList] = useState([]);
 
   const { getList } = useContext(FormContext);
@@ -42,4 +42,4 @@ const OfficerRequests = () => {
   );
 };
 
-export default OfficerRequests;
+export default Inventory;
