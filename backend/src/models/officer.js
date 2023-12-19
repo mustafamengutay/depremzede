@@ -67,7 +67,7 @@ const officerSchema = new mongoose.Schema({
     tokens: [{
         token: {
             type: String,
-            required: true
+            //required: true
         }
     }]
 }, {
