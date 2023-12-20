@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 const Headline = () => {
   return (
-    <div className='-tracking-4 flex flex-col items-start gap-4 mt-[122px]'>
+    <div className='-tracking-4  flex-col items-start gap-4 mt-[122px] md:flex hidden'>
       <p className='tracking-widest text-xs text-white font-medium'>
         2023 DEPREMZEDE
       </p>
