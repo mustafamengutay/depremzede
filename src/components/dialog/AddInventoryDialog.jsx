@@ -45,9 +45,7 @@ const AddInventoryDialog = () => {
       adetSayisi: stock,
     };
 
-    console.log(request);
-
-    // sendPost(request, '/gorevli-tibbiMalzeme-istegi');
+    sendPost(request, '/inventory');
   };
 
   const overlay = {
