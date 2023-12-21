@@ -8,6 +8,11 @@ const gorevliIstegiSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
+  fiziksel_İd: {
+    type: String,
+    required: true,
+    trim: true,
+  },
   urunismi: {
     type: String,
     required: true,

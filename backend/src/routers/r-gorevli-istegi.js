@@ -19,6 +19,25 @@ router.get("/gorevli-isteklerini-listele", async (req, res) => {
 
 //------------------------------------------------------------------------------
 
+// Belirli bir GOREVLI ISTEĞINI SIL (DELETE)
+router.delete("/gorevli-istegi-sil/:id", async (req, res) => {
+  try {
+    const _id = req.params.id;
+
+    const gorevliIstegi = await GorevliIstegiModeli.findOneAndDelete({ _id });
+
+    if (!gorevliIstegi) {
+      return res.status(404).send({ message: "İstek bulunamadı." });
+    }
+
+    res.send({ message: "İstek başarıyla silindi.", deleted: gorevliIstegi });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+//------------------------------------------------------------------------------
+
 // TUM GOREVLI ISTEKLERINI SIL (DELETE)
 router.delete("/gorevli-isteklerini-sil", async (req, res) => {
   try {
@@ -38,6 +57,7 @@ router.post("/gorevli-cadir-istegi", async (req, res) => {
     const { adetSayisi, istenilenBolge } = req.body;
 
     const sabitDegerler = {
+      fiziksel_İd: "100",
       gorevliAdi: "ISIM SOYISIM",
       urunismi: "ÇADIR",
       kategori: "BARINMA",
@@ -65,6 +85,7 @@ router.post("/gorevli-gida-istegi", async (req, res) => {
     const { adetSayisi, istenilenBolge } = req.body;
 
     const sabitDegerler = {
+      fiziksel_İd: "200",
       gorevliAdi: "ISIM SOYISIM",
       urunismi: "GIDA",
       kategori: "BESLENME",
@@ -92,6 +113,7 @@ router.post("/gorevli-giysi-istegi", async (req, res) => {
     const { adetSayisi, istenilenBolge } = req.body;
 
     const sabitDegerler = {
+      fiziksel_İd: "300",
       gorevliAdi: "ISIM SOYISIM",
       urunismi: "GİYSİ",
       kategori: "KIYAFET",
@@ -116,7 +138,17 @@ router.post("/gorevli-giysi-istegi", async (req, res) => {
 // GOREVLI TIBBI-MALZEME ISTEGI (POST)
 router.post("/gorevli-tibbiMalzeme-istegi", async (req, res) => {
   try {
-    const { urunismi, adetSayisi, istenilenBolge } = req.body;
+    const { fiziksel_İd, adetSayisi, istenilenBolge } = req.body;
+
+    let urunismi;
+    // 'fiziksel_id' değerine göre 'urunismi' ayarlama
+    if (fiziksel_İd === "401") {
+      urunismi = "İlk-Yardım-Kiti";
+    } else if (fiziksel_İd === "402") {
+      urunismi = "Tansiyon İlacı";
+    } else {
+      return res.status(400).send({ error: "Geçersiz fiziksel id" });
+    }
 
     const sabitDegerler = {
       gorevliAdi: "ISIM SOYISIM",
@@ -126,6 +158,7 @@ router.post("/gorevli-tibbiMalzeme-istegi", async (req, res) => {
     const gorevliIstegi = new GorevliIstegiModeli({
       ...sabitDegerler,
       urunismi,
+      fiziksel_İd,
       adetSayisi,
       istenilenBolge,
     });
