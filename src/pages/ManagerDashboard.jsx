@@ -3,12 +3,10 @@ import { useEffect } from 'react';
 import HelpLink from '../components/menu/HelpLink';
 import OfficerSideMenu from '../components/officer/OfficerSideMenu';
 import SideMenuLink from '../components/menu/SideMenuLink';
-import InformationLink from '../components/menu/InformationLink';
 
 import search from '../assets/search.svg';
 import map from '../assets/map.svg';
 import info from '../assets/info.svg';
-import check from '../assets/check.svg';
 
 import assignOfficer from '../assets/assignOfficer.svg';
 import createOfficer from '../assets/createOfficer.svg';
@@ -17,6 +15,7 @@ import officer_profil from '../assets/officer-profile.png';
 import officerRequests from '../assets/officerRequests.svg';
 import { setBackgroundColorBlack } from '../utils/BackgroundColorUtils';
 import { Outlet } from 'react-router-dom';
+import AddInventoryDialog from '../components/dialog/AddInventoryDialog';
 
 const ManagerDashboard = () => {
   useEffect(() => {
@@ -48,12 +47,7 @@ export const ManagerMenu = () => {
     <div className='flex flex-col justify-center gap-16'>
       <div className='flex justify-between items-center'>
         <div className='flex flex-col gap-6  mx-4'>
-          <InformationLink
-            icon={check}
-            title='Envanter Ekle'
-            width=' 650px'
-            route={'/envanter-ekle'}
-          />
+          <AddInventoryDialog />
           <div className='flex flex-col gap-6'>
             <div className='flex  gap-6  flex-col md:flex-row'>
               <HelpLink
