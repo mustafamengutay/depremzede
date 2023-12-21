@@ -8,16 +8,38 @@ export const FormProvider = ({ children }) => {
     /**
      * 
      * @param {object} post An object that stores information.
-     * @summary It is used to send information to the database.
+     * @returns An object includes the response data and a successful status.
+     * @summary It is used to send information to a database.
      */
     const sendPost = async (post, url) => {
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(post),
-        });
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(post),
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            return {
+                success: true,
+                data,
+            };
+
+        } catch (error) {
+            console.error('Error during POST request:', error);
+
+            return {
+                success: false,
+                error: error.message,
+            };
+        }
     };
 
     /**
