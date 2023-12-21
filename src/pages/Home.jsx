@@ -31,15 +31,15 @@ const Home = () => {
   }, []);
 
   return (
-    <div className='wrapper'>
-      <div className='lg:flex lg:justify-center'>
+    <div className='wrapper min-w-[578px]'>
+      <div className='flex justify-center'>
         <div className='mx-35 lg:max-w-[1160px]'>
           <Header />
-          <main className='mt-20 flex justify-between lg:w-[1160px]'>
+          <main className='mt-20 flex justify-between lg:w-[1160px] '>
             <Headline />
             <div className='flex'>
               <div className='flex gap-11 items-start'>
-                <menu className='w-[533px] flex flex-col gap-6 items-center justify-center'>
+                <menu className='w-[533px] flex flex-col gap-6 items-center justify-center '>
                   <UnderDebrisLink route='/enkaz-altinda' />
                   <InformationLink
                     icon={donation}
@@ -79,7 +79,7 @@ const Home = () => {
                     route='/konaklama-saglayanlar'
                   />
                 </menu>
-                <div className='h-full mr-4 flex flex-col justify-between items-center'>
+                <div className='h-full mr-4 md:flex hidden flex-col justify-between items-center'>
                   <div className='mt-14 flex flex-col gap-8'>
                     <SideMenuLink icon={search} title='Arama' />
                     <SideMenuLink icon={map} title='Harita' />

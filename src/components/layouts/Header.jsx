@@ -4,7 +4,7 @@ import { scrollDownByPercentage } from "../../utils/ScrollUtils";
 
 const Header = () => {
   return (
-    <header className='text-white md:min-w-[1000px] min-w-[532px] font-light -tracking-4 flex items-center justify-between mt-10'>
+    <header className='text-white md:min-w-[1000px]  font-light -tracking-4 flex items-center justify-between mt-10'>
       <p className='font-semibold text-7 w-max'>Depremzede</p>
       <div className='flex items-center gap-35 text-base'>
         <nav>

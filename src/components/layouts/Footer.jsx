@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <footer className='text-base bg-white md:min-w-[1140px] min-w-[880px] text-black md:h-60 h-96 mt-60 flex  items-center justify-center '>
-      <div className='flex flex-col md:flex-row md:items-end items-center justify-between md:w-[1160px] '>
+    <footer className='text-base bg-white md:min-w-[1140px] min-w-[578px] text-black md:h-60 h-96 mt-60 flex  items-center justify-center'>
+      <div className='flex flex-col md:flex-row md:items-end items-center justify-between md:w-[1160px]'>
         <div className='flex flex-col items-start mb-8'>
           <div className='flex flex-col gap-6 mb-8'>
             <h2 className='font-bold text-3xl'>Depremzede</h2>
