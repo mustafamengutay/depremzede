@@ -1,3 +1,4 @@
+/*
 const mongoose = require('mongoose')
 //const validator = require('validator')
 
@@ -47,3 +48,4 @@ EnvanterSchema.pre('save', async function (next) {
 const Envanter = mongoose.model('Envanter', EnvanterSchema)
 
 module.exports = Envanter
+*/

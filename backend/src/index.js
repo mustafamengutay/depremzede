@@ -6,7 +6,9 @@ require("./db/mongoose");
 const userRouter = require("./routers/user");
 const officerRouter = require("./routers/officer");
 const governmentRouter = require("./routers/government");
+//
 const gorevliIstekleriRouter = require("./routers/r-gorevli-istegi");
+const yeniEnvanterRouter = require("./routers/r-envanter");
 
 //------------------------------------------------------------------------------
 
@@ -22,8 +24,10 @@ app.use(express.json());
 app.use(userRouter);
 app.use(officerRouter);
 app.use(governmentRouter);
-app.use(gorevliIstekleriRouter);
 
+//
+app.use(gorevliIstekleriRouter);
+app.use(yeniEnvanterRouter);
 //------------------------------------------------------------------------------
 app.listen(port, () => {
   console.log("Server is up on port " + port);
