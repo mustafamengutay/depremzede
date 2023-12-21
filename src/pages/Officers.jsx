@@ -3,7 +3,6 @@ import FormHeader from '../components/form/FormHeader';
 import { setBackgroundColorWhite } from '../utils/BackgroundColorUtils';
 import { resetLocation } from '../utils/ScrollUtils';
 import SearchBar from '../components/form/SearchBar';
-import Select from '../components/form/elements/Select';
 
 import FormContext from '../context/form/FormContext';
 import OfficerList from '../components/officer/OfficerList';
@@ -33,7 +32,6 @@ const Officers = () => {
       <FormHeader title='Görevliler' description={descriptionText} />
       <div className='flex justify-between items-center'>
         <SearchBar title='ID veya isim giriniz...' width='300px' />
-        <Select />
       </div>
       <div className='mt-6 overflow-x-auto'>
         <OfficerList posts={officers} />
