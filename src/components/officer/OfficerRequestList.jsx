@@ -4,12 +4,12 @@ import ReactPaginate from 'react-paginate';
 
 import FormContext from '../../context/form/FormContext';
 
-const OfficerRequestList = ({ posts }) => {
+const OfficerRequestList = ({ posts, fetchList }) => {
   const [page, setPage] = useState(0);
   const [filterData, setFilterData] = useState([]);
   const records = 8;
 
-  const { searchBarValue } = useContext(FormContext);
+  const { searchBarValue, sendPost } = useContext(FormContext);
 
   useEffect(() => {
     setFilterData(
@@ -28,20 +28,23 @@ const OfficerRequestList = ({ posts }) => {
     }
   });
 
-  const handleConfirm = (e, id) => {
+  const handleConfirm = (e, id, stock) => {
     e.preventDefault();
 
-    // fetch(``, {
-    //   method: 'PATCH',
-    // });
+    const inventory = {
+      fiziksel_id: id,
+      adetSayisi: stock,
+    };
+
+    sendPost(inventory, '/envanter-onayla').then(() => fetchList());
   };
 
   const handleCancel = (e, id) => {
     e.preventDefault();
 
-    // fetch(``, {
-    //   method: 'DELETE',
-    // });
+    fetch(`/gorevli-istegi-sil/${id}`, {
+      method: 'DELETE',
+    }).then(() => fetchList());
   };
 
   return (
@@ -52,6 +55,9 @@ const OfficerRequestList = ({ posts }) => {
             <Table.Row>
               <Table.ColumnHeaderCell justify={'center'}>
                 Görevli Adı
+              </Table.ColumnHeaderCell>
+              <Table.ColumnHeaderCell justify={'center'}>
+                Fiziksel ID
               </Table.ColumnHeaderCell>
               <Table.ColumnHeaderCell justify={'center'}>
                 Ürün Adı
@@ -78,6 +84,7 @@ const OfficerRequestList = ({ posts }) => {
                   <Table.RowHeaderCell justify={'center'}>
                     {post.gorevliAdi}
                   </Table.RowHeaderCell>
+                  <Table.Cell justify={'center'}>{post.fiziksel_İd}</Table.Cell>
                   <Table.Cell justify={'center'}>{post.urunismi}</Table.Cell>
                   <Table.Cell justify={'center'}>{post.kategori}</Table.Cell>
                   <Table.Cell justify={'center'}>{post.adetSayisi}</Table.Cell>
@@ -88,7 +95,9 @@ const OfficerRequestList = ({ posts }) => {
                     <div className='flex justify-center gap-2'>
                       <button
                         className='flex flex-col items-center justify-center h-8 w-20  py-2 px-4 bg-grey-1 hover:bg-black transition text-white rounded-lg'
-                        onClick={(e) => handleConfirm(e, post._id)}
+                        onClick={(e) =>
+                          handleConfirm(e, post.fiziksel_İd, post.adetSayisi)
+                        }
                       >
                         Onayla
                       </button>

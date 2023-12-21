@@ -45,7 +45,7 @@ const AddInventoryDialog = () => {
       adetSayisi: stock,
     };
 
-    sendPost(request, '/inventory');
+    sendPost(request, '/envanter-ekle');
   };
 
   const overlay = {

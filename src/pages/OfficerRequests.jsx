@@ -4,7 +4,6 @@ import { setBackgroundColorWhite } from '../utils/BackgroundColorUtils';
 import { resetLocation } from '../utils/ScrollUtils';
 import OfficerRequestList from '../components/officer/OfficerRequestList';
 import SearchBar from '../components/form/SearchBar';
-import Select from '../components/form/elements/Select';
 
 import FormContext from '../context/form/FormContext';
 
@@ -13,15 +12,16 @@ const OfficerRequests = () => {
 
   const { getList } = useContext(FormContext);
 
+  const fetchList = async () => {
+    const list = await getList('/gorevli-isteklerini-listele');
+    setOfficerRequestList(list);
+  };
+
   useEffect(() => {
     // Page Settings
     setBackgroundColorWhite();
     resetLocation();
 
-    const fetchList = async () => {
-      const list = await getList('/gorevli-isteklerini-listele');
-      setOfficerRequestList(list);
-    };
     fetchList();
   }, []);
 
@@ -33,10 +33,9 @@ const OfficerRequests = () => {
       <FormHeader title='Görevli İstekleri' description={descriptionText} />
       <div className='flex justify-between items-center'>
         <SearchBar title='İstenilen ürünün ismini giriniz...' width='300px' />
-        <Select />
       </div>
       <div className='mt-6 overflow-x-auto'>
-        <OfficerRequestList posts={officerRequestList} />
+        <OfficerRequestList posts={officerRequestList} fetchList={fetchList} />
       </div>
     </div>
   );

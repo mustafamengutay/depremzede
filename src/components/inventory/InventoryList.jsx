@@ -23,7 +23,7 @@ const OfficerRequestList = ({ posts }) => {
     if (searchBarValue === '') {
       return inventory;
     } else {
-      const info = inventory.inventoryName;
+      const info = inventory.urunismi;
       return info.toLowerCase().includes(searchBarValue);
     }
   });
@@ -57,16 +57,7 @@ const OfficerRequestList = ({ posts }) => {
                 Kategori
               </Table.ColumnHeaderCell>
               <Table.ColumnHeaderCell justify={'center'}>
-                Ürün Türü
-              </Table.ColumnHeaderCell>
-              <Table.ColumnHeaderCell justify={'center'}>
                 Adet Sayısı
-              </Table.ColumnHeaderCell>
-              <Table.ColumnHeaderCell justify={'center'}>
-                Açıklama
-              </Table.ColumnHeaderCell>
-              <Table.ColumnHeaderCell justify={'center'}>
-                Durum
               </Table.ColumnHeaderCell>
             </Table.Row>
           </Table.Header>
@@ -76,20 +67,10 @@ const OfficerRequestList = ({ posts }) => {
               return (
                 <Table.Row align={'center'} key={post._id}>
                   <Table.RowHeaderCell justify={'center'}>
-                    {post.inventoryName}
+                    {post.urunismi}
                   </Table.RowHeaderCell>
-                  <Table.Cell justify={'center'}>{post.category}</Table.Cell>
-                  <Table.Cell justify={'center'}>{post.type}</Table.Cell>
-                  <Table.Cell justify={'center'}>{post.stock}</Table.Cell>
-                  <Table.Cell justify={'center'}>{post.description}</Table.Cell>
-                  <Table.Cell align='center'>
-                    <button
-                      className='flex flex-col items-center justify-center h-8 w-20  py-2 px-4 bg-grey-1 hover:bg-black transition text-white rounded-lg'
-                      onClick={(e) => handleConfirm(e, post._id)}
-                    >
-                      Azalt
-                    </button>
-                  </Table.Cell>
+                  <Table.Cell justify={'center'}>{post.kategori}</Table.Cell>
+                  <Table.Cell justify={'center'}>{post.adetSayisi}</Table.Cell>
                 </Table.Row>
               );
             })}
