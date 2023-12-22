@@ -59,8 +59,8 @@ router.post("/gorevli-cadir-istegi", async (req, res) => {
     const sabitDegerler = {
       fiziksel_İd: "100",
       gorevliAdi: "ISIM SOYISIM",
-      urunismi: "ÇADIR",
-      kategori: "BARINMA",
+      urunismi: "Çadır",
+      kategori: "Barınma",
     };
 
     const gorevliIstegi = new GorevliIstegiModeli({
@@ -87,8 +87,8 @@ router.post("/gorevli-gida-istegi", async (req, res) => {
     const sabitDegerler = {
       fiziksel_İd: "200",
       gorevliAdi: "ISIM SOYISIM",
-      urunismi: "GIDA",
-      kategori: "BESLENME",
+      urunismi: "Gıda",
+      kategori: "Beslenme",
     };
 
     const gorevliIstegi2 = new GorevliIstegiModeli({
@@ -115,8 +115,8 @@ router.post("/gorevli-giysi-istegi", async (req, res) => {
     const sabitDegerler = {
       fiziksel_İd: "300",
       gorevliAdi: "ISIM SOYISIM",
-      urunismi: "GİYSİ",
-      kategori: "KIYAFET",
+      urunismi: "Giysi",
+      kategori: "Giysi",
     };
 
     const gorevliIstegi2 = new GorevliIstegiModeli({
@@ -141,9 +141,8 @@ router.post("/gorevli-tibbiMalzeme-istegi", async (req, res) => {
     const { fiziksel_İd, adetSayisi, istenilenBolge } = req.body;
 
     let urunismi;
-    // 'fiziksel_id' değerine göre 'urunismi' ayarlama
     if (fiziksel_İd === "401") {
-      urunismi = "İlk-Yardım-Kiti";
+      urunismi = "İlk Yardım Kiti";
     } else if (fiziksel_İd === "402") {
       urunismi = "Tansiyon İlacı";
     } else {

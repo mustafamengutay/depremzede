@@ -1,5 +1,6 @@
 const express = require("express");
 const Envanter = require("../models/m-envanter");
+const GorevliIstegiModeli = require("../models/m-gorevli-istegi");
 const router = new express.Router();
 
 //------------------------------------------------------------------------------
@@ -41,9 +42,9 @@ router.post("/envanter-ekle", async (req, res) => {
     const urunVeKategori = {
       100: { urunismi: "Çadır", kategori: "Barınma" },
       200: { urunismi: "Gıda", kategori: "Beslenme" },
-      300: { urunismi: "Kıyafet", kategori: "Giysi" },
-      401: { urunismi: "İlk-Yardim-Kiti", kategori: "Tıbbi Malzeme" },
-      402: { urunismi: "Tansiyon-ilacı", kategori: "Tıbbi Malzeme" },
+      300: { urunismi: "Giysi", kategori: "Giysi" },
+      401: { urunismi: "İlk Yardim Kiti", kategori: "Tıbbi Malzeme" },
+      402: { urunismi: "Tansiyon ilacı", kategori: "Tıbbi Malzeme" },
     };
 
     // Eğer kayıt zaten varsa adetSayisi'ni güncelle
@@ -68,9 +69,50 @@ router.post("/envanter-ekle", async (req, res) => {
 });
 
 //------------------------------------------------------------------------------
-const GorevliIstegiModeli = require("../models/m-gorevli-istegi");
 
 // ENVANTERDEN İTEM ONAYLA (POST)
+router.post("/envanter-onayla/:id", async (req, res) => {
+  try {
+    const _id = req.params.id;
+
+    // Görevli isteğini bul
+    const gorevliIstegi = await GorevliIstegiModeli.findById(_id);
+    if (!gorevliIstegi) {
+      return res.status(404).send({ message: "İstek bulunamadı." });
+    }
+
+    // Envanterdeki ilgili ürünü bul
+    const envanterItem = await Envanter.findOne({
+      fiziksel_İd: gorevliIstegi.fiziksel_İd,
+    });
+    if (!envanterItem) {
+      return res.status(404).send({ message: "Envanterde ürün bulunamadı." });
+    }
+
+    // Envanterdeki adet sayısını azalt
+    envanterItem.adetSayisi =
+      parseInt(envanterItem.adetSayisi) - parseInt(gorevliIstegi.adetSayisi);
+
+    // Eğer adet sayısı 0 veya daha az ise, ürünü envanterden sil
+    if (envanterItem.adetSayisi <= 0) {
+      await Envanter.deleteOne({ fiziksel_İd: gorevliIstegi.fiziksel_İd });
+    } else {
+      // Güncellenen adet sayısı ile kaydet
+      await envanterItem.save();
+    }
+
+    // Görevli isteğini sil
+    await GorevliIstegiModeli.deleteOne({ _id });
+
+    res.send({ message: "İstek başarıyla onaylandı ve envanter güncellendi." });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+//------------------------------------------------------------------------------
+
+/* // ENVANTERDEN İTEM ONAYLA (POST)
 router.post("/envanter-onayla", async (req, res) => {
   const { fiziksel_id, adetSayisi } = req.body;
 
@@ -101,7 +143,7 @@ router.post("/envanter-onayla", async (req, res) => {
   } catch (error) {
     res.status(500).send(error);
   }
-});
+}); */
 
 //------------------------------------------------------------------------------
 
