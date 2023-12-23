@@ -54,7 +54,7 @@ export const OfficerInformation = ({
   jobType,
 }) => {
   return (
-    <div className='w-[550px] h-max mx-4'>
+    <div className='w-[550px] h-max mx-4 md:ml-0 ml-16'>
       <div className='flex items-center gap-6 mb-12'>
         <p className='text-white font-semibold text-2xl'>{officerName}</p>
         <OfficerTitle jobType={jobType} />
