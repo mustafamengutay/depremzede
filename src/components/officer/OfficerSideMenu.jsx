@@ -1,9 +1,9 @@
-import officerMenu from '../../assets/islemler.svg';
-import officerInfo from '../../assets/bilgiler.svg';
-import officerExit from '../../assets/cikis.svg';
+import officerMenu from "../../assets/islemler.svg";
+import officerInfo from "../../assets/bilgiler.svg";
+import officerExit from "../../assets/cikis.svg";
 
-import OfficerAvatar from './OfficerAvatar';
-import { useLocation, Link } from 'react-router-dom';
+import OfficerAvatar from "./OfficerAvatar";
+import { useLocation, Link } from "react-router-dom";
 
 const OfficerSideMenu = ({
   officerImage,
@@ -15,7 +15,7 @@ const OfficerSideMenu = ({
 
   const pathMatchRoute = (route) => {
     if (route === location.pathname) {
-      return '#2C2C2C';
+      return "#2C2C2C";
     } else {
       return null;
     }
@@ -24,14 +24,16 @@ const OfficerSideMenu = ({
   return (
     <div className='flex flex-col items-start'>
       <div className='flex flex-col items-center'>
-        <h1 className='font-bold text-7 text-white mb-20'>Depremzede</h1>
+        <h1 className='font-bold text-7 text-white mb-20 hidden md:block'>
+          Depremzede
+        </h1>
         <div className='flex flex-col items-center gap-2'>
           <OfficerAvatar
             image={officerImage}
             name={officerName}
             jobType={jobType}
           />
-          <ul className='flex flex-col items-center gap-7 text-white mt-16 w-full'>
+          <ul className='flex md:flex-col items-center gap-7 text-white md:mt-16 mt-8 w-full'>
             <Link
               className='hover:bg-grey-1 w-full px-8 py-4 rounded-5 flex items-center gap-4 cursor-pointer transition'
               style={{
@@ -53,7 +55,7 @@ const OfficerSideMenu = ({
               <p className='font-light'>Bilgilerim</p>
             </Link>
             <Link
-              className='mt-20 hover:bg-grey-1 px-8 py-4 rounded-5 flex items-center gap-4 cursor-pointer transition'
+              className='md:mt-20 md:ml-0 ml-44 hover:bg-grey-1 px-8 py-4 rounded-5 flex items-center gap-4 cursor-pointer transition'
               to='/'
             >
               <img src={officerExit} alt='Officer Exit' />

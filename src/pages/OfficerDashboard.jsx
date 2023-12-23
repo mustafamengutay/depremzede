@@ -1,23 +1,23 @@
-import { useEffect } from 'react';
-import OfficerSideMenu from '../components/officer/OfficerSideMenu';
+import { useEffect } from "react";
+import OfficerSideMenu from "../components/officer/OfficerSideMenu";
 
-import officer_profil from '../assets/officer-profile.png';
-import check from '../assets/check.svg';
+import officer_profil from "../assets/officer-profile.png";
+import check from "../assets/check.svg";
 
-import search from '../assets/search.svg';
-import map from '../assets/map.svg';
-import info from '../assets/info.svg';
+import search from "../assets/search.svg";
+import map from "../assets/map.svg";
+import info from "../assets/info.svg";
 
-import InformationLink from '../components/menu/InformationLink';
-import SideMenuLink from '../components/menu/SideMenuLink';
-import { Outlet } from 'react-router-dom';
-import { OfficerTitle } from '../components/officer/OfficerAvatar';
-import { setBackgroundColorBlack } from '../utils/BackgroundColorUtils';
+import InformationLink from "../components/menu/InformationLink";
+import SideMenuLink from "../components/menu/SideMenuLink";
+import { Outlet } from "react-router-dom";
+import { OfficerTitle } from "../components/officer/OfficerAvatar";
+import { setBackgroundColorBlack } from "../utils/BackgroundColorUtils";
 
-import TentDialog from '../components/dialog/TentDialog';
-import ClothesDialog from '../components/dialog/ClothesDialog';
-import FoodAidDialog from '../components/dialog/FoodAidDialog';
-import MedicalDialog from '../components/dialog/MedicalDialog';
+import TentDialog from "../components/dialog/TentDialog";
+import ClothesDialog from "../components/dialog/ClothesDialog";
+import FoodAidDialog from "../components/dialog/FoodAidDialog";
+import MedicalDialog from "../components/dialog/MedicalDialog";
 
 const OfficerDashboard = () => {
   useEffect(() => {
@@ -25,17 +25,17 @@ const OfficerDashboard = () => {
   });
 
   return (
-    <div className='container max-w-dashboard h-screen flex items-center justify-between'>
+    <div className='container max-w-dashboard h-screen md:flex items-center justify-between md:mt-0 mt-8 md:w-auto w-[680px]'>
       <OfficerSideMenu
         officerImage={officer_profil}
-        officerName={'Ahmet Sezer'}
-        jobType={'Gorevli'}
-        routeAddress={'/gorevli'}
+        officerName={"Ahmet Sezer"}
+        jobType={"Gorevli"}
+        routeAddress={"/gorevli"}
       />
 
       <Outlet />
 
-      <div className='flex flex-col gap-8'>
+      <div className='md:flex hidden flex-col gap-8'>
         <SideMenuLink icon={search} title='Arama' />
         <SideMenuLink icon={map} title='Harita' />
         <SideMenuLink icon={info} title='Bilgilendirme' />
@@ -95,19 +95,19 @@ export const OfficerMenu = () => {
   return (
     <div className='flex flex-col justify-center gap-16'>
       <div className='flex justify-between items-center'>
-        <div className='flex flex-col gap-6  mx-4'>
+        <div className='flex flex-col gap-6  mx-4 md:mt-0 mt-8'>
           <InformationLink
             icon={check}
             title='Depremzede Bilgi Doğrulama'
             width=' 650px'
-            route={'/depremzede-onayla'}
+            route={"/depremzede-onayla"}
           />
           <div className='flex flex-col gap-6'>
-            <div className='flex  gap-6  flex-col md:flex-row'>
+            <div className='flex  gap-6 flex-row'>
               <TentDialog />
               <ClothesDialog />
             </div>
-            <div className='flex gap-6  flex-col md:flex-row'>
+            <div className='flex gap-6 flex-row'>
               <FoodAidDialog />
               <MedicalDialog />
             </div>
@@ -117,5 +117,4 @@ export const OfficerMenu = () => {
     </div>
   );
 };
-
 export default OfficerDashboard;
