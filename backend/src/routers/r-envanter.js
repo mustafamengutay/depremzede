@@ -89,6 +89,15 @@ router.post("/envanter-onayla/:id", async (req, res) => {
       return res.status(404).send({ message: "Envanterde ürün bulunamadı." });
     }
 
+    // Envanterdeki mevcut adet sayısını kontrol et
+    if (
+      parseInt(envanterItem.adetSayisi) < parseInt(gorevliIstegi.adetSayisi)
+    ) {
+      return res
+        .status(400)
+        .send({ message: "Envanterde istediğiniz kadar ürün yok." });
+    }
+
     // Envanterdeki adet sayısını azalt
     envanterItem.adetSayisi =
       parseInt(envanterItem.adetSayisi) - parseInt(gorevliIstegi.adetSayisi);
@@ -109,41 +118,6 @@ router.post("/envanter-onayla/:id", async (req, res) => {
     res.status(500).send(error);
   }
 });
-
-//------------------------------------------------------------------------------
-
-/* // ENVANTERDEN İTEM ONAYLA (POST)
-router.post("/envanter-onayla", async (req, res) => {
-  const { fiziksel_id, adetSayisi } = req.body;
-
-  try {
-    // Envanterdeki ilgili ürünü bul
-    let envanterItem = await Envanter.findOne({ fiziksel_İd: fiziksel_id });
-
-    if (!envanterItem) {
-      return res.status(404).send({ message: "Ürün bulunamadı." });
-    }
-
-    // Envanterdeki adet sayısını azalt
-    envanterItem.adetSayisi =
-      parseInt(envanterItem.adetSayisi) - parseInt(adetSayisi);
-
-    // Eğer adetSayisi 0 veya daha az ise, ürünü sil
-    if (envanterItem.adetSayisi <= 0) {
-      await Envanter.deleteOne({ fiziksel_İd: fiziksel_id });
-    } else {
-      // Güncellenen adetSayisi ile kaydet
-      await envanterItem.save();
-    }
-
-    // Gorevli İstegi'nden ilgili kaydı sil
-    await GorevliIstegiModeli.deleteOne({ fiziksel_İd: fiziksel_id });
-
-    res.send({ message: "İşlem başarıyla tamamlandı." });
-  } catch (error) {
-    res.status(500).send(error);
-  }
-}); */
 
 //------------------------------------------------------------------------------
 
