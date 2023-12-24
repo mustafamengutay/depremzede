@@ -45,21 +45,20 @@ const AppRouter = () => {
       <Route path='/gorevli' element={<OfficerDashboard />}>
         <Route path='' element={<OfficerMenu />} />
         <Route path='bilgilerim' element={<OfficerInformation />} />
+        <Route path='depremzede-onayla' element={<VictimConfirmation />} />
       </Route>
 
       <Route path='/yonetici' element={<ManagerDashboard />}>
         <Route path='' element={<ManagerMenu />} />
         <Route path='bilgilerim' element={<OfficerInformation />} />
+        <Route path='envanterler' element={<Inventory />} />
+        <Route path='gorevliler' element={<Officers />} />
+        <Route path='gorevli-olustur' element={<CreateOfficerForm />} />
+        <Route path='gorevli-istekleri' element={<OfficerRequests />} />
+        <Route path='envanter-ekle' element={<AddInventoryForm />} />
       </Route>
 
       <Route path='/*' element={<NotFound />} />
-
-      <Route path='/envanterler' element={<Inventory />} />
-      <Route path='/gorevliler' element={<Officers />} />
-      <Route path='/gorevli-olustur' element={<CreateOfficerForm />} />
-      <Route path='/gorevli-istekleri' element={<OfficerRequests />} />
-      <Route path='/depremzede-onayla' element={<VictimConfirmation />} />
-      <Route path='/envanter-ekle' element={<AddInventoryForm />} />
     </Routes>
   );
 };

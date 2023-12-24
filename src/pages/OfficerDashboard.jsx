@@ -10,7 +10,7 @@ import info from '../assets/info.svg';
 
 import InformationLink from '../components/menu/InformationLink';
 import SideMenuLink from '../components/menu/SideMenuLink';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { OfficerTitle } from '../components/officer/OfficerAvatar';
 import { setBackgroundColorBlack } from '../utils/BackgroundColorUtils';
 
@@ -23,6 +23,7 @@ import AuthContext from '../context/auth/AuthContext';
 const OfficerDashboard = () => {
   const { officerData } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     setBackgroundColorBlack();
@@ -34,20 +35,30 @@ const OfficerDashboard = () => {
 
   return (
     <div className='container max-w-dashboard h-screen md:flex items-center justify-between md:mt-0 mt-8 md:w-auto w-[680px]'>
-      <OfficerSideMenu
-        officerImage={officer_profil}
-        officerData={officerData}
-        storage={'officer'}
-        routeAddress={'/gorevli'}
-      />
+      {location.pathname === '/gorevli' ||
+      location.pathname === '/gorevli/bilgilerim' ? (
+        <OfficerSideMenu
+          officerImage={officer_profil}
+          officerData={officerData}
+          storage={'officer'}
+          routeAddress={'/gorevli'}
+        />
+      ) : (
+        ''
+      )}
 
       <Outlet />
 
-      <div className='md:flex hidden flex-col gap-8'>
-        <SideMenuLink icon={search} title='Arama' />
-        <SideMenuLink icon={map} title='Harita' />
-        <SideMenuLink icon={info} title='Bilgilendirme' />
-      </div>
+      {location.pathname === '/gorevli' ||
+      location.pathname === '/gorevli/bilgilerim' ? (
+        <div className='md:flex hidden flex-col gap-8'>
+          <SideMenuLink icon={search} title='Arama' />
+          <SideMenuLink icon={map} title='Harita' />
+          <SideMenuLink icon={info} title='Bilgilendirme' />
+        </div>
+      ) : (
+        ''
+      )}
     </div>
   );
 };
@@ -101,7 +112,7 @@ export const OfficerMenu = () => {
             icon={check}
             title='Depremzede Bilgi Doğrulama'
             width=' 650px'
-            route={'/depremzede-onayla'}
+            route={'/gorevli/depremzede-onayla'}
           />
           <div className='flex flex-col gap-6'>
             <div className='flex  gap-6 flex-row'>
