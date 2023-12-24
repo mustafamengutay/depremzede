@@ -33,8 +33,6 @@ export const FormProvider = ({ children }) => {
             };
 
         } catch (error) {
-            console.error('Error during POST request:', error);
-
             return {
                 success: false,
                 error: error.message,
