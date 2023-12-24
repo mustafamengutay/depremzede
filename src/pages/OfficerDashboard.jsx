@@ -31,7 +31,7 @@ const OfficerDashboard = () => {
     if (localStorage.getItem('officer') !== 'true') {
       navigate('/');
     }
-  });
+  }, []);
 
   return (
     <div className='container max-w-dashboard h-screen md:flex items-center justify-between md:mt-0 mt-8 md:w-auto w-[680px]'>
@@ -112,7 +112,7 @@ export const OfficerMenu = () => {
             icon={check}
             title='Depremzede Bilgi Doğrulama'
             width=' 650px'
-            route={'/gorevli/depremzede-onayla'}
+            route={'/depremzede-onayla'}
           />
           <div className='flex flex-col gap-6'>
             <div className='flex  gap-6 flex-row'>

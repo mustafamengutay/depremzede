@@ -73,13 +73,13 @@ export const ManagerMenu = () => {
                 icon={inventory}
                 title='Envanterler'
                 width='313px'
-                route='/yonetici/envanterler'
+                route='/envanterler'
               />
               <HelpLink
                 icon={assignOfficer}
                 title='Görevli Listesi'
                 width='313px'
-                route='/yonetici/gorevliler'
+                route='/gorevliler'
               />
             </div>
             <div className='flex gap-6 flex-row'>
@@ -87,13 +87,13 @@ export const ManagerMenu = () => {
                 icon={createOfficer}
                 title='Görevli Oluştur / Sil'
                 width='313px'
-                route='/yonetici/gorevli-olustur'
+                route='/gorevli-olustur'
               />
               <HelpLink
                 icon={officerRequests}
                 title='Görevli İstekleri'
                 width='313px'
-                route='/yonetici/gorevli-istekleri'
+                route='/gorevli-istekleri'
               />
             </div>
           </div>

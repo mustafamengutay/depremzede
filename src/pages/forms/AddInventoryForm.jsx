@@ -28,6 +28,10 @@ const UnderDebrisForm = () => {
   useEffect(() => {
     setBackgroundColorWhite();
     resetLocation();
+
+    if (localStorage.getItem('government') !== 'true') {
+      navigate('/');
+    }
   }, []);
 
   const formHeaderTitle = 'Envanter Ekle Formu';

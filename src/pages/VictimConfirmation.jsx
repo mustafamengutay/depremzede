@@ -1,4 +1,5 @@
 import { useEffect, useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { ScrollArea, Table } from '@radix-ui/themes';
 import ReactPaginate from 'react-paginate';
@@ -12,6 +13,7 @@ import FormContext from '../context/form/FormContext';
 
 const VictimConfirmation = () => {
   const { getList } = useContext(FormContext);
+  const navigate = useNavigate();
 
   const [posts, setPosts] = useState([]);
 
@@ -39,6 +41,10 @@ const VictimConfirmation = () => {
   useEffect(() => {
     setBackgroundColorWhite();
     resetLocation();
+
+    if (localStorage.getItem('officer') !== 'true') {
+      navigate('/');
+    }
 
     fetchList();
   }, [page, getList]);

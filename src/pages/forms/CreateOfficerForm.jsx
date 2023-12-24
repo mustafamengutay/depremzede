@@ -1,10 +1,11 @@
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import FormHeader from '../../components/form/FormHeader';
-import Input from '../../components/form/elements/Input';
 import { setBackgroundColorWhite } from '../../utils/BackgroundColorUtils';
 import { resetLocation } from '../../utils/ScrollUtils';
+
+import FormHeader from '../../components/form/FormHeader';
+import Input from '../../components/form/elements/Input';
 import SubmitButton from '../../components/form/elements/SubmitButton';
 
 import FormContext from '../../context/form/FormContext';
@@ -25,6 +26,10 @@ const CreateOfficerForm = () => {
     // Page Settings
     setBackgroundColorWhite();
     resetLocation();
+
+    if (localStorage.getItem('government') !== 'true') {
+      navigate('/');
+    }
   }, []);
 
   const descriptionText = (
