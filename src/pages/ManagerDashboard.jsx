@@ -1,34 +1,42 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from 'react';
 
-import HelpLink from "../components/menu/HelpLink";
-import OfficerSideMenu from "../components/officer/OfficerSideMenu";
-import SideMenuLink from "../components/menu/SideMenuLink";
+import HelpLink from '../components/menu/HelpLink';
+import OfficerSideMenu from '../components/officer/OfficerSideMenu';
+import SideMenuLink from '../components/menu/SideMenuLink';
 
-import search from "../assets/search.svg";
-import map from "../assets/map.svg";
-import info from "../assets/info.svg";
+import search from '../assets/search.svg';
+import map from '../assets/map.svg';
+import info from '../assets/info.svg';
 
-import assignOfficer from "../assets/assignOfficer.svg";
-import createOfficer from "../assets/createOfficer.svg";
-import inventory from "../assets/inventory.svg";
-import officer_profil from "../assets/officer-profile.png";
-import officerRequests from "../assets/officerRequests.svg";
-import { setBackgroundColorBlack } from "../utils/BackgroundColorUtils";
-import { Outlet } from "react-router-dom";
-import AddInventoryDialog from "../components/dialog/AddInventoryDialog";
+import assignOfficer from '../assets/assignOfficer.svg';
+import createOfficer from '../assets/createOfficer.svg';
+import inventory from '../assets/inventory.svg';
+import officer_profil from '../assets/officer-profile.png';
+import officerRequests from '../assets/officerRequests.svg';
+import { setBackgroundColorBlack } from '../utils/BackgroundColorUtils';
+import { Outlet, useNavigate } from 'react-router-dom';
+import AddInventoryDialog from '../components/dialog/AddInventoryDialog';
+import AuthContext from '../context/auth/AuthContext';
 
 const ManagerDashboard = () => {
+  const { managerData } = useContext(AuthContext);
+  const navigate = useNavigate();
+
   useEffect(() => {
     setBackgroundColorBlack();
+
+    if (localStorage.getItem('government') !== 'true') {
+      navigate('/');
+    }
   });
 
   return (
     <div className='container max-w-dashboard h-screen md:flex items-center justify-between md:mt-0 mt-8 md:w-auto w-[680px]'>
       <OfficerSideMenu
         officerImage={officer_profil}
-        officerName={"Ahmet Sezer"}
-        jobType={"Yonetici"}
-        routeAddress={"/yonetici"}
+        officerData={managerData}
+        storage={'government'}
+        routeAddress={'/yonetici'}
       />
 
       <Outlet />

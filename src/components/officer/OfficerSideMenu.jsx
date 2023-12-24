@@ -1,21 +1,21 @@
-import officerMenu from "../../assets/islemler.svg";
-import officerInfo from "../../assets/bilgiler.svg";
-import officerExit from "../../assets/cikis.svg";
+import officerMenu from '../../assets/islemler.svg';
+import officerInfo from '../../assets/bilgiler.svg';
+import officerExit from '../../assets/cikis.svg';
 
-import OfficerAvatar from "./OfficerAvatar";
-import { useLocation, Link } from "react-router-dom";
+import OfficerAvatar from './OfficerAvatar';
+import { useLocation, Link } from 'react-router-dom';
 
 const OfficerSideMenu = ({
   officerImage,
-  officerName,
-  jobType,
+  officerData,
   routeAddress,
+  storage,
 }) => {
   const location = useLocation();
 
   const pathMatchRoute = (route) => {
     if (route === location.pathname) {
-      return "#2C2C2C";
+      return '#2C2C2C';
     } else {
       return null;
     }
@@ -30,8 +30,8 @@ const OfficerSideMenu = ({
         <div className='flex flex-col items-center gap-2'>
           <OfficerAvatar
             image={officerImage}
-            name={officerName}
-            jobType={jobType}
+            name={officerData.name}
+            jobType={'gorevli'}
           />
           <ul className='flex md:flex-col items-center gap-7 text-white md:mt-16 mt-8 w-full'>
             <Link
@@ -57,6 +57,7 @@ const OfficerSideMenu = ({
             <Link
               className='md:mt-20 md:ml-0 ml-44 hover:bg-grey-1 px-8 py-4 rounded-5 flex items-center gap-4 cursor-pointer transition'
               to='/'
+              onClick={() => localStorage.removeItem(storage)}
             >
               <img src={officerExit} alt='Officer Exit' />
               <p className='font-light'>Çıkış Yap</p>
