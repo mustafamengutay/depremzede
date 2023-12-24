@@ -1,5 +1,6 @@
 import { useEffect, useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Toaster, toast } from 'sonner';
 
 import { setBackgroundColorWhite } from '../utils/BackgroundColorUtils';
 import { resetLocation } from '../utils/ScrollUtils';
@@ -40,7 +41,11 @@ const Login = () => {
       if (email === 'admin' && password === 'admin') {
         setAuthorizedManager(true);
         localStorage.setItem('government', 'true');
-        navigate('/yonetici');
+        toast.success('Yönetici Girişi Başarılı! Yönlendiriliyorsunuz...');
+
+        setTimeout(() => {
+          navigate('/yonetici');
+        }, 3000);
         return;
       }
 
@@ -48,13 +53,18 @@ const Login = () => {
 
       if (!isOfficerExist.success) {
         setLoginError(true);
+        toast.error('Giriş Bilgileri Yanlış');
         return;
       }
 
       setAuthorizedOfficer(true);
       setOfficerData(isOfficerExist.data.officer);
       localStorage.setItem('officer', 'true');
-      navigate('/gorevli');
+      toast.success('Görevli Girişi Başarılı! Yönlendiriliyorsunuz...');
+
+      setTimeout(() => {
+        navigate('/gorevli');
+      }, 3000);
     };
 
     login();
@@ -92,14 +102,10 @@ const Login = () => {
           >
             Giriş Yap
           </button>
-          {loginError && (
-            <div className='mt-12'>
-              <p className=' bg-red-200 border-red-800 text-red-700 rounded-xl px-4 py-2'>
-                Hesap Bilgileri Yanlış!
-              </p>
-            </div>
-          )}
         </form>
+      </div>
+      <div>
+        <Toaster expand visibleToasts={5} />
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 
 import { Dialog, Flex } from '@radix-ui/themes';
+import { Toaster, toast } from 'sonner';
 import * as Dialogs from '@radix-ui/react-dialog';
 
 import tent from '../../assets/home.svg';
@@ -26,6 +27,8 @@ const TentDialog = () => {
     };
 
     sendPost(request, '/gorevli-cadir-istegi');
+
+    toast.success('Çadır İsteğiniz Başarılı!');
   };
 
   const overlay = {
@@ -38,33 +41,36 @@ const TentDialog = () => {
   };
 
   return (
-    <Dialog.Root>
-      <Dialog.Trigger>
-        <HelpLink icon={tent} title='Çadır İsteği' width='313px' />
-      </Dialog.Trigger>
-      <Dialogs.Overlay style={overlay} />
-      <Dialog.Content style={{ maxWidth: 450 }}>
-        <Dialog.Title>Çadır İsteği</Dialog.Title>
-        <Dialog.Description size='2' mb='4'>
-          Adet sayısını ve bölgeyi giriniz.
-        </Dialog.Description>
-        <form onSubmit={handleSubmit}>
-          <Flex direction='column' gap='3'>
-            <Input title='Adet' width='400px' setState={setStock} />
-            <Input
-              title='İstenilen Bölge'
-              width='400px'
-              setState={setLocation}
-            />
-          </Flex>
-          <Dialog.Close>
-            <div className='mt-4 flex justify-end'>
-              <SubmitButton />
-            </div>
-          </Dialog.Close>
-        </form>
-      </Dialog.Content>
-    </Dialog.Root>
+    <div>
+      <Dialog.Root>
+        <Dialog.Trigger>
+          <HelpLink icon={tent} title='Çadır İsteği' width='313px' />
+        </Dialog.Trigger>
+        <Dialogs.Overlay style={overlay} />
+        <Dialog.Content style={{ maxWidth: 450 }}>
+          <Dialog.Title>Çadır İsteği</Dialog.Title>
+          <Dialog.Description size='2' mb='4'>
+            Adet sayısını ve bölgeyi giriniz.
+          </Dialog.Description>
+          <form onSubmit={handleSubmit}>
+            <Flex direction='column' gap='3'>
+              <Input title='Adet' width='400px' setState={setStock} />
+              <Input
+                title='İstenilen Bölge'
+                width='400px'
+                setState={setLocation}
+              />
+            </Flex>
+            <Dialog.Close>
+              <div className='mt-4 flex justify-end'>
+                <SubmitButton />
+              </div>
+            </Dialog.Close>
+          </form>
+        </Dialog.Content>
+      </Dialog.Root>
+      <Toaster expand visibleToasts={5} />
+    </div>
   );
 };
 

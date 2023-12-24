@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 
 import { Dialog, Flex } from '@radix-ui/themes';
+import { Toaster, toast } from 'sonner';
 import * as Dialogs from '@radix-ui/react-dialog';
 
 import check from '../../assets/check.svg';
@@ -46,6 +47,8 @@ const AddInventoryDialog = () => {
     };
 
     sendPost(request, '/envanter-ekle');
+
+    toast.success('Envanter Eklendi!');
   };
 
   const overlay = {
@@ -58,29 +61,32 @@ const AddInventoryDialog = () => {
   };
 
   return (
-    <Dialog.Root>
-      <Dialog.Trigger>
-        <InformationLink icon={check} title='Envanter Ekle' width=' 650px' />
-      </Dialog.Trigger>
-      <Dialogs.Overlay style={overlay} />
-      <Dialog.Content style={{ maxWidth: 450 }}>
-        <Dialog.Title>Envanter Ekle</Dialog.Title>
-        <Dialog.Description size='2' mb='4'>
-          İlaç İsmini ve Adet sayısını giriniz.
-        </Dialog.Description>
-        <form onSubmit={handleSubmit}>
-          <Flex direction='column' gap='3'>
-            <Select options={inventoryOptions} id={id} set={setId} />
-            <Input title='Adet' width='400px' setState={setStock} />
-          </Flex>
-          <Dialog.Close>
-            <div className='mt-4 flex justify-end'>
-              <SubmitButton />
-            </div>
-          </Dialog.Close>
-        </form>
-      </Dialog.Content>
-    </Dialog.Root>
+    <div>
+      <Dialog.Root>
+        <Dialog.Trigger>
+          <InformationLink icon={check} title='Envanter Ekle' width=' 650px' />
+        </Dialog.Trigger>
+        <Dialogs.Overlay style={overlay} />
+        <Dialog.Content style={{ maxWidth: 450 }}>
+          <Dialog.Title>Envanter Ekle</Dialog.Title>
+          <Dialog.Description size='2' mb='4'>
+            İlaç İsmini ve Adet sayısını giriniz.
+          </Dialog.Description>
+          <form onSubmit={handleSubmit}>
+            <Flex direction='column' gap='3'>
+              <Select options={inventoryOptions} id={id} set={setId} />
+              <Input title='Adet' width='400px' setState={setStock} />
+            </Flex>
+            <Dialog.Close>
+              <div className='mt-4 flex justify-end'>
+                <SubmitButton />
+              </div>
+            </Dialog.Close>
+          </form>
+        </Dialog.Content>
+      </Dialog.Root>
+      <Toaster expand visibleToasts={5} />
+    </div>
   );
 };
 
