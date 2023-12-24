@@ -22,6 +22,13 @@ const VictimConfirmation = () => {
   const fetchList = async () => {
     const posts = await getList('/users/enkaz-altinda');
     setPosts(posts);
+
+    const lastPage = Math.ceil(posts.length / records) - 1;
+
+    if (page > lastPage) {
+      setPage(lastPage);
+    }
+
     setFilterData(
       posts.filter((item, index) => {
         return (index >= page * records) & (index < (page + 1) * records);
@@ -58,7 +65,9 @@ const VictimConfirmation = () => {
 
     fetch(`/officers/cancel-request/${id}`, {
       method: 'DELETE',
-    }).then(() => fetchList());
+    }).then(() => {
+      fetchList();
+    });
   };
 
   return (
