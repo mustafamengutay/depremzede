@@ -1,7 +1,14 @@
 const OfficerAvatar = ({ image, name, jobType }) => {
   return (
-    <div className='flex flex-col items-center gap-2'>
-      <img src={image} alt='officer profile photo' />
+    <div className='flex md:flex-col flex-row items-center gap-2'>
+      <h1 className='font-bold text-7 text-white items-center md:hidden block mr-64'>
+        Depremzede
+      </h1>
+      <img
+        className='hidden md:block'
+        src={image}
+        alt='officer profile photo'
+      />
       <p className='text-white text-xl'>{name}</p>
       <OfficerTitle jobType={jobType} />
     </div>

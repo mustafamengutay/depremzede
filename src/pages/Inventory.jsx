@@ -1,14 +1,18 @@
 import { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import FormHeader from '../components/form/FormHeader';
+import SearchBar from '../components/form/SearchBar';
+
 import { setBackgroundColorWhite } from '../utils/BackgroundColorUtils';
 import { resetLocation } from '../utils/ScrollUtils';
-import SearchBar from '../components/form/SearchBar';
 
 import FormContext from '../context/form/FormContext';
 import InventoryList from '../components/inventory/InventoryList';
 
 const Inventory = () => {
   const [inventoryList, setInventoryList] = useState([]);
+  const navigate = useNavigate();
 
   const { getList } = useContext(FormContext);
 
@@ -16,6 +20,10 @@ const Inventory = () => {
     // Page Settings
     setBackgroundColorWhite();
     resetLocation();
+
+    if (localStorage.getItem('government') !== 'true') {
+      navigate('/');
+    }
 
     const fetchList = async () => {
       const list = await getList('/envanter-listele');

@@ -1,28 +1,29 @@
-import React from "react";
-import { useEffect } from "react";
+import React from 'react';
+import { useEffect } from 'react';
 
-import Header from "../components/layouts/Header";
-import Headline from "../components/layouts/Headline";
-import Footer from "../components/layouts/Footer";
-import UnderDebrisLink from "../components/menu/UnderDebrisLink";
-import InformationLink from "../components/menu/InformationLink";
-import HelpLink from "../components/menu/HelpLink";
-import SideMenuLink from "../components/menu/SideMenuLink";
+import Header from '../components/layouts/Header';
+import Headline from '../components/layouts/Headline';
+import Footer from '../components/layouts/Footer';
+import UnderDebrisLink from '../components/menu/UnderDebrisLink';
+import InformationLink from '../components/menu/InformationLink';
+import HelpLink from '../components/menu/HelpLink';
+import SideMenuLink from '../components/menu/SideMenuLink';
 
-import donation from "../assets/donation.svg";
-import home from "../assets/home.svg";
-import clothes from "../assets/clothes.svg";
-import food from "../assets/utensils.svg";
-import car from "../assets/car.svg";
-import list from "../assets/list.svg";
-import homes from "../assets/homes.svg";
+import donation from '../assets/donation.svg';
+import home from '../assets/home.svg';
+import clothes from '../assets/clothes.svg';
+import food from '../assets/utensils.svg';
+import car from '../assets/car.svg';
+import list from '../assets/list.svg';
+import homes from '../assets/homes.svg';
 
-import search from "../assets/search.svg";
-import map from "../assets/map.svg";
-import info from "../assets/info.svg";
-import up from "../assets/up.svg";
+import search from '../assets/search.svg';
+import map from '../assets/map.svg';
+import info from '../assets/info.svg';
+import up from '../assets/up.svg';
 
-import { setBackgroundColorBlack } from "../utils/BackgroundColorUtils";
+import { setBackgroundColorBlack } from '../utils/BackgroundColorUtils';
+import { Toaster } from 'sonner';
 
 const Home = () => {
   useEffect(() => {
@@ -86,7 +87,7 @@ const Home = () => {
                     <SideMenuLink icon={info} title='Bilgilendirme' />
                   </div>
                   <div>
-                    <SideMenuLink icon={up} action={"up"} />
+                    <SideMenuLink icon={up} action={'up'} />
                   </div>
                 </div>
               </div>
@@ -94,6 +95,7 @@ const Home = () => {
           </main>
         </div>
       </div>
+      <Toaster />
       <Footer />
     </div>
   );

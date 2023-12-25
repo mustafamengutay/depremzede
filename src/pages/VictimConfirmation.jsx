@@ -1,4 +1,5 @@
 import { useEffect, useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { ScrollArea, Table } from '@radix-ui/themes';
 import ReactPaginate from 'react-paginate';
@@ -12,6 +13,7 @@ import FormContext from '../context/form/FormContext';
 
 const VictimConfirmation = () => {
   const { getList } = useContext(FormContext);
+  const navigate = useNavigate();
 
   const [posts, setPosts] = useState([]);
 
@@ -22,6 +24,13 @@ const VictimConfirmation = () => {
   const fetchList = async () => {
     const posts = await getList('/users/enkaz-altinda');
     setPosts(posts);
+
+    const lastPage = Math.ceil(posts.length / records) - 1;
+
+    if (page > lastPage) {
+      setPage(lastPage);
+    }
+
     setFilterData(
       posts.filter((item, index) => {
         return (index >= page * records) & (index < (page + 1) * records);
@@ -32,6 +41,10 @@ const VictimConfirmation = () => {
   useEffect(() => {
     setBackgroundColorWhite();
     resetLocation();
+
+    if (localStorage.getItem('officer') !== 'true') {
+      navigate('/');
+    }
 
     fetchList();
   }, [page, getList]);
@@ -58,7 +71,9 @@ const VictimConfirmation = () => {
 
     fetch(`/officers/cancel-request/${id}`, {
       method: 'DELETE',
-    }).then(() => fetchList());
+    }).then(() => {
+      fetchList();
+    });
   };
 
   return (

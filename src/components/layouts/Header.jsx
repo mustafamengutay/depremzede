@@ -1,6 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { scrollDownByPercentage } from "../../utils/ScrollUtils";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { toast } from 'sonner';
+
+import { scrollDownByPercentage } from '../../utils/ScrollUtils';
 
 const Header = () => {
   return (
@@ -36,15 +38,16 @@ const Header = () => {
           </ul>
         </nav>
         <div className='flex items-center gap-8'>
-          <a
-            href='/'
-            onClick={() => alert("English translation will be active soon!")}
+          <Link
+            onClick={() =>
+              toast.info('English support will be introduced soon!')
+            }
           >
             En
-          </a>
+          </Link>
           <Link
             className='bg-grey-1 px-8 rounded-full py-2  inline-block border-2 border-black  transition-all duration-300 hover:bg-white hover:text-black'
-            to={"/giris-yap"}
+            to={'/giris-yap'}
           >
             Giriş Yap
           </Link>

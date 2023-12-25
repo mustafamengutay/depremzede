@@ -1,20 +1,33 @@
-import authReducer from "./AuthReducer";
-
-const { createContext, useState, useReducer } = require("react");
+import { createContext, useState } from "react";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const initialState = {
-        emailInput: '',
-        passwordInput: '',
-    };
+    const [authorizedOfficer, setAuthorizedOfficer] = useState(false);
+    const [officerData, setOfficerData] = useState({});
 
-    const [state, dispatch] = useReducer(authReducer, initialState);
+    const [authorizedManager, setAuthorizedManager] = useState(false);
+    const [managerData, setManagerData] = useState({
+        email: 'admin',
+        password: 'admin',
+        name: 'Admin',
+        surname: 'Admin',
+        phoneNumber: '444',
+        dataOfBirth: '-',
+        comeFromCity: '-',
+        responsibleFromCity: '-',
+    });
 
     return <AuthContext.Provider value={{
-        ...state,
-        dispatch,
+        authorizedOfficer,
+        setAuthorizedOfficer,
+        officerData,
+        setOfficerData,
+
+        authorizedManager,
+        setAuthorizedManager,
+        managerData,
+        setManagerData,
     }}>
         {children}
     </AuthContext.Provider>

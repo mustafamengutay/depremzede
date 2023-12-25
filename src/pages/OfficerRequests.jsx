@@ -1,14 +1,18 @@
 import { useContext, useEffect, useState } from 'react';
-import FormHeader from '../components/form/FormHeader';
+import { useNavigate } from 'react-router-dom';
+
 import { setBackgroundColorWhite } from '../utils/BackgroundColorUtils';
 import { resetLocation } from '../utils/ScrollUtils';
-import OfficerRequestList from '../components/officer/OfficerRequestList';
+
+import FormHeader from '../components/form/FormHeader';
 import SearchBar from '../components/form/SearchBar';
+import OfficerRequestList from '../components/officer/OfficerRequestList';
 
 import FormContext from '../context/form/FormContext';
 
 const OfficerRequests = () => {
   const [officerRequestList, setOfficerRequestList] = useState([]);
+  const navigate = useNavigate();
 
   const { getList } = useContext(FormContext);
 
@@ -21,6 +25,10 @@ const OfficerRequests = () => {
     // Page Settings
     setBackgroundColorWhite();
     resetLocation();
+
+    if (localStorage.getItem('government') !== 'true') {
+      navigate('/');
+    }
 
     fetchList();
   }, []);
