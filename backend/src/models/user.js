@@ -45,6 +45,11 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         trim: false,
         default: false,
+    },
+    derece: {
+        type: String,
+        trim: false,
+        default: 1,
     }
 })
 
