@@ -13,5 +13,22 @@ mongoose.connect(DB_URI, {
     .then(() => console.log('DB is connected'));
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 // mongodb+srv://admin:earthquake1@mylocaldb.0a9keyk.mongodb.net/
 //mongodb://127.0.0.1:27017/my-database-earthquake

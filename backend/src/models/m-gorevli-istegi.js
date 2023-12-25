@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const validator = require("validator");
+//const validator = require("validator");
 
 //GOREVLI ISTEKLERI SEMASI
 const gorevliIstegiSchema = new mongoose.Schema({
