@@ -28,7 +28,7 @@ const OfficerRequestList = ({ posts, fetchList }) => {
     }
   });
 
-  const handleConfirm = (e, id, stock) => {
+  const handleConfirm = (e, id, stock, postId) => {
     e.preventDefault();
 
     const inventory = {
@@ -36,7 +36,7 @@ const OfficerRequestList = ({ posts, fetchList }) => {
       adetSayisi: stock,
     };
 
-    sendPost(inventory, '/envanter-onayla').then(() => fetchList());
+    sendPost(inventory, `/envanter-onayla/${postId}`).then(() => fetchList());
   };
 
   const handleCancel = (e, id) => {
@@ -96,7 +96,12 @@ const OfficerRequestList = ({ posts, fetchList }) => {
                       <button
                         className='flex flex-col items-center justify-center h-8 w-20  py-2 px-4 bg-grey-1 hover:bg-black transition text-white rounded-lg'
                         onClick={(e) =>
-                          handleConfirm(e, post.fiziksel_İd, post.adetSayisi)
+                          handleConfirm(
+                            e,
+                            post.fiziksel_İd,
+                            post.adetSayisi,
+                            post._id
+                          )
                         }
                       >
                         Onayla
