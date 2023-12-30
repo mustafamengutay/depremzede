@@ -3,6 +3,7 @@ import { useContext, useState } from 'react';
 import { Dialog, Flex } from '@radix-ui/themes';
 import { Toaster, toast } from 'sonner';
 import * as Dialogs from '@radix-ui/react-dialog';
+import Select from '../form/elements/Select';
 
 import medical from '../../assets/pharmacy.svg';
 
@@ -14,7 +15,16 @@ import FormContext from '../../context/form/FormContext';
 const MedicalDialog = () => {
   const { sendPost } = useContext(FormContext);
 
-  const [name, setName] = useState('');
+  const inventoryOptions = [
+    {
+      401: 'İlk Yardım Seti',
+    },
+    {
+      402: 'Tansiyon İlacı',
+    },
+  ];
+
+  const [id, setId] = useState('100');
   const [stock, setStock] = useState('');
   const [location, setLocation] = useState('');
 
@@ -22,7 +32,7 @@ const MedicalDialog = () => {
     e.preventDefault();
 
     const request = {
-      urunismi: name,
+      fiziksel_İd: id,
       adetSayisi: stock,
       istenilenBolge: location,
     };
@@ -55,7 +65,7 @@ const MedicalDialog = () => {
           </Dialog.Description>
           <form onSubmit={handleSubmit}>
             <Flex direction='column' gap='3'>
-              <Input title='İlaç Adı' width='400px' setState={setName} />
+              <Select options={inventoryOptions} id={id} set={setId} />
               <Input title='Adet' width='400px' setState={setStock} />
               <Input
                 title='İstenilen Bölge'
