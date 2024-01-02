@@ -7,7 +7,7 @@ const User4 = require("../models/user4");
 const User5 = require("../models/user5");
 
 
-//const checkPostFrequency = require("../middleware/checkPostFrequency");
+
 const router = new express.Router();
 
 

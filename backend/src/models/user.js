@@ -50,7 +50,16 @@ const userSchema = new mongoose.Schema({
         type: String,
         trim: false,
         default: 1,
-    }
+    },
+    posts: [
+        {
+            // Assume that each post has a createdAt field
+            createdAt: {
+                type: Date,
+                default: Date.now,
+            },
+        }
+    ]
 })
 
 
