@@ -18,7 +18,7 @@ const CreateOfficerForm = () => {
   const [surname, setSurname] = useState('');
   const [dob, setDob] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
-  // const [email, setEmail] = useState('');
+  const [email, setEmail] = useState('');
   const [cameFrom, setCameFrom] = useState('');
   const [region, setRegion] = useState('');
 
@@ -47,7 +47,7 @@ const CreateOfficerForm = () => {
       name,
       surname,
       phoneNumber,
-      email: `${name}${surname}@gmail.com`,
+      email: email,
       dataOfBirth: dob,
       comeFromCity: cameFrom,
       resposibleFromCity: region,
@@ -69,18 +69,25 @@ const CreateOfficerForm = () => {
             <p className='font-medium text-xl -tracking-2 mb-4 md:mb-0'>
               Kişisel Bilgiler
             </p>
-            <div className='flex flex-wrap gap-7   justify-end   flex-col md:flex-row  '>
+            <div className='flex flex-wrap gap-7 justify-end flex-col md:flex-row'>
               <div className='flex flex-col md:flex-row gap-8'>
                 <Input
                   title='İsim'
                   altTitle='İsminizi giriniz'
                   setState={setName}
                 />
-                <Input
-                  title='Soyisim'
-                  altTitle='Soyisminizi giriniz'
-                  setState={setSurname}
-                />
+                <div className='flex flex-col gap-7'>
+                  <Input
+                    title='Soyisim'
+                    altTitle='Soyisminizi giriniz'
+                    setState={setSurname}
+                  />
+                  <Input
+                    title='E-posta'
+                    altTitle='E-posta adresini giriniz'
+                    setState={setEmail}
+                  />
+                </div>
               </div>
               <div className='flex flex-col md:flex-row gap-8'>
                 <Input
