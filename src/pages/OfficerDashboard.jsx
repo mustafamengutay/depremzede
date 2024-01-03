@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import OfficerSideMenu from '../components/officer/OfficerSideMenu';
 
 import officer_profil from '../assets/officer-profile.png';
@@ -38,7 +38,6 @@ const OfficerDashboard = () => {
         <OfficerSideMenu
           officerImage={officer_profil}
           officerName={localStorage.getItem('name')}
-          storage={'officer'}
           routeAddress={'/gorevli'}
         />
       ) : (
