@@ -30,6 +30,12 @@ const Login = () => {
     // Page Settings
     setBackgroundColorWhite();
     resetLocation();
+
+    if (localStorage.getItem('government') === 'true') {
+      navigate('/yonetici');
+    } else if (localStorage.getItem('officer') === 'true') {
+      navigate('/gorevli');
+    }
   }, []);
 
   const handleSubmit = (e) => {
