@@ -77,27 +77,27 @@ export const OfficerInformation = () => {
         <OfficerTitle jobType={'Görevli'} />
       </div>
       <div className='grid grid-cols-1 gap-y-6'>
-        <hr classNamez='border-[#E9ECEF] w-full border-t-[0.5px]' />
+        <hr className='border-[#E9ECEF] w-full border-t-[0.5px]' />
         <div className='text-white flex items-center gap-2'>
           <p>ID:</p>
           <p className='font-semibold text-xl'>{Uid}</p>
         </div>
-        <hr classNamez='border-[#E9ECEF] w-full border-t-[0.5px]' />
+        <hr className='border-[#E9ECEF] w-full border-t-[0.5px]' />
         <div className='text-white flex items-center gap-2'>
           <p>Doğum Tarihi:</p>
           <p className='font-semibold text-xl'>{dataOfBirth}</p>
         </div>
-        <hr classNamez='border-[#E9ECEF] w-full border-t-[0.5px]' />
+        <hr className='border-[#E9ECEF] w-full border-t-[0.5px]' />
         <div className='text-white flex items-center gap-2'>
           <p>Geldiği Şehir:</p>
           <p className='font-semibold text-xl'>{comeFromCity}</p>
         </div>
-        <hr classNamez='border-[#E9ECEF] w-full border-t-[0.5px]' />
+        <hr className='border-[#E9ECEF] w-full border-t-[0.5px]' />
         <div className='text-white flex items-center gap-2'>
           <p>Görevli Olduğu Bölge:</p>
           <p className='font-semibold text-xl'>{resposibleFromCity}</p>
         </div>
-        <hr classNamez='border-[#E9ECEF] w-full border-t-[0.5px]' />
+        <hr className='border-[#E9ECEF] w-full border-t-[0.5px]' />
       </div>
     </div>
   );
