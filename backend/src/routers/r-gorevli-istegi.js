@@ -54,11 +54,11 @@ router.delete("/gorevli-isteklerini-sil", async (req, res) => {
 // GOREVLI CADIR ISTEGI (POST)
 router.post("/gorevli-cadir-istegi", async (req, res) => {
   try {
-    const { adetSayisi, istenilenBolge } = req.body;
+    const { gorevliAdi, adetSayisi, istenilenBolge } = req.body;
 
     const sabitDegerler = {
       fiziksel_İd: "100",
-      gorevliAdi: "ISIM SOYISIM",
+      gorevliAdi: gorevliAdi,
       urunismi: "Çadır",
       kategori: "Barınma",
     };
@@ -82,11 +82,11 @@ router.post("/gorevli-cadir-istegi", async (req, res) => {
 // GOREVLI GIDA ISTEGI (POST)
 router.post("/gorevli-gida-istegi", async (req, res) => {
   try {
-    const { adetSayisi, istenilenBolge } = req.body;
+    const { gorevliAdi, adetSayisi, istenilenBolge } = req.body;
 
     const sabitDegerler = {
       fiziksel_İd: "200",
-      gorevliAdi: "ISIM SOYISIM",
+      gorevliAdi: gorevliAdi,
       urunismi: "Gıda",
       kategori: "Beslenme",
     };
@@ -110,11 +110,11 @@ router.post("/gorevli-gida-istegi", async (req, res) => {
 // GOREVLI GIYSI ISTEGI (POST)
 router.post("/gorevli-giysi-istegi", async (req, res) => {
   try {
-    const { adetSayisi, istenilenBolge } = req.body;
+    const { gorevliAdi, adetSayisi, istenilenBolge } = req.body;
 
     const sabitDegerler = {
       fiziksel_İd: "300",
-      gorevliAdi: "ISIM SOYISIM",
+      gorevliAdi: gorevliAdi,
       urunismi: "Giysi",
       kategori: "Giysi",
     };
@@ -138,7 +138,7 @@ router.post("/gorevli-giysi-istegi", async (req, res) => {
 // GOREVLI TIBBI-MALZEME ISTEGI (POST)
 router.post("/gorevli-tibbiMalzeme-istegi", async (req, res) => {
   try {
-    const { fiziksel_İd, adetSayisi, istenilenBolge } = req.body;
+    const { gorevliAdi, fiziksel_İd, adetSayisi, istenilenBolge } = req.body;
 
     let urunismi;
     if (fiziksel_İd === "401") {
@@ -150,7 +150,7 @@ router.post("/gorevli-tibbiMalzeme-istegi", async (req, res) => {
     }
 
     const sabitDegerler = {
-      gorevliAdi: "ISIM SOYISIM",
+      gorevliAdi: gorevliAdi,
       kategori: "Tıbbi Malzeme",
     };
 
