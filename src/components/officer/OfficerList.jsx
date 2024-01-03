@@ -82,7 +82,7 @@ const OfficerRequestList = ({ posts }) => {
               return (
                 <Table.Row align={'center'} key={post._id}>
                   <Table.RowHeaderCell justify={'center'}>
-                    {index}
+                    {post.Uid}
                   </Table.RowHeaderCell>
                   <Table.RowHeaderCell justify={'center'}>
                     {post.name + ' ' + post.surname}
