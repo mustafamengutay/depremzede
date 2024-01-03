@@ -5,12 +5,7 @@ import officerExit from '../../assets/cikis.svg';
 import OfficerAvatar from './OfficerAvatar';
 import { useLocation, Link } from 'react-router-dom';
 
-const OfficerSideMenu = ({
-  officerImage,
-  officerName,
-  routeAddress,
-  storage,
-}) => {
+const OfficerSideMenu = ({ officerImage, officerName, routeAddress }) => {
   const location = useLocation();
 
   const pathMatchRoute = (route) => {
@@ -31,7 +26,9 @@ const OfficerSideMenu = ({
           <OfficerAvatar
             image={officerImage}
             name={officerName}
-            jobType={'Görevli'}
+            jobType={
+              location.pathname.includes('yonetici') ? 'Yönetici' : 'Görevli'
+            }
           />
           <ul className='flex md:flex-col items-center gap-7 text-white md:mt-16 mt-8 w-full'>
             <Link

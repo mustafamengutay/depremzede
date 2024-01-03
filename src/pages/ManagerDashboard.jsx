@@ -37,8 +37,7 @@ const ManagerDashboard = () => {
       location.pathname === '/yonetici/bilgilerim' ? (
         <OfficerSideMenu
           officerImage={officer_profil}
-          officerData={managerData}
-          storage={'government'}
+          officerName={localStorage.getItem('name')}
           routeAddress={'/yonetici'}
         />
       ) : (
