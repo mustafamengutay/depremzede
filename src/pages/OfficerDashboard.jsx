@@ -18,10 +18,8 @@ import TentDialog from '../components/dialog/TentDialog';
 import ClothesDialog from '../components/dialog/ClothesDialog';
 import FoodAidDialog from '../components/dialog/FoodAidDialog';
 import MedicalDialog from '../components/dialog/MedicalDialog';
-import AuthContext from '../context/auth/AuthContext';
 
 const OfficerDashboard = () => {
-  const { officerData } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
