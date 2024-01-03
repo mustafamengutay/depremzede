@@ -39,7 +39,7 @@ const Officers = () => {
     <div className='container w-screen h-screen -tracking-4 min-w-[464px]'>
       <FormHeader title='Görevliler' description={descriptionText} />
       <div className='flex justify-between items-center'>
-        <SearchBar title='ID veya isim giriniz...' width='300px' />
+        <SearchBar title='İsim giriniz...' width='300px' />
       </div>
       <div className='mt-6 overflow-x-auto'>
         <OfficerList posts={officers} />
