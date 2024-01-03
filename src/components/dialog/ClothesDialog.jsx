@@ -16,14 +16,17 @@ const ClothesDialog = () => {
   const { sendPost } = useContext(FormContext);
 
   const [stock, setStock] = useState('');
-  const [location, setLocation] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const officerName =
+      localStorage.getItem('name') + ' ' + localStorage.getItem('surname');
+
     const request = {
+      gorevliAdi: officerName,
       adetSayisi: stock,
-      istenilenBolge: location,
+      istenilenBolge: localStorage.getItem('resposibleFromCity'),
     };
 
     sendPost(request, '/gorevli-giysi-istegi');
@@ -55,11 +58,6 @@ const ClothesDialog = () => {
           <form onSubmit={handleSubmit}>
             <Flex direction='column' gap='3'>
               <Input title='Adet' width='400px' setState={setStock} />
-              <Input
-                title='İstenilen Bölge'
-                width='400px'
-                setState={setLocation}
-              />
             </Flex>
             <Dialog.Close>
               <div className='mt-4 flex justify-end'>

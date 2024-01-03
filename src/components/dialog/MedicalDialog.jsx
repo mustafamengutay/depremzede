@@ -17,24 +17,27 @@ const MedicalDialog = () => {
 
   const inventoryOptions = [
     {
-      401: 'İlk Yardım Seti',
+      401: 'İlk Yardım Kiti',
     },
     {
       402: 'Tansiyon İlacı',
     },
   ];
 
-  const [id, setId] = useState('100');
+  const [id, setId] = useState('401');
   const [stock, setStock] = useState('');
-  const [location, setLocation] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const officerName =
+      localStorage.getItem('name') + ' ' + localStorage.getItem('surname');
+
     const request = {
       fiziksel_İd: id,
+      gorevliAdi: officerName,
       adetSayisi: stock,
-      istenilenBolge: location,
+      istenilenBolge: localStorage.getItem('resposibleFromCity'),
     };
 
     sendPost(request, '/gorevli-tibbiMalzeme-istegi');
@@ -67,11 +70,6 @@ const MedicalDialog = () => {
             <Flex direction='column' gap='3'>
               <Select options={inventoryOptions} id={id} set={setId} />
               <Input title='Adet' width='400px' setState={setStock} />
-              <Input
-                title='İstenilen Bölge'
-                width='400px'
-                setState={setLocation}
-              />
             </Flex>
             <Dialog.Close>
               <div className='mt-4 flex justify-end'>
