@@ -9,7 +9,6 @@ export const AuthProvider = ({ children }) => {
     const [authorizedManager, setAuthorizedManager] = useState(false);
     const [managerData, setManagerData] = useState({
         email: 'admin',
-        password: 'admin',
         name: 'Admin',
         surname: 'Admin',
         phoneNumber: '444',
