@@ -39,7 +39,7 @@ const OfficerDashboard = () => {
       location.pathname === '/gorevli/bilgilerim' ? (
         <OfficerSideMenu
           officerImage={officer_profil}
-          officerData={officerData}
+          officerName={localStorage.getItem('name')}
           storage={'officer'}
           routeAddress={'/gorevli'}
         />
@@ -64,17 +64,20 @@ const OfficerDashboard = () => {
 };
 
 export const OfficerInformation = () => {
-  const { officerData } = useContext(AuthContext);
+  const Uid = localStorage.getItem('Uid');
+  const name = localStorage.getItem('name');
+  const surname = localStorage.getItem('surname');
+  const dataOfBirth = localStorage.getItem('dataOfBirth');
+  const comeFromCity = localStorage.getItem('comeFromCity');
+  const resposibleFromCity = localStorage.getItem('resposibleFromCity');
 
-  const { Uid, name, surname, dataOfBirth, comeFromCity, resposibleFromCity } =
-    officerData;
   return (
     <div className='w-[550px] h-max mx-4 md:ml-0 ml-16'>
       <div className='flex items-center gap-6 mb-6'>
         <p className='text-white font-semibold text-2xl'>
           {name + ' ' + surname}
         </p>
-        <OfficerTitle jobType={'Gorevli'} />
+        <OfficerTitle jobType={'Görevli'} />
       </div>
       <div className='grid grid-cols-1 gap-y-6'>
         <hr classNamez='border-[#E9ECEF] w-full border-t-[0.5px]' />

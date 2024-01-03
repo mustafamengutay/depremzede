@@ -18,6 +18,12 @@ export const AuthProvider = ({ children }) => {
         responsibleFromCity: '-',
     });
 
+    const saveLoginDataToLocalStorage = (loginData) => {
+        for (const key of Object.keys(loginData)) {
+            localStorage.setItem(key, loginData[key]);
+        }
+    };
+
     return <AuthContext.Provider value={{
         authorizedOfficer,
         setAuthorizedOfficer,
@@ -28,6 +34,7 @@ export const AuthProvider = ({ children }) => {
         setAuthorizedManager,
         managerData,
         setManagerData,
+        saveLoginDataToLocalStorage,
     }}>
         {children}
     </AuthContext.Provider>

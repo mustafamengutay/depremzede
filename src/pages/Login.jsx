@@ -13,8 +13,13 @@ import AuthContext from '../context/auth/AuthContext';
 
 const Login = () => {
   const { sendPost } = useContext(FormContext);
-  const { setAuthorizedOfficer, setOfficerData, setAuthorizedManager } =
-    useContext(AuthContext);
+  const {
+    setAuthorizedOfficer,
+    setOfficerData,
+    setAuthorizedManager,
+    saveLoginDataToLocalStorage,
+    managerData,
+  } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -39,6 +44,7 @@ const Login = () => {
       // TEMPORARY ADMIN
       if (email === 'admin' && password === 'admin') {
         setAuthorizedManager(true);
+        saveLoginDataToLocalStorage(managerData);
         localStorage.setItem('government', 'true');
         toast.success('Yönetici Girişi Başarılı! Yönlendiriliyorsunuz...');
 
@@ -57,6 +63,7 @@ const Login = () => {
 
       setAuthorizedOfficer(true);
       setOfficerData(isOfficerExist.data.officer);
+      saveLoginDataToLocalStorage(isOfficerExist.data.officer);
       localStorage.setItem('officer', 'true');
       toast.success('Görevli Girişi Başarılı! Yönlendiriliyorsunuz...');
 
