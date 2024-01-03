@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import HelpLink from '../components/menu/HelpLink';
 import OfficerSideMenu from '../components/officer/OfficerSideMenu';
@@ -16,10 +16,8 @@ import officerRequests from '../assets/officerRequests.svg';
 import { setBackgroundColorBlack } from '../utils/BackgroundColorUtils';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import AddInventoryDialog from '../components/dialog/AddInventoryDialog';
-import AuthContext from '../context/auth/AuthContext';
 
 const ManagerDashboard = () => {
-  const { managerData } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -84,7 +82,7 @@ export const ManagerMenu = () => {
             <div className='flex gap-6 flex-row'>
               <HelpLink
                 icon={createOfficer}
-                title='Görevli Oluştur / Sil'
+                title='Görevli Oluştur'
                 width='313px'
                 route='/gorevli-olustur'
               />
