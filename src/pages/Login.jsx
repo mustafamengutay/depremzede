@@ -20,7 +20,6 @@ const Login = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [loginError, setLoginError] = useState(false);
 
   useEffect(() => {
     // Page Settings
@@ -52,7 +51,6 @@ const Login = () => {
       const isOfficerExist = await sendPost(user, '/officers/login');
 
       if (!isOfficerExist.success) {
-        setLoginError(true);
         toast.error('Giriş Bilgileri Yanlış');
         return;
       }
@@ -88,7 +86,7 @@ const Login = () => {
           </div>
           <div className='flex flex-col gap-6 mb-12'>
             <Input title='E-posta Adresi' setState={setEmail} />
-            <Input title='Şifre' setState={setPassword} />
+            <Input title='Şifre' type={'password'} setState={setPassword} />
             <a
               className='text-xs text-right underline hover:text-stone-500'
               href='#'

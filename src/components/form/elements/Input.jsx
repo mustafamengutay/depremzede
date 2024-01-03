@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-const Input = ({ title, altTitle, width = '', setState }) => {
+const Input = ({ title, altTitle, width = '', setState, type = 'text' }) => {
   const [value, setValue] = useState('');
 
   const handleTextChange = (e) => {
@@ -20,7 +20,7 @@ const Input = ({ title, altTitle, width = '', setState }) => {
       <input
         style={{ width: width }}
         placeholder={title}
-        type='text'
+        type={type}
         value={value}
         onChange={handleTextChange}
         className={
