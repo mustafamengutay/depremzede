@@ -84,7 +84,11 @@ const Home = () => {
                   <div className='mt-14 flex flex-col gap-8'>
                     <SideMenuLink icon={search} title='Arama' />
                     <SideMenuLink icon={map} title='Harita' />
-                    <SideMenuLink icon={info} title='Bilgilendirme' />
+                    <SideMenuLink
+                      icon={info}
+                      title='Bilgilendirme'
+                      route={'/bilgilendirme'}
+                    />
                   </div>
                   <div>
                     <SideMenuLink icon={up} action={'up'} />

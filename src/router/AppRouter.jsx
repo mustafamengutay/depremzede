@@ -24,10 +24,12 @@ import FoodAidForm from '../pages/forms/FoodAidForm';
 import VehicleForm from '../pages/forms/VehicleForm';
 import VictimConfirmation from '../pages/VictimConfirmation';
 import AddInventoryForm from '../pages/forms/AddInventoryForm';
+import Information from '../pages/Information';
 
 const AppRouter = () => {
   return (
     <Routes>
+      <Route path='/bilgilendirme' element={<Information />} />
       <Route path='/enkaz-altinda' element={<UnderDebrisForm />} />
       <Route path='/konaklama-yardimi' element={<AccomodationForm />} />
       <Route path='/gida-yardimi' element={<FoodAidForm />} />
