@@ -8,7 +8,7 @@ const FormHeader = ({ title, description }) => {
         <h1 className='text-xl font-medium'>{title}</h1>
         <CloseButton />
       </div>
-      <div className='text-base text-grey-2 font-light mb-10'>
+      <div className='text-base text-gray-500 font-light mb-10'>
         {description}
       </div>
       <hr />

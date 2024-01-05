@@ -25,7 +25,7 @@ const UnderDebrisList = () => {
     'Aşağıdaki listeden enkaz altında olan vatandaşlarımızın adresini görebilir ve ilan sahibiyle iletişime geçebilirsiniz.';
 
   return (
-    <div className='container w-screen h-screen -tracking-4 '>
+    <div className='container w-screen h-screen -tracking-4'>
       <FormHeader title='Enkaz Altında Olanlar' description={descriptionText} />
       <div className='overflow-x-auto'>
         <InformationList posts={underDebrisList} />
